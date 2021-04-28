@@ -1,1 +1,1 @@
-# hitokage-haze_maize_meat
+# Hitokage - HAZE MAIZE MEAT
