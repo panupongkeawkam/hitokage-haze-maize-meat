@@ -11,11 +11,15 @@
         <div class="head-contain">
             <h1>ปัญหาหมอกควัน</h1>
         </div>
-        <div id="sky1" class="sky vector"></div>
+
+        <!-- bg and layer in by -->
+        <div id="sky1" class="sky vector"></div> 
         <div id="field1" class="front-field vector"></div>
         <div id="field2" class="back-field vector"></div>
         <div id="corn1" class="corn vector"></div>
-        <div class="body-contain-1">
+        <!-- /bg and layer in by -->
+
+        <div class="body-contain"> <!-- main material -->
             <div id="slide1" class="text-1">
                 <h2>TEST TEXT</h2>
                 <p>In Thailand, maize (corn) is considered as one of 
@@ -41,7 +45,7 @@
                        a grave threat to local communities.</p>
             </div>
         </div>
-        <div class="body-contain-2">
+        <div class="body-contain">
             <div id="slide2" class="text-2">
                 <h2>TEST TEXT</h2>
                 <p>In Thailand, maize (corn) is considered as one of 
@@ -67,7 +71,7 @@
                        a grave threat to local communities.</p>
             </div>
         </div>
-        <div class="body-contain-3">
+        <div class="body-contain">
             <div id="slide3" class="text-3">
                 <h2>TEST TEXT</h2>
                 <p>In Thailand, maize (corn) is considered as one of 
@@ -93,7 +97,7 @@
                        a grave threat to local communities.</p>
             </div>
         </div>
-        <div class="body-contain-4">
+        <div class="body-contain">
             <div id="slide4" class="text-4">
                 <h2>TEST TEXT</h2>
                 <p>In Thailand, maize (corn) is considered as one of 
@@ -122,12 +126,12 @@
     </body>
     <style>
         body {
-            font-family: 'Kanit', sans-serif;
-            margin: 0%;
-            background-color: #26c5ff;
+            margin: 0;
             width: 100%;
-            transition: 1s;
             height: auto;
+            transition: 1s;
+            font-family: 'Kanit', sans-serif;
+            background-color: #26c5ff;
         }
         h1 {
             text-shadow: 4px 4px white;
@@ -146,123 +150,78 @@
         }
 
         .head-contain {
-            margin: 0%;
             width: 100%;
             height: 160px;
             animation: slide-up 1s;
         }
-        
-        .body-contain-1 {
+
+        .body-contain {
             width: 100%;
             height: 1000px;
+        }
+        .text-1, .text-2, .text-3, .text-4 {
+            width: 40%;
+            height: 800px;
+            display: none;
+            overflow: auto;
+            border-radius: 20px;
+            margin: 50px;
+            background: white;
         }
         .text-1 {
-            display: none;
-            overflow: auto;
-            z-index: 1;
-            width: 40%;
-            height: 800px;
-            background: white;
-            border-radius: 20px;
-            margin: 50px;
             float: left;
             animation: slide-right 1s;
-        }
-
-        .body-contain-2 {
-            width: 100%;
-            height: 1000px;
         }
         .text-2 {
-            display: none;
             float: right;
-            overflow: auto;
-            z-index: 1;
-            width: 40%;
-            height: 800px;
-            background: white;
-            border-radius: 20px;
-            margin: 50px;
             animation: slide-left 1s;
         }
-
-        .body-contain-3 {
-            width: 100%;
-            height: 1000px;
-        }
         .text-3 {
-            display: none;
-            overflow: auto;
-            z-index: 1;
-            width: 40%;
-            height: 800px;
-            background: white;
-            border-radius: 20px;
-            margin: 50px;
             float: left;
             animation: slide-right 1s;
         }
-
-        .body-contain-4 {
-            width: 100%;
-            height: 1000px;
-        }
         .text-4 {
-            display: none;
-            overflow: auto;
-            z-index: 1;
-            width: 40%;
-            height: 800px;
-            background: white;
-            border-radius: 20px;
-            margin: 50px;
             float: right;
             animation: slide-left 1s;
         }
 
         .vector {
+            background-size: 100%;
             position: fixed;
             background-repeat: no-repeat;
             background-position: center;
         }
+        .corn {
+            z-index: -1;
+            width: 200vh;
+            height: 200%;
+            bottom: -700px;
+            background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/837583674667958292/Pngtreeillustration_plant_rice_field_pattern_4380415.png");
+        }
         .front-field {
             z-index: -2;
-            width: 100%;
+            width: 200vh;
             height: 100%;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/836901390802616330/Pngtreefields_5643431.png");
-            background-size: 100%;
             bottom: -1000px;
-            filter: grayscale(80%);
+            background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/836901390802616330/Pngtreefields_5643431.png");
+            filter: blur(1px);
         }
         .back-field {
             z-index: -3;
-            width: 100%;
+            width: 200vh;
             height: 100%;
+            bottom: -700px;
             background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/836901390802616330/Pngtreefields_5643431.png");
-            background-size: 100%;
-            bottom: -700px;
             transform: scaleX(-1);
-            filter: grayscale(100%);
-        }
-        .corn {
-            z-index: -1;
-            width: 100%;
-            height: 200%;
-            background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/837583674667958292/Pngtreeillustration_plant_rice_field_pattern_4380415.png");
-            background-size: 100%;
-            bottom: -700px;
-            filter: grayscale(90%);
+            filter: blur(2px);
         }
         .sky {
             z-index: -4;
             opacity: 50%;
-            width: 100%;
+            width: 200vh;
             height: 200%;
-            background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/837659276389515284/Pngtreeabstract_cloudy_sky_with_some_5675425.png");
-            background-size: 100%;
             top: -60px;
+            background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/837659276389515284/Pngtreeabstract_cloudy_sky_with_some_5675425.png");
         }
         @keyframes slide-up {
             from {
@@ -298,14 +257,13 @@
   	  <script>
         window.onscroll = function() {
             let value =  window.scrollY;
-            var s1 = -60 - (value / 2.5);
-            var f1 = -1000 + (value / 3.2);
-            var f2 = -700 + (value / 4);
-            var p1 = -800 + (value / 4.2);
-            sky1.style.top = s1.toString() + "px";
-            field1.style.bottom = f1.toString() + "px";
-            field2.style.bottom = f2.toString() + "px";
-            corn1.style.bottom = p1.toString() + "px";
+            sky1.style.top = (-60 - (value / 2.5)).toString() + "px";
+            field1.style.bottom = (-1000 + (value / 3.2)).toString() + "px";
+            field2.style.bottom = (-700 + (value / 4)).toString() + "px";
+            corn1.style.bottom = (-800 + (value / 4.2)).toString() + "px";
+            field1.style.filter = "grayscale(" + (value / 100 * 3).toString() + "%)";
+            field2.style.filter = "grayscale(" + (value / 100 * 3.5).toString() + "%)";
+            corn1.style.filter = "grayscale(" + (value / 100 * 2.5).toString() + "%) sepia(" + (value / 100 * 2.5).toString() + "%)";
             if (value < 700) {
                 document.body.style.backgroundColor = "#26c5ff";
                 slide1.style.display = "initial";
