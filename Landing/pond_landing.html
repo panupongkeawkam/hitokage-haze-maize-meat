@@ -6,17 +6,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<body>
+        <div class="value">scroll = <span id="test">0</span></div>
+        <div class="head-page-bar">
+            <div class="head-button">Greenpeace</div>
+            <div class="head-button">ร่วมบริจาค</div>
+            <div class="head-button">งานรณรงค์</div>
+            <div class="head-button">บริจาค</div>
+        </div>
         <div class="head-contain">
-            <h1>ปัญหาหมอกควัน</h1>
+            <div class="head-title"><span style="color: yellow; font-size: 96px;">Haze Maize Meat</span>
+                <span class="head-title">GREENPEACE</span>
+                <span class="head-title">Project</span>
+            </div>
         </div>
 
         <!-- bg and layer in by -->
-        <div id="sky1" class="sky vector"></div> 
-        <div id="field1" class="front-field vector"></div>
-        <div id="field2" class="back-field vector"></div>
+        <div id="smoke1" class="smoke vector"></div>
         <div id="corn1" class="corn vector"></div>
+        <div id="field1" class="front-field vector"></div>
+        <div id="smoke2" class="smoke vector" style="z-index: -4; transform: scaleX(-1);"></div>
+        <div id="field2" class="back-field vector"></div>
+        <div id="sky1" class="sky vector"></div>
         <!-- /bg and layer in by -->
 
         <div class="body-contain"> <!-- main material -->
@@ -130,7 +146,7 @@
             width: 100%;
             height: auto;
             transition: 1s;
-            font-family: 'Kanit', sans-serif;
+            font-family: 'Comfortaa', cursive;
             background-color: #26c5ff;
         }
         h1 {
@@ -138,21 +154,65 @@
             font-size: 120px;
             color: #63cb05;
             text-align: center;
+            font-weight: bolder;
         }
         h2 {
-            font-size: 36px;
-            margin: 4%;
+            margin-top: 8%;
+            font-size: 1.6vw;
         }
         p {
-            font-size: 20px;
-            margin: 4%;
+            font-size: 0.8vw;
             text-indent: 4%;
+        }
+        .value {
+            top: 24px;
+            right: 24px;
+            font-size: 16px;
+            color: red;
+            position: fixed;
         }
 
         .head-contain {
-            width: 100%;
-            height: 160px;
-            animation: slide-up 1s;
+            transition: 0.5s;
+            display: flex;
+            padding: 0% 5% 0% 5%;
+            margin: auto;
+            background: grey;
+            align-items: center;
+            justify-content: flex-start;
+            width: 90%;
+            height: 980px;
+            background: rgba(0, 0, 0, 40%);
+        }
+        .head-title {
+            display: block;
+            margin-top: 16px;
+            font-size: 84px;
+            color: white;
+        }
+        .head-page-bar {
+            z-index: 2;
+            padding: 8px 5% 8px 5%;
+            width: 90%;
+            height: 48px;
+            background: rgba(21, 69, 96, 80%);
+        }
+        .head-button {
+            width: 10%;
+            height: 48px;
+            float: left;
+            border-radius: 8px;
+            margin-right: 36px;
+            color: white;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        .head-button:hover {
+            background: rgba(98, 200, 6, 60%);
+            cursor: pointer;
+            transition: 0.3s;
         }
 
         .body-contain {
@@ -160,27 +220,23 @@
             height: 1000px;
         }
         .text-1, .text-2, .text-3, .text-4 {
-            width: 40%;
-            height: 800px;
+            width: 36%;
+            height: 29vw;
+            margin: 5%;
             display: none;
-            overflow: auto;
-            border-radius: 20px;
-            margin: 50px;
-            background: white;
+            padding: 4%;
+            align-items: center;
+            justify-content: center;
+            background-size: 112%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url("https://cdn.discordapp.com/attachments/785389543451918386/837722409872130048/Pngtreeyellow_vintage_kraft_paper_5466294.png");
         }
-        .text-1 {
+        .text-1, .text-3 {
             float: left;
             animation: slide-right 1s;
         }
-        .text-2 {
-            float: right;
-            animation: slide-left 1s;
-        }
-        .text-3 {
-            float: left;
-            animation: slide-right 1s;
-        }
-        .text-4 {
+        .text-2, .text-4 {
             float: right;
             animation: slide-left 1s;
         }
@@ -191,36 +247,42 @@
             background-repeat: no-repeat;
             background-position: center;
         }
-        .corn {
+        .smoke {
             z-index: -1;
+            opacity: 80%;
             width: 200vh;
             height: 200%;
-            bottom: -700px;
+            bottom: -800px;
+            background-image: url("https://cdn.discordapp.com/attachments/800661200085188648/837674058006003732/Pngtreeblack_particle_style_pollution_smoke_5436310.png");
+        }
+        .corn {
+            z-index: -2;
+            width: 200vh;
+            height: 200%;
+            bottom: -800px;
             background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/837583674667958292/Pngtreeillustration_plant_rice_field_pattern_4380415.png");
         }
         .front-field {
-            z-index: -2;
+            z-index: -3;
             width: 200vh;
             height: 100%;
             bottom: -1000px;
             background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/836901390802616330/Pngtreefields_5643431.png");
-            filter: blur(1px);
         }
         .back-field {
-            z-index: -3;
+            z-index: -5;
             width: 200vh;
             height: 100%;
             bottom: -700px;
             background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/836901390802616330/Pngtreefields_5643431.png");
             transform: scaleX(-1);
-            filter: blur(2px);
         }
         .sky {
-            z-index: -4;
+            z-index: -6;
             opacity: 50%;
             width: 200vh;
             height: 200%;
-            top: -60px;
+            top: 0px;
             background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/837659276389515284/Pngtreeabstract_cloudy_sky_with_some_5675425.png");
         }
         @keyframes slide-up {
@@ -257,13 +319,18 @@
   	  <script>
         window.onscroll = function() {
             let value =  window.scrollY;
-            sky1.style.top = (-60 - (value / 2.5)).toString() + "px";
-            field1.style.bottom = (-1000 + (value / 3.2)).toString() + "px";
-            field2.style.bottom = (-700 + (value / 4)).toString() + "px";
+            document.getElementById("test").innerHTML = value;
+            smoke1.style.bottom = (-800 + (value / 4)).toString() + "px";
             corn1.style.bottom = (-800 + (value / 4.2)).toString() + "px";
+            field1.style.bottom = (-1000 + (value / 3.2)).toString() + "px";
+            smoke2.style.bottom = (-800 + (value / 3.8)).toString() + "px";
+            field2.style.bottom = (-700 + (value / 4)).toString() + "px";
+            sky1.style.top = (0 - (value / 2.5)).toString() + "px";
+            corn1.style.filter = "grayscale(" + (value / 100 * 3).toString() + "%) sepia(" + (value / 100 * 1.8).toString() + "%)";
             field1.style.filter = "grayscale(" + (value / 100 * 3).toString() + "%)";
-            field2.style.filter = "grayscale(" + (value / 100 * 3.5).toString() + "%)";
-            corn1.style.filter = "grayscale(" + (value / 100 * 2.5).toString() + "%) sepia(" + (value / 100 * 2.5).toString() + "%)";
+            field2.style.filter = "grayscale(" + (value / 100 * 3.5).toString() + "%) blur(2px)";
+            document.getElementsByClassName("head-contain")[0].style.height = (1080 - value).toString() + "px";
+            document.getElementsByClassName("head-contain")[0].style.opacity = (100 - value / 6).toString() + "%";
             if (value < 700) {
                 document.body.style.backgroundColor = "#26c5ff";
                 slide1.style.display = "initial";
