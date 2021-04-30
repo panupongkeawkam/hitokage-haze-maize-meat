@@ -7,23 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <head>
+	<body>
         <div class="head-contain">
             <h1>ปัญหาหมอกควัน</h1>
         </div>
-    </head>
-	<body>
-        <div id="sun-1" class="sun vector"></div>
-        <div id="cloud-1" class="small-cloud vector"></div>
-        <div id="cloud-2" class="big-cloud vector"></div>
-        <div id="cloud-3" class="big-cloud vector" style="left: 120px; animation-duration: 16s"></div>
-        <div id="cloud-4" class="small-cloud vector" style="left: 720px; animation-duration: 40s"></div>
-        <div id="cloud-5" class="small-cloud vector" style="right: 60px; animation: cloud-right 28s infinite alternate linear;"></div>
-        <div id="field-1" class="front-field vector"></div>
-        <div id="field-2" class="back-field vector"></div>
+        <div id="sky1" class="sky vector"></div>
+        <div id="field1" class="front-field vector"></div>
+        <div id="field2" class="back-field vector"></div>
+        <div id="corn1" class="corn vector"></div>
         <div class="body-contain-1">
-            <div id="slide-1" class="blank">
-                <h2>Course</h2>
+            <div id="slide1" class="text-1">
+                <h2>TEST TEXT</h2>
                 <p>In Thailand, maize (corn) is considered as one of 
                     the country’s most valuable cash crops supported and 
                     promoted by the government both for  domestic usage and 
@@ -48,8 +42,8 @@
             </div>
         </div>
         <div class="body-contain-2">
-            <div id="slide-2" class="blank">
-                <h2>Course</h2>
+            <div id="slide2" class="text-2">
+                <h2>TEST TEXT</h2>
                 <p>In Thailand, maize (corn) is considered as one of 
                     the country’s most valuable cash crops supported and 
                     promoted by the government both for  domestic usage and 
@@ -74,8 +68,8 @@
             </div>
         </div>
         <div class="body-contain-3">
-            <div id="slide-3" class="blank">
-                <h2>Course</h2>
+            <div id="slide3" class="text-3">
+                <h2>TEST TEXT</h2>
                 <p>In Thailand, maize (corn) is considered as one of 
                     the country’s most valuable cash crops supported and 
                     promoted by the government both for  domestic usage and 
@@ -100,8 +94,8 @@
             </div>
         </div>
         <div class="body-contain-4">
-            <div id="slide-4" class="blank">
-                <h2>Course</h2>
+            <div id="slide4" class="text-4">
+                <h2>TEST TEXT</h2>
                 <p>In Thailand, maize (corn) is considered as one of 
                     the country’s most valuable cash crops supported and 
                     promoted by the government both for  domestic usage and 
@@ -127,21 +121,13 @@
         </div>
     </body>
     <style>
-        :root {
-            --sun-top: 160;
-        }
-        head {
-            font-family: 'Kanit', sans-serif;
-            width: 100%;
-            height: 200px;
-        }
         body {
             font-family: 'Kanit', sans-serif;
             margin: 0%;
             background-color: #26c5ff;
             width: 100%;
             transition: 1s;
-            height: 4000px;
+            height: auto;
         }
         h1 {
             text-shadow: 4px 4px white;
@@ -158,9 +144,6 @@
             margin: 4%;
             text-indent: 4%;
         }
-        .blank {
-            opacity: 0%;
-        }
 
         .head-contain {
             margin: 0%;
@@ -174,6 +157,7 @@
             height: 1000px;
         }
         .text-1 {
+            display: none;
             overflow: auto;
             z-index: 1;
             width: 40%;
@@ -190,6 +174,8 @@
             height: 1000px;
         }
         .text-2 {
+            display: none;
+            float: right;
             overflow: auto;
             z-index: 1;
             width: 40%;
@@ -197,7 +183,6 @@
             background: white;
             border-radius: 20px;
             margin: 50px;
-            float: right;
             animation: slide-left 1s;
         }
 
@@ -206,6 +191,7 @@
             height: 1000px;
         }
         .text-3 {
+            display: none;
             overflow: auto;
             z-index: 1;
             width: 40%;
@@ -222,6 +208,7 @@
             height: 1000px;
         }
         .text-4 {
+            display: none;
             overflow: auto;
             z-index: 1;
             width: 40%;
@@ -238,40 +225,8 @@
             background-repeat: no-repeat;
             background-position: center;
         }
-        .sun {
-            z-index: -1;
-            width: 720px;
-            height: 720px;
-            border-radius: 100%;
-            box-shadow: 0px 0px 720px white;
-            background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/836883003078344704/sun-3.png");
-            background-size: 720px;
-            top: -360px;
-            right: -240px;
-        }
-        .small-cloud {
-            opacity: 80%;
-            z-index: -2;
-            width: 200px;
-            height: 200px;
-            background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/836879658338484234/cloud.png");
-            background-size: 200px;
-            top: 240px;
-            animation: cloud-left 12s infinite alternate linear;
-        }
-        .big-cloud {
-            opacity: 70%;
-            z-index: -2;
-            width: 480px;
-            height: 480px;
-            background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/836879658338484234/cloud.png");
-            background-size: 480px;
-            top: 360px;
-            right: 240px;
-            animation: cloud-right 16s infinite alternate linear;
-        }
         .front-field {
-            z-index: -1;
+            z-index: -2;
             width: 100%;
             height: 100%;
             background-repeat: no-repeat;
@@ -282,16 +237,32 @@
             filter: grayscale(80%);
         }
         .back-field {
-            z-index: -1;
+            z-index: -3;
             width: 100%;
             height: 100%;
-            background-repeat: no-repeat;
-            background-position: center;
             background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/836901390802616330/Pngtreefields_5643431.png");
             background-size: 100%;
             bottom: -700px;
             transform: scaleX(-1);
+            filter: grayscale(100%);
+        }
+        .corn {
+            z-index: -1;
+            width: 100%;
+            height: 200%;
+            background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/837583674667958292/Pngtreeillustration_plant_rice_field_pattern_4380415.png");
+            background-size: 100%;
+            bottom: -700px;
             filter: grayscale(90%);
+        }
+        .sky {
+            z-index: -4;
+            opacity: 50%;
+            width: 100%;
+            height: 200%;
+            background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/837659276389515284/Pngtreeabstract_cloudy_sky_with_some_5675425.png");
+            background-size: 100%;
+            top: -60px;
         }
         @keyframes slide-up {
             from {
@@ -323,46 +294,30 @@
                 opacity: 100%;
             }
         }
-        @keyframes cloud-left {
-            to {
-                transform: translateX(1940px);
-            }
-        }
-        @keyframes cloud-right {
-            to {
-                transform: translateX(-1940px);
-            }
-        }
     </style>
   	  <script>
         window.onscroll = function() {
             let value =  window.scrollY;
-            var sun = -360 - (value / 2);
-            var cloud1 = 240 - (value / 2);
-            var cloud2 = 380 - (value / 3);
-            var cloud3 = 120 - (value / 3);
-            var field1 = -1000 + (value / 3.2);
-            var field2 = -700 + (value / 4);
-            document.getElementById("sun-1").style.top = sun.toString() + "px";
-            document.getElementById("cloud-1").style.top = cloud1.toString() + "px";
-            document.getElementById("cloud-2").style.top = cloud1.toString() + "px";
-            document.getElementById("cloud-3").style.top = cloud2.toString() + "px";
-            document.getElementById("cloud-4").style.top = cloud3.toString() + "px";
-            document.getElementById("cloud-5").style.top = cloud2.toString() + "px";
-            document.getElementById("field-1").style.bottom = field1.toString() + "px";
-            document.getElementById("field-2").style.bottom = field2.toString() + "px";
+            var s1 = -60 - (value / 2.5);
+            var f1 = -1000 + (value / 3.2);
+            var f2 = -700 + (value / 4);
+            var p1 = -800 + (value / 4.2);
+            sky1.style.top = s1.toString() + "px";
+            field1.style.bottom = f1.toString() + "px";
+            field2.style.bottom = f2.toString() + "px";
+            corn1.style.bottom = p1.toString() + "px";
             if (value < 700) {
                 document.body.style.backgroundColor = "#26c5ff";
-                document.getElementById("slide-1").className = "text-1";
+                slide1.style.display = "initial";
             } else if (value < 1700) {
                 document.body.style.backgroundColor = "#7a96a1";
-                document.getElementById("slide-2").className = "text-2";
+                slide2.style.display = "initial";
             } else if (value < 2700) {
                 document.body.style.backgroundColor = "#7a96a1";
-                document.getElementById("slide-3").className = "text-3";
+                slide3.style.display = "initial";
             } else if (value < 3700) {
                 document.body.style.backgroundColor = "#87857e";
-                document.getElementById("slide-4").className = "text-4";
+                slide4.style.display = "initial";
             }
             // document.documentElement.style.setProperty("--hue", 200 - (value / 100 * 2));
         }
