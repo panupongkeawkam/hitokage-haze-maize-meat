@@ -1,7 +1,5 @@
 <html>
     <title>ฮิโตคาเงะ</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
@@ -12,15 +10,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<body>
-        <div class="focus"></div>
-        <div class="value">scroll = <span id="test">0</span></div>
+        <div class="focus-1"></div>
+        <div class="focus-2"></div>
+        <!-- <div class="direc-contain">
+            <button onclick="direc()"><abbr title="Home"><div class="direc-button" style="background: red;"></div></abbr></button>
+            <button onclick="direc()"><abbr title="ปัญหา"><div class="direc-button" style="background: red;"></div></abbr></button>
+            <button onclick="direc()"><abbr title="กราฟ"><div class="direc-button" style="background: red;"></div></abbr></button>
+            <button onclick="direc()"><abbr title="สาเหตุ"><div class="direc-button" style="background: red;"></div></abbr></button>
+            <button onclick="direc()"><abbr title="ข้อเสนอ"><div class="direc-button" style="background: red;"></div></abbr></button>
+        </div> -->
         <div class="head-page-bar">
             <div class="head-button">Greenpeace</div>
             <div class="head-button">ร่วมบริจาค</div>
             <div class="head-button">งานรณรงค์</div>
             <div class="head-button">บริจาค</div>
         </div>
-        <div class="head-contain">
+        <div id="head" class="head-contain">
             <div class="heading"><span style="color: yellow; font-size: 96px;">Haze Maize Meat</span>
                 <span class="heading">GREENPEACE</span>
                 <span class="heading">Project</span>
@@ -36,9 +41,9 @@
         <div id="sky1" class="sky vector"></div>
         <!-- /bg and layer in by -->
 
-        <div class="body-contain"> <!-- main material -->
-            <div class="title-contain">ปัญหา</div>
-            <div id="slide1" class="text-1">
+        <div id="title1" class="title">ปัญหา</div>
+        <div class="material-contain"> <!-- main material -->
+            <div id="slide1" class="text"  style="animation: slide-right 1s;">
                 <h2>TEST TEXT</h2>
                 <p>In Thailand, maize (corn) is considered as one of 
                     the country’s most valuable cash crops supported and 
@@ -62,11 +67,19 @@
                        in industrial maize plantation and transboundary haze pollution- 
                        a grave threat to local communities.</p>
             </div>
-            <img src="https://www.greenpeace.org/static/planet4-southeastasia-stateless/2019/04/859bd164-gp04n2h.jpg" class="picture">
+            <img id="pic1" src="https://www.greenpeace.org/static/planet4-southeastasia-stateless/2019/04/859bd164-gp04n2h.jpg" class="picture" style="animation: slide-left 1s;">
         </div>
-        <div class="body-contain">
-            <div class="title-contain">กราฟ</div>
-            <div id="slide2" class="text-2">
+        <div class="line"></div>
+        <div id="title2" class="title">กราฟ</div>
+        <div class="material-contain">
+            <img id="pic2" src="https://lh3.googleusercontent.com/P7imSS_x85-XxVv9JSMU2pRsWgyenaqAl-HY9UdXRWtqorJcoiqxkKBgRG1rtWUyD94QnGux04krgHH1Ap_jmyC-BLJgKemXOiAg-4b4fol5rG22cRq6OHEF8rwJtI4Tq_4gel3x" class="picture" style="animation: slide-right 1s;">
+            <img id="pic3" src="https://lh3.googleusercontent.com/jvHgDaWJp-pgh4mViDD04PYlivO2_VvTUQowL9eSQI54uyXs5MWVdGVERAC3kUocUUhZL8hR1ulne3_MqLQmUYOSdRJpAf1XL7AuRHZrN3GvU-XWxqpsl1i1GBA5lC30Ucxlz9dt" class="picture" style="animation: slide-left 1s;">
+        </div>
+        <div class="line"></div>
+        <div id="title3" class="title">สาเหตุ</div>
+        <div class="material-contain">
+            <img id="pic4" src="https://lh6.googleusercontent.com/YhbBqSIufG04GeDJUNbPHrde-ZzTQCqym2HmTXey0sifYobp6oXgdzgZCgUNtjWnFmwMLXfh3-ZLoyE-kaB1Dlbj99-RM1hK-5kC-4l7R8odo-fJR30oscdg_anWD0_UfZ25vUTm" class="picture" style="animation: slide-right 1s;">
+            <div id="slide3" class="text"  style="animation: slide-left 1s;">
                 <h2>TEST TEXT</h2>
                 <p>In Thailand, maize (corn) is considered as one of 
                     the country’s most valuable cash crops supported and 
@@ -91,37 +104,10 @@
                        a grave threat to local communities.</p>
             </div>
         </div>
-        <div class="body-contain">
-            <div class="title-contain">สาเหตุ</div>
-            <div id="slide3" class="text-3">
-                <h2>TEST TEXT</h2>
-                <p>In Thailand, maize (corn) is considered as one of 
-                    the country’s most valuable cash crops supported and 
-                    promoted by the government both for  domestic usage and 
-                    for export. It plays an important role in the manufacturing 
-                    of feeds used in livestock, a rapidly growing industry. The 
-                    latest 2019 data collected by the Office of Agricultural 
-                    Economics reveals that there are 6,929,904 rai dedicated 
-                    for maize agriculture in Thailand, much of it located in 
-                    the Upper Northern of Thailand.</p>
-                <p>Industrial maize cultivation at  mass production levels 
-                    results to land cover change of  forest areas, specifically 
-                    watershed forests and arable land  for other types of crop 
-                    farming.  In this study, satellite images– using Moderate 
-                    Resolution Imaging Spectroradiometer (MODIS) equipment from 
-                    NASA’s Terra and Aqua satellite and VIIRS system satellite– 
-                    have detected hotspots, burn scars  in maize farming areas 
-                    located in Mekong sub-region which also includes  Upper Northern
-                     Thailand, Lao People’s Democratic Republic, and the Shan State
-                      of Myanmar.  The images reveal a correlation between the increase
-                       in industrial maize plantation and transboundary haze pollution- 
-                       a grave threat to local communities.</p>
-            </div>
-            <img src="https://www.greenpeace.org/static/planet4-southeastasia-stateless/2019/04/859bd164-gp04n2h.jpg" class="picture">
-        </div>
-        <div class="body-contain">
-            <div class="title-contain">ข้อเสนอ</div>
-            <div id="slide4" class="text-4">
+        <div class="line"></div>
+        <div id="title4" class="title">ข้อเสนอ</div>
+        <div class="material-contain">
+            <div id="slide4" class="text" style="animation: slide-left 1s;">
                 <h2>TEST TEXT</h2>
                 <p>In Thailand, maize (corn) is considered as one of 
                     the country’s most valuable cash crops supported and 
@@ -154,48 +140,48 @@
             height: auto;
             transition: 1s;
             font-family: 'Comfortaa', cursive;
-            background-color: #26c5ff;
+            background-color: hsl(190, 100%, 50%);
         }
         h2 {
-            margin-top: 8%;
+            margin: 8% 8% 1% 8%;
             font-size: 1.6vw;
         }
         p {
+            margin: 1% 8% 1% 8%;
             font-size: 0.8vw;
             text-indent: 4%;
         }
-        .value {
-            top: 24px;
-            right: 24px;
-            font-size: 16px;
-            color: red;
-            position: fixed;
-        }
-        .focus {
+        .focus-1, .focus-2 {
+            transition: 0.5s;
             z-index: -1;
             width: 100%;
             height: 100%;
             position: fixed;
-            background-color: rgb(0, 0, 0, 25%);
         }
+        .focus-1 {
+            background-color: hsl(0, 0%, 0%, 30%);
+        }
+        .focus-2 {
+            background-color: hsl(0, 0%, 0%, 60%);
+        }
+
         .head-contain {
             width: 90%;
-            height: 980px;
+            height: 1080px;
             padding: 0% 5% 0% 5%;
             transition: 0.3s;
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            background: rgba(0, 0, 0, 40%);
         }
         .heading {
             display: block;
             margin-top: 16px;
             font-size: 84px;
             color: white;
-            animation: title-slide 1s;
+            animation: heading-slide 1s;
         }
-        .head-page-bar, .head-button, .title-contain {
+        .head-page-bar, .head-button, .title {
             display: flex;
             text-align: center;
             align-items: center;
@@ -212,6 +198,7 @@
             margin: 1%;
             border-radius: 8px;
             color: white;
+            font-family: 'Kanit';
             justify-content: center;
         }
         .head-button:hover {
@@ -220,49 +207,69 @@
             transition: 0.3s;
         }
 
-        .body-contain {
+        .material-contain {
             width: 100%;
-            height: 1000px;
-            margin: 0;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .title-contain {
+        .title {
             width: 100%;
+            display: none;
             justify-content: center;
             font-family: 'Kanit';
             color: white;
             font-size: 96px;
-            /* background: red; */
+            animation: title-slide 1s;
         }
-        .text-1, .text-2, .text-3, .text-4 {
-            width: 36%;
+        .text {
+            width: 40%;
             height: 26vw;
-            margin: 0% 5% 0% 5%;
             display: none;
-            padding: 4%;
-            /* background-color: red; */
-            align-items: center;
-            justify-content: center;
-            background-size: 112%;
+            margin: 5%;
+            background-size: 100%;
             background-repeat: no-repeat;
             background-position: center;
-            background-image: url("https://cdn.discordapp.com/attachments/785389543451918386/837722409872130048/Pngtreeyellow_vintage_kraft_paper_5466294.png");
+            background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/838032417084014662/Pngtreeyellow_vintage_kraft_paper_5466294_3.png");
         }
-        .text-1, .text-3 {
-            float: left;
-            animation: slide-right 1s;
+
+        /* .direc-contain {
+            position: fixed;
+            right: 1%;
+            top: 40%;
+            width: 32px;
+            height: 200px;
         }
-        .text-2, .text-4 {
-            float: right;
-            animation: slide-left 1s;
+        .direc-button {
+            width: 32px;
+            height: 32px;
+            margin: 8px 0px 8px 0px;
+            border-radius: 100%;
         }
+        .direc-button:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        } */
+
         .picture {
-            width: 40%;
-            margin: 3% 5% 3% 0%;
+            display: none;
+            width: 36%;
+            margin: 5%;
             box-shadow: 0px 0px 8px 10px rgb(0, 0, 0, 20%);
             border-radius: 4px;
         }
+        .line {
+            width: 50%;
+            margin: 10% 25% 4% 25%;
+            height: 8px;
+            border-radius: 8px;
+            background: rgb(255, 255, 255, 60%);
+            animation: up-down 2s ease infinite alternate;
+        }
 
         .vector {
+            width: 100%;
             background-size: 100%;
             position: fixed;
             background-repeat: no-repeat;
@@ -271,28 +278,24 @@
         .smoke {
             z-index: -1;
             opacity: 80%;
-            width: 100%;
             height: 200%;
             bottom: -90%;
             background-image: url("https://cdn.discordapp.com/attachments/800661200085188648/837674058006003732/Pngtreeblack_particle_style_pollution_smoke_5436310.png");
         }
         .corn {
             z-index: -2;
-            width: 100%;
             height: 200%;
             bottom: -90%;
             background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/837583674667958292/Pngtreeillustration_plant_rice_field_pattern_4380415.png");
         }
         .front-field {
             z-index: -3;
-            width: 100%;
             height: 100%;
             bottom: -75%;
             background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/836901390802616330/Pngtreefields_5643431.png");
         }
         .back-field {
             z-index: -5;
-            width: 100%;
             height: 100%;
             bottom: -65%;
             background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/836901390802616330/Pngtreefields_5643431.png");
@@ -300,74 +303,78 @@
         }
         .sky {
             z-index: -6;
-            opacity: 50%;
-            width: 100%;
+            opacity: 60%;
             height: 200%;
             top: -10%;
             background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/837659276389515284/Pngtreeabstract_cloudy_sky_with_some_5675425.png");
         }
+        @keyframes up-down {
+            to {transform: translateY(8px);}
+        }
         @keyframes title-slide {
-            from {
-                transform: translateX(-20%);
-                opacity: 0%;
-            }
-            to {
-                transform: translateX(0%);
-                opacity: 100%;
-            }
+            from {transform: translateY(96px); opacity: 0%;}
+            to {transform: translateY(0px); opacity: 100%;}
+        }
+        @keyframes heading-slide {
+            from {transform: translateX(-20%); opacity: 0%;}
+            to {transform: translateX(0%); opacity: 100%;}
         }
         @keyframes slide-right {
-            from {
-                transform: translateX(-32px);
-                opacity: 0%;
-            }
-            to {
-                transform: translateX(0px);
-                opacity: 100%;
-            }
+            from {transform: translateX(-32px); opacity: 0%;}
+            to {transform: translateX(0px); opacity: 100%;}
         }
         @keyframes slide-left {
-            from {
-                transform: translateX(32px);
-                opacity: 0%;
-            }
-            to {
-                transform: translateX(0px);
-                opacity: 100%;
-            }
+            from {transform: translateX(32px); opacity: 0%;}
+            to {transform: translateX(0px); opacity: 100%;}
         }
     </style>
   	  <script>
         window.onscroll = function() {
             let value =  window.scrollY;
-            document.getElementById("test").innerHTML = value;
 
-            smoke1.style.bottom = (-90 + (value / 38)).toString() + "%";
-            corn1.style.bottom = (-90 + (value / 38)).toString() + "%";
-            field1.style.bottom = (-75 + (value / 40)).toString() + "%";
-            smoke2.style.bottom = (-65 + (value / 32)).toString() + "%";
-            field2.style.bottom = (-65 + (value / 32)).toString() + "%";
+            smoke1.style.bottom = (-90 + (value / 48)).toString() + "%";
+            corn1.style.bottom = (-90 + (value / 48)).toString() + "%";
+            field1.style.bottom = (-75 + (value / 46)).toString() + "%";
+            smoke2.style.bottom = (-75 + (value / 32)).toString() + "%";
+            field2.style.bottom = (-65 + (value / 40)).toString() + "%";
             sky1.style.top = (-10 - (value / 24)).toString() + "%";
 
             corn1.style.filter = "grayscale(" + (value / 100 * 3).toString() + "%) sepia(" + (value / 100 * 1.8).toString() + "%)";
             field1.style.filter = "grayscale(" + (value / 100 * 3).toString() + "%)";
             field2.style.filter = "grayscale(" + (value / 100 * 3.5).toString() + "%) blur(2px)";
-            document.getElementsByClassName("head-contain")[0].style.height = (1080 - value).toString() + "px";
-            document.getElementsByClassName("head-contain")[0].style.opacity = (100 - value / 6).toString() + "%";
-            if (value < 700) {
-                document.body.style.backgroundColor = "#26c5ff";
+
+            document.getElementsByClassName("focus-2")[0].style.backgroundColor = "hsl(0, 0%, 0%, "+ (60 - value * 1.5).toString() + "%)";
+            document.getElementsByClassName("head-contain")[0].style.transform = "translateY(" + (0 - value / 10).toString() + "%)";
+
+            if (value > 600) {
+                title1.style.display = "flex";
                 slide1.style.display = "initial";
-            } else if (value < 1700) {
-                document.body.style.backgroundColor = "#7a96a1";
-                slide2.style.display = "initial";
-            } else if (value < 2700) {
-                document.body.style.backgroundColor = "#7a96a1";
+                pic1.style.display = "initial";
+            }
+            if (value > 1600) {
+                title2.style.display = "flex";
+                pic2.style.display = "initial";
+                pic3.style.display = "initial";
+            }
+            if (value > 2600) {
+                title3.style.display = "flex";
                 slide3.style.display = "initial";
-            } else if (value < 3700) {
-                document.body.style.backgroundColor = "#87857e";
+                pic4.style.display = "initial";
+            }
+            if (value > 3600) {
+                title4.style.display = "flex";
                 slide4.style.display = "initial";
             }
-            // document.documentElement.style.setProperty("--hue", 200 - (value / 100 * 2));
+
+            if (value < 600) {
+                document.body.style.backgroundColor = "hsl(190, 100%, 50%)";
+            } else if (value < 1600) {
+                document.body.style.backgroundColor = "hsl(190, 20%, 50%)";
+            } else if (value < 2600) {
+                document.body.style.backgroundColor = "hsl(36, 20%, 50%)";
+            } else if (value < 3600) {
+                document.body.style.backgroundColor = "hsl(19, 40%, 50%)";
+            }
         }
   	  </script>
    </body>
