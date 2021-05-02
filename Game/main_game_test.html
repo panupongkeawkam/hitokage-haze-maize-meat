@@ -39,6 +39,18 @@
       50%{opacity: 0;}
       100%{opacity: 1;}
     }
+    @keyframes walk1{
+      0%{transform: translate(-50px);}
+      100%{transform: translate(100px);}
+    }
+    @keyframes walk2{
+      0%{transform: translate(0px);}
+      100%{transform: translate(100px);}
+    }
+    @keyframes walk3{
+      0%{transform: translate(0px, 0px);}
+      100%{transform: translate(0px, -150px);}
+    }
     .money{
       width:300px;
       top:0%;
@@ -102,6 +114,7 @@
       left:50%;
       height:200px;
       position: absolute;
+      animation: walk1 2s infinite alternate;
     }
     .chicken2{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png");
@@ -112,6 +125,7 @@
       left:65%;
       height:200px;
       position: absolute;
+      animation: walk2 5s infinite alternate;
     }
     .chicken3{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png");
@@ -122,6 +136,7 @@
       left:80%;
       height:200px;
       position: absolute;
+      animation: walk3 1s infinite alternate;
     }
     #dirt1{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838131534874804234/dirt.png");
@@ -261,10 +276,47 @@
       background-size: contain;
       background-repeat:no-repeat;
       width:70px;
-      top:60%;
-      left:17%;
       height:100px;
-      position: absolute;
+      visibility: hidden;
+    }
+    #corngrow2{
+      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png");
+      background-size: contain;
+      background-repeat:no-repeat;
+      width:70px;
+      height:100px;
+      visibility: hidden;
+    }
+    #corngrow3{
+      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png");
+      background-size: contain;
+      background-repeat:no-repeat;
+      width:70px;
+      height:100px;
+      visibility: hidden;
+    }
+    #corngrow4{
+      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png");
+      background-size: contain;
+      background-repeat:no-repeat;
+      width:70px;
+      height:100px;
+      visibility: hidden;
+    }
+    #corngrow5{
+      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png");
+      background-size: contain;
+      background-repeat:no-repeat;
+      width:70px;
+      height:100px;
+      visibility: hidden;
+    }
+    #corngrow6{
+      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png");
+      background-size: contain;
+      background-repeat:no-repeat;
+      width:70px;
+      height:100px;
       visibility: hidden;
     }
     .watercan:active {
@@ -277,22 +329,27 @@
   <div class="bg2"></div>
   <div class="bg1"></div>
   <div class="sun"></div>
-  <div class="chicken1"></div>
-  <div class="chicken2"></div>
   <div class="chicken3"></div>
+  <div class="chicken2"></div>
+  <div class="chicken1"></div>
   <div class="chickenlogo"></div>
   <div class="cornlogo"></div>
   <div class="coin"></div>
   <div class="dirt"></div>
     <div id="dirt1" onclick="grow1()"></div>
-    <div id="dirt2"></div>
-    <div id="dirt3"></div>
-    <div id="dirt4"></div>
-    <div id="dirt5"></div>
-    <div id="dirt6"></div>
+    <div id="dirt2" onclick="grow2()"></div>
+    <div id="dirt3" onclick="grow3()"></div>
+    <div id="dirt4" onclick="grow4()"></div>
+    <div id="dirt5" onclick="grow5()"></div>
+    <div id="dirt6" onclick="grow6()"></div>
   </div>
   <div class="grow"></div>
-  <div id="corngrow1"></div>
+  <div style="position:absolute; top:60%; left:17%;" id="corngrow1"></div>
+  <div style="position:absolute; top:60%; left:23%;" id="corngrow2"></div>
+  <div style="position:absolute; top:60%; left:29%;" id="corngrow3"></div>
+  <div style="position:absolute; top:77%; left:15%;" id="corngrow4"></div>
+  <div style="position:absolute; top:77%; left:21%;" id="corngrow5"></div>
+  <div style="position:absolute; top:77%; left:27%;" id="corngrow6"></div>
   <div class="watercan" onclick="change()"></div>
   <div class="seed"></div>
   <div class="money">1000</div>
@@ -305,6 +362,21 @@
   }
   function grow1(){
     document.getElementById("corngrow1").style.visibility="visible";
+  }
+  function grow2(){
+    document.getElementById("corngrow2").style.visibility="visible";
+  }
+  function grow3(){
+    document.getElementById("corngrow3").style.visibility="visible";
+  }
+  function grow4(){
+    document.getElementById("corngrow4").style.visibility="visible";
+  }
+  function grow5(){
+    document.getElementById("corngrow5").style.visibility="visible";
+  }
+  function grow6(){
+    document.getElementById("corngrow6").style.visibility="visible";
   }
   function myFunction() {
     document.getElementById("tutorial").style.display = "none";
