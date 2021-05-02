@@ -48,6 +48,21 @@
       height:100px;
       position: absolute;
     }
+    #tutorial{
+      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838329377095680035/tutorial.png");
+      background-size: contain;
+      background-repeat:no-repeat;
+      width: 59.5%;
+      height: 69.5%;
+      top:15%;
+      left:20%;
+      position: absolute;
+      border-width: 1em;
+      border-style: solid;
+      border-color: white;
+      cursor:pointer;
+      visibility: visible; 
+    }
     .cornlogo{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128363230855168/corn.png");
       background-size: contain;
@@ -98,7 +113,7 @@
       height:200px;
       position: absolute;
     }
-    .dirt1{
+    #dirt1{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838131534874804234/dirt.png");
       background-size: contain;
       background-repeat:no-repeat;
@@ -108,7 +123,7 @@
       height:200px;
       position: absolute;
     }
-    .dirt2{
+    #dirt2{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838131534874804234/dirt.png");
       background-size: contain;
       background-repeat:no-repeat;
@@ -118,7 +133,7 @@
       height:200px;
       position: absolute;
     }
-    .dirt3{
+    #dirt3{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838131534874804234/dirt.png");
       background-size: contain;
       background-repeat:no-repeat;
@@ -128,7 +143,7 @@
       height:200px;
       position: absolute;
     }
-    .dirt4{
+    #dirt4{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838131534874804234/dirt.png");
       background-size: contain;
       background-repeat:no-repeat;
@@ -138,7 +153,7 @@
       height:200px;
       position: absolute;
     }
-    .dirt5{
+    #dirt5{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838131534874804234/dirt.png");
       background-size: contain;
       background-repeat:no-repeat;
@@ -148,7 +163,7 @@
       height:200px;
       position: absolute;
     }
-    .dirt6{
+    #dirt6{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838131534874804234/dirt.png");
       background-size: contain;
       background-repeat:no-repeat;
@@ -177,7 +192,6 @@
       height:100px;
       position: absolute;
     }
-
     .watercan{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128421468897310/watercan.png");
       background-size: contain;
@@ -232,7 +246,7 @@
     height:150px;
     position: absolute;
     }
-    .corngrow1{
+    #corngrow1{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png");
       background-size: contain;
       background-repeat:no-repeat;
@@ -241,11 +255,12 @@
       left:17%;
       height:100px;
       position: absolute;
+      visibility: hidden;
     }
     .watercan:active {
     cursor: url('/imgages/cursor1.gif');
-}
-  </style>
+    }
+  </style>  
 </head>
 <body>
   <div class="bg3"></div>
@@ -258,22 +273,31 @@
   <div class="chickenlogo"></div>
   <div class="cornlogo"></div>
   <div class="coin"></div>
-  <div class="dirt1 dirt"></div>
-  <div class="dirt2 dirt"></div>
-  <div class="dirt3 dirt"></div>
-  <div class="dirt4 dirt"></div>
-  <div class="dirt5 dirt"></div>
-  <div class="dirt6 dirt"></div>
+  <div class="dirt"></div>
+    <div id="dirt1" onclick="grow1()"></div>
+    <div id="dirt2"></div>
+    <div id="dirt3"></div>
+    <div id="dirt4"></div>
+    <div id="dirt5"></div>
+    <div id="dirt6"></div>
+  </div>
   <div class="grow"></div>
-  <div class="corngrow1"></div>
+  <div id="corngrow1"></div>
   <div class="watercan" onclick="change()"></div>
   <div class="seed"></div>
   <div class="money">1000</div>
   <div class="environment">สภาพแวดล้อม: 100</div>
+  <div id="tutorial" onclick="myFunction()"></div>
   <script>
   function change() {
     document.body.style.cursor = "url('https://cur.cursors-4u.net/others/oth-5/oth440.cur'), auto";
   }
-    </script>
+  function grow1(){
+    document.getElementById("corngrow1").style.visibility="visible";
+  }
+  function myFunction() {
+    document.getElementById("tutorial").style.display = "none";
+  }
+  </script>
 </body>
 </html>
