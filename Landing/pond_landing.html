@@ -12,35 +12,47 @@
 	<body>
         <div class="focus-1"></div>
         <div class="focus-2"></div>
-        <!-- <div class="direc-contain">
-            <button onclick="direc()"><abbr title="Home"><div class="direc-button" style="background: red;"></div></abbr></button>
-            <button onclick="direc()"><abbr title="ปัญหา"><div class="direc-button" style="background: red;"></div></abbr></button>
-            <button onclick="direc()"><abbr title="กราฟ"><div class="direc-button" style="background: red;"></div></abbr></button>
-            <button onclick="direc()"><abbr title="สาเหตุ"><div class="direc-button" style="background: red;"></div></abbr></button>
-            <button onclick="direc()"><abbr title="ข้อเสนอ"><div class="direc-button" style="background: red;"></div></abbr></button>
-        </div> -->
-        <div class="head-page-bar">
+        <div class="value">scroll = <span id="test">0</span></div>
+
+        <div class="direc-contain">
+            <a href="#direc1">
+                <div class="direc-button" onmouseenter="showInfo(this, 0)" onmouseleave="javascript: this.innerHTML = ``" style="background: #EAD69D;"></div>
+            </a>
+            <a href="#direc2">
+                <div class="direc-button" onmouseenter="showInfo(this, 1)" onmouseleave="javascript: this.innerHTML = ``" style="background: #C0B637;"></div>
+            </a>
+            <a href="#direc3">
+                <div class="direc-button" onmouseenter="showInfo(this, 2)" onmouseleave="javascript: this.innerHTML = ``" style="background: #728544;"></div>
+            </a>
+            <a href="#direc4">
+                <div class="direc-button" onmouseenter="showInfo(this, 3)" onmouseleave="javascript: this.innerHTML = ``" style="background: #BCB747;"></div>
+            </a>
+            <a href="#direc5">
+                <div class="direc-button" onmouseenter="showInfo(this, 4)" onmouseleave="javascript: this.innerHTML = ``" style="background: #9D9449;"></div>
+            </a>
+        </div>
+
+        <div id="smoke1" class="smoke layer"></div>
+        <div id="corn1" class="corn layer"></div>
+        <div id="field1" class="front-field layer"></div>
+        <div id="smoke2" class="smoke layer" style="z-index: -4; transform: scaleX(-1);"></div>
+        <div id="field2" class="back-field layer"></div>
+        <div id="sky1" class="sky layer"></div>
+
+        <div id="direc1" class="head-page-bar">
             <div class="head-button">Greenpeace</div>
             <div class="head-button">ร่วมบริจาค</div>
             <div class="head-button">งานรณรงค์</div>
             <div class="head-button">บริจาค</div>
         </div>
         <div id="head" class="head-contain">
-            <div class="heading"><span style="color: yellow; font-size: 96px;">Haze Maize Meat</span>
+            <div class="heading"><span style="color: #E1BD61; font-size: 96px;">Haze Maize Meat</span>
                 <span class="heading">GREENPEACE</span>
-                <span class="heading">Project</span>
+                <span class="heading">Hitokage - Project</span>
             </div>
         </div>
 
-        <!-- bg and layer in by -->
-        <div id="smoke1" class="smoke vector"></div>
-        <div id="corn1" class="corn vector"></div>
-        <div id="field1" class="front-field vector"></div>
-        <div id="smoke2" class="smoke vector" style="z-index: -4; transform: scaleX(-1);"></div>
-        <div id="field2" class="back-field vector"></div>
-        <div id="sky1" class="sky vector"></div>
-        <!-- /bg and layer in by -->
-
+        <div id="direc2" class="line"></div>
         <div id="title1" class="title">ปัญหา</div>
         <div class="material-contain"> <!-- main material -->
             <div id="slide1" class="text"  style="animation: slide-right 1s;">
@@ -69,13 +81,13 @@
             </div>
             <img id="pic1" src="https://www.greenpeace.org/static/planet4-southeastasia-stateless/2019/04/859bd164-gp04n2h.jpg" class="picture" style="animation: slide-left 1s;">
         </div>
-        <div class="line"></div>
+        <div id="direc3" class="line"></div>
         <div id="title2" class="title">กราฟ</div>
         <div class="material-contain">
             <img id="pic2" src="https://lh3.googleusercontent.com/P7imSS_x85-XxVv9JSMU2pRsWgyenaqAl-HY9UdXRWtqorJcoiqxkKBgRG1rtWUyD94QnGux04krgHH1Ap_jmyC-BLJgKemXOiAg-4b4fol5rG22cRq6OHEF8rwJtI4Tq_4gel3x" class="picture" style="animation: slide-right 1s;">
             <img id="pic3" src="https://lh3.googleusercontent.com/jvHgDaWJp-pgh4mViDD04PYlivO2_VvTUQowL9eSQI54uyXs5MWVdGVERAC3kUocUUhZL8hR1ulne3_MqLQmUYOSdRJpAf1XL7AuRHZrN3GvU-XWxqpsl1i1GBA5lC30Ucxlz9dt" class="picture" style="animation: slide-left 1s;">
         </div>
-        <div class="line"></div>
+        <div id="direc4" class="line"></div>
         <div id="title3" class="title">สาเหตุ</div>
         <div class="material-contain">
             <img id="pic4" src="https://lh6.googleusercontent.com/YhbBqSIufG04GeDJUNbPHrde-ZzTQCqym2HmTXey0sifYobp6oXgdzgZCgUNtjWnFmwMLXfh3-ZLoyE-kaB1Dlbj99-RM1hK-5kC-4l7R8odo-fJR30oscdg_anWD0_UfZ25vUTm" class="picture" style="animation: slide-right 1s;">
@@ -104,7 +116,7 @@
                        a grave threat to local communities.</p>
             </div>
         </div>
-        <div class="line"></div>
+        <div id="direc5" class="line"></div>
         <div id="title4" class="title">ข้อเสนอ</div>
         <div class="material-contain">
             <div id="slide4" class="text" style="animation: slide-left 1s;">
@@ -132,8 +144,22 @@
                        a grave threat to local communities.</p>
             </div>
         </div>
+        <div class="foot-contain">
+            <a href="https://www.greenpeace.org/global/" target="_blank">
+                <img src="https://cdn.discordapp.com/attachments/750412142351614163/838364092947103754/output-onlinepngtools.png" height="40%" class="foot-about">
+            </a>
+            <a href="" target="_blank">
+                <img src="https://cdn.discordapp.com/attachments/750412142351614163/838364075787681802/5_2_2021_5_39_13_PM.png" height="90%" class="foot-about">
+            </a>
+            <a href="https://github.com/panupongkeawkam/hitokage-haze_maize_meat" target="_blank">
+                <img src="https://cdn.discordapp.com/attachments/750412142351614163/838362737998036992/github.png" height="50%" class="foot-about" style="filter: invert(1);">
+            </a>
+        </div>
     </body>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             margin: 0;
             width: 100%;
@@ -150,6 +176,13 @@
             margin: 1% 8% 1% 8%;
             font-size: 0.8vw;
             text-indent: 4%;
+        }
+        .value {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            color: red;
+            font-size: 16px;
         }
         .focus-1, .focus-2 {
             transition: 0.5s;
@@ -234,23 +267,52 @@
             background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/838032417084014662/Pngtreeyellow_vintage_kraft_paper_5466294_3.png");
         }
 
-        /* .direc-contain {
+        .direc-contain {
+            z-index: 2;
             position: fixed;
             right: 1%;
             top: 40%;
-            width: 32px;
+            width: 24px;
             height: 200px;
         }
         .direc-button {
-            width: 32px;
-            height: 32px;
+            width: 24px;
+            height: 24px;
             margin: 8px 0px 8px 0px;
             border-radius: 100%;
+            opacity: 80%;
+        }
+        .direc-text {
+            width: 64px;
+            height: 24px;
+            margin-right: 32px;
+            text-align: right;
+            color: white;
+            font-family: 'Kanit';
+            float: right;
+            animation: slide-left 0.5s;
         }
         .direc-button:hover {
+            transform: scale(1.2);
+            transition: 0.5s;
+            opacity: 100%;
+        }
+        .foot-contain {
+            width: 90%;
+            height: 120px;
+            background: rgba(21, 69, 96, 100%);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0% 5% 0% 5%;
+        }
+        .foot-about {
+            margin-right: 64px;
+        }
+        .foot-about:hover {
             transform: scale(1.05);
-            transition: 0.3s;
-        } */
+            transition: 0.5s;
+        }
 
         .picture {
             display: none;
@@ -265,10 +327,10 @@
             height: 8px;
             border-radius: 8px;
             background: rgb(255, 255, 255, 60%);
-            animation: up-down 2s ease infinite alternate;
+            animation: up-down 3s linear infinite alternate;
         }
 
-        .vector {
+        .layer {
             width: 100%;
             background-size: 100%;
             position: fixed;
@@ -309,7 +371,7 @@
             background-image: url("https://cdn.discordapp.com/attachments/750412142351614163/837659276389515284/Pngtreeabstract_cloudy_sky_with_some_5675425.png");
         }
         @keyframes up-down {
-            to {transform: translateY(8px);}
+            to {transform: translateY(12px);}
         }
         @keyframes title-slide {
             from {transform: translateY(96px); opacity: 0%;}
@@ -331,9 +393,10 @@
   	  <script>
         window.onscroll = function() {
             let value =  window.scrollY;
+            test.innerHTML = value;
 
-            smoke1.style.bottom = (-90 + (value / 48)).toString() + "%";
-            corn1.style.bottom = (-90 + (value / 48)).toString() + "%";
+            smoke1.style.bottom = (-90 + (value / 52)).toString() + "%";
+            corn1.style.bottom = (-90 + (value / 52)).toString() + "%";
             field1.style.bottom = (-75 + (value / 46)).toString() + "%";
             smoke2.style.bottom = (-75 + (value / 32)).toString() + "%";
             field2.style.bottom = (-65 + (value / 40)).toString() + "%";
@@ -375,6 +438,10 @@
             } else if (value < 3600) {
                 document.body.style.backgroundColor = "hsl(19, 40%, 50%)";
             }
+        }
+        function showInfo(x, index) {
+            var arr = ["หน้าหลัก", "สาเหตุ", "กราฟ", "ปัญหา", "ข้อเสนอ"];
+            x.innerHTML = `<div class="direc-text" style="display: initial;">${arr[index]}</div>`;
         }
   	  </script>
    </body>
