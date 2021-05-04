@@ -2,10 +2,9 @@
     <title>ฮิโตคาเงะ</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@300&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -32,12 +31,12 @@
             </a>
         </div>
 
-        <div id="smoke1" class="smoke layer"></div>
-        <div id="corn1" class="corn layer"></div>
-        <div id="field1" class="front-field layer"></div>
+        <div id="smoke1" class="smoke layer" style="z-index: -1;"></div>
+        <div id="corn1" class="corn layer" style="z-index: -2;"></div>
+        <div id="field1" class="front-field layer" style="z-index: -3;"></div>
         <div id="smoke2" class="smoke layer" style="z-index: -4; transform: scaleX(-1);"></div>
-        <div id="field2" class="back-field layer"></div>
-        <div id="sky1" class="sky layer"></div>
+        <div id="field2" class="back-field layer" style="z-index: -5;"></div>
+        <div id="sky1" class="sky layer" style="z-index: -6;"></div>
 
         <div id="direc1" class="head-page-bar">
             <a class="head-button" href="https://www.greenpeace.org/thailand/" target="_blank">Greenpeace</a>
@@ -54,7 +53,7 @@
 
         <div id="direc2" class="line"></div>
         <div id="title1" class="title">ปัญหา</div>
-        <div class="material-contain"> <!-- main material -->
+        <div class="material-contain">
             <div id="slide1" class="text"  style="animation: slide-right 1s;">
                 <h2>TEST TEXT</h2>
                 <p>In Thailand, maize (corn) is considered as one of 
@@ -79,19 +78,31 @@
                        in industrial maize plantation and transboundary haze pollution- 
                        a grave threat to local communities.</p>
             </div>
-            <img id="pic1" src="https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Landing/picture/city.png" class="picture" style="animation: slide-left 1s;">
+            <div id="pic1" class="picture-contain" style="animation: slide-left 1s;">
+                <img src="Landing/picture/city.png" class="picture">
+                <div class="caption">caption</div>
+            </div> 
         </div>
         <div id="direc3" class="line"></div>
         <div id="title2" class="title">กราฟ</div>
         <div class="material-contain">
-            <img id="pic2" src="https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Landing/picture/graph-1.png" class="picture" style="animation: slide-right 1s;">
-            <img id="pic3" src="https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Landing/picture/graph-2.png" class="picture" style="animation: slide-left 1s;">
+            <div id="pic2" class="picture-contain" style="animation: slide-right 1s; width: 40%;">
+                <img src="Landing/picture/graph-1.png" class="picture">
+                <span class="caption">caption</span>
+            </div>
+            <div id="pic3" class="picture-contain" style="animation: slide-left 1s; width: 40%;">
+                <img src="Landing/picture/graph-2.png" class="picture">
+                <span class="caption">caption</span>
+            </div>
         </div>
         <div id="direc4" class="line"></div>
         <div id="title3" class="title">สาเหตุ</div>
         <div class="material-contain">
-            <img id="pic4" src="https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Landing/picture/corn_field.png" class="picture" style="animation: slide-right 1s;">
-            <div id="slide3" class="text"  style="animation: slide-left 1s;">
+            <div id="pic4" class="picture-contain" style="animation: slide-right 1s;">
+                <img src="Landing/picture/corn_field.png" class="picture">
+                <div class="caption">caption</div>
+            </div>
+            <div id="slide3" class="text" style="animation: slide-left 1s;">
                 <h2>TEST TEXT</h2>
                 <p>In Thailand, maize (corn) is considered as one of 
                     the country’s most valuable cash crops supported and 
@@ -145,14 +156,14 @@
             </div>
         </div>
         <div class="foot-contain">
-            <a class="foot-about" href="https://www.greenpeace.org/global/" target="_blank">
-                <img src="https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Landing/picture/icon-greenpeace.png" height="40%">
+            <a href="https://www.greenpeace.org/global/" target="_blank">
+                <img src="Landing/picture/icon-greenpeace.png" height="40%" class="foot-about">
             </a>
-            <a class="foot-about" href="game.html" target="_blank">
-                <img src="https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Landing/picture/icon-game.png" height="90%" >
+            <a href="game.html" target="_blank">
+                <img src="Landing/picture/icon-game.png" height="90%" class="foot-about">
             </a>
-            <a class="foot-about" href="https://github.com/panupongkeawkam/hitokage-haze_maize_meat" target="_blank">
-                <img src="https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Landing/picture/icon-github.png" height="50%" style="filter: invert(1);">
+            <a href="https://github.com/panupongkeawkam/hitokage-haze_maize_meat" target="_blank">
+                <img src="Landing/picture/icon-github.png" height="50%" class="foot-about" style="filter: invert(1);">
             </a>
         </div>
     </body>
@@ -231,8 +242,7 @@
             margin: 1%;
             border-radius: 8px;
             color: white;
-            text-decoration: none;
-            font-family: 'Kanit';
+            font-family: 'K2D';
             justify-content: center;
         }
         .head-button:hover {
@@ -245,27 +255,27 @@
             width: 100%;
             height: 600px;
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             align-items: center;
         }
         .title {
             width: 100%;
+            padding: 2% 0% 2% 0%;
             display: none;
             justify-content: center;
-            font-family: 'Kanit';
+            font-family: 'K2D';
             color: white;
-            font-size: 96px;
+            font-size: 72px;
             animation: title-slide 1s;
         }
         .text {
-            width: 40%;
-            height: 26vw;
+            width: 46%;
+            height: 30vw;
             display: none;
-            margin: 5%;
             background-size: 100%;
             background-repeat: no-repeat;
             background-position: center;
-            background-image: url("https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Landing/picture/textbox1.png");
+            background-image: url("Landing/picture/textbox1.png");
         }
 
         .direc-contain {
@@ -289,7 +299,7 @@
             margin-right: 32px;
             text-align: right;
             color: white;
-            font-family: 'Kanit';
+            font-family: 'K2D';
             float: right;
             animation: slide-left 0.5s;
         }
@@ -300,8 +310,8 @@
         }
         .foot-contain {
             width: 90%;
-            height: 120px;
-            background: rgba(21, 69, 96, 100%);
+            height: 112px;
+            background: rgba(21, 69, 96, 80%);
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -315,13 +325,24 @@
             transition: 0.5s;
         }
 
-        .picture {
+        .picture-contain {
             display: none;
-            width: 36%;
-            margin: 5%;
-            box-shadow: 0px 0px 8px 10px rgb(0, 0, 0, 20%);
+            width: 32%;
             border-radius: 4px;
         }
+        .picture {
+            width: 100%;
+            box-shadow: 0px 0px 8px 10px rgb(0, 0, 0, 20%);
+        }
+        .caption {
+            text-align: center;
+            display: block;
+            color: white;
+            padding: 1% 0% 1% 0%;
+            font-family: 'Comfortaa';
+            font-size: 32px;
+        }
+
         .line {
             width: 50%;
             margin: 10% 25% 4% 25%;
@@ -339,37 +360,32 @@
             background-position: center;
         }
         .smoke {
-            z-index: -1;
             opacity: 80%;
             height: 200%;
             bottom: -90%;
-            background-image: url("https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Landing/picture/background-smoke.png");
+            background-image: url("Landing/picture/background-smoke.png");
         }
         .corn {
-            z-index: -2;
             height: 200%;
             bottom: -90%;
-            background-image: url("https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Landing/picture/background-cornfield.png");
+            background-image: url("Landing/picture/background-cornfield.png");
         }
         .front-field {
-            z-index: -3;
-            height: 100%;
-            bottom: -75%;
-            background-image: url("https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Landing/picture/background-farm.png");
+            height: 200%;
+            bottom: -95%;
+            background-image: url("Landing/picture/background-farm.png");
         }
         .back-field {
-            z-index: -5;
-            height: 100%;
-            bottom: -65%;
-            background-image: url("https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Landing/picture/background-farm.png");
+            height: 200%;
+            bottom: -85%;
+            background-image: url("Landing/picture/background-farm.png");
             transform: scaleX(-1);
         }
         .sky {
-            z-index: -6;
             opacity: 60%;
             height: 200%;
             top: -10%;
-            background-image: url("https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Landing/picture/background-cloud.png");
+            background-image: url("Landing/picture/background-cloud.png");
         }
         @keyframes up-down {
             to {transform: translateY(12px);}
@@ -396,16 +412,16 @@
             let value =  window.scrollY;
             test.innerHTML = value;
 
-            smoke1.style.bottom = (-90 + (value / 52)).toString() + "%";
-            corn1.style.bottom = (-90 + (value / 52)).toString() + "%";
-            field1.style.bottom = (-75 + (value / 46)).toString() + "%";
-            smoke2.style.bottom = (-75 + (value / 32)).toString() + "%";
-            field2.style.bottom = (-65 + (value / 40)).toString() + "%";
+            smoke1.style.bottom = (-90 + (value / 54)).toString() + "%";
+            corn1.style.bottom = (-90 + (value / 54)).toString() + "%";
+            field1.style.bottom = (-95 + (value / 64)).toString() + "%";
+            smoke2.style.bottom = (-75 + (value / 36)).toString() + "%";
+            field2.style.bottom = (-85 + (value / 56)).toString() + "%";
             sky1.style.top = (-10 - (value / 24)).toString() + "%";
 
             corn1.style.filter = "grayscale(" + (value / 100 * 3).toString() + "%) sepia(" + (value / 100 * 1.8).toString() + "%)";
-            field1.style.filter = "grayscale(" + (value / 100 * 3).toString() + "%)";
-            field2.style.filter = "grayscale(" + (value / 100 * 3.5).toString() + "%) blur(2px)";
+            field1.style.filter = "grayscale(" + (value / 100 * 3).toString() + "%) blur(1px)";
+            field2.style.filter = "grayscale(" + (value / 100 * 3.5).toString() + "%) blur(3px)";
 
             document.getElementsByClassName("focus-2")[0].style.backgroundColor = "hsl(0, 0%, 0%, "+ (60 - value * 1.5).toString() + "%)";
             document.getElementsByClassName("head-contain")[0].style.transform = "translateY(" + (0 - value / 10).toString() + "%)";
@@ -441,7 +457,7 @@
             }
         }
         function showInfo(x, index) {
-            var arr = ["หน้าหลัก", "สาเหตุ", "กราฟ", "ปัญหา", "ข้อเสนอ"];
+            var arr = ["หน้าหลัก", "ปัญหา", "กราฟ", "สาเหตุ", "ข้อเสนอ"];
             x.innerHTML = `<div class="direc-text" style="display: initial;">${arr[index]}</div>`;
         }
   	  </script>
