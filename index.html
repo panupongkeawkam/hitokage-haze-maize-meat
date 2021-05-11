@@ -11,7 +11,6 @@
 	<body>
         <div class="focus-1"></div>
         <div class="focus-2"></div>
-        <!-- <div class="scroll-value">scroll = <span id="test">0</span></div> -->
 
         <div class="direc-contain">
             <a href="#direc1">
@@ -188,13 +187,7 @@
             font-size: 0.8vw;
             text-indent: 4%;
         }
-        .scroll-value {
-            position: fixed;
-            top: 16px;
-            right: 16px;
-            color: red;
-            font-size: 16px;
-        }
+
         .focus-1, .focus-2 {
             transition: 0.5s;
             z-index: -1;
@@ -410,7 +403,6 @@
   	  <script>
         window.onscroll = function() {
             let value =  window.scrollY;
-            test.innerHTML = value;
 
             smoke1.style.bottom = (-90 + (value / 54)).toString() + "%";
             corn1.style.bottom = (-90 + (value / 54)).toString() + "%";
