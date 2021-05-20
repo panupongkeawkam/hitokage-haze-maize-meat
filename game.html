@@ -1,925 +1,563 @@
 <html>
-<head>
-	<title>Let's Start</title>
+  <head>
+    <title>ฮิโตคาเงะ</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  </head>
+
   <style>
-    body{
-      margin: 0px;
-      padding: 0;
+    body {
+      margin: 0%;
       width: 1920px;
       height: 1080px;
       position: relative;
-      background-color: red;
-      font-family:Georgia, 'Times New Roman', Times, serif;
     }
-    .bg1{
-      background:url("https://cdn.discordapp.com/attachments/807588926332207136/838128453827035186/bg1.png");
+    .background-1, .background-2, .background-3 {
       width: 100%;
-      height: 100%; 
-      background-size:100% 100%;
-      background-repeat: no-repeat;
-      animation: ani 5s infinite ;
-      position: absolute;
-    }
-    .bg2{
-      background:url("https://cdn.discordapp.com/attachments/807588926332207136/838128469472444456/bg2.png");
-      width: 100%;
-      height: 100%; 
-      background-size:100% 100%;
-      background-repeat: no-repeat;
-      position: absolute;
-      animation: ani 5s infinite ;
-    }
-    .bg3{
-      background:url("https://cdn.discordapp.com/attachments/807588926332207136/838128472824086578/bg3.png");
-      width: 100%;
-      height: 100%; 
-      background-size:100% 100%;
+      height: 100%;
+      background-size: 100% 100%;
       background-repeat: no-repeat;
       position: absolute;
     }
-    @keyframes ani{
-      0%{opacity: 1;}
-      50%{opacity: 0;}
-      100%{opacity: 1;}
+    .background-1 {
+      background-image: url("https://cdn.discordapp.com/attachments/807588926332207136/838128453827035186/bg1.png");
+      animation: days-passed 20s infinite;
     }
-    @keyframes walk1{
-      0%{transform: translate(-50px);}
-      100%{transform: translate(100px);}
+    .background-2 {
+      background-image: url("https://cdn.discordapp.com/attachments/807588926332207136/838128469472444456/bg2.png");
+      animation: days-passed 20s infinite;
     }
-    @keyframes walk2{
-      0%{transform: translate(0px);}
-      100%{transform: translate(100px);}
+    .background-3 {
+      background-image: url("https://cdn.discordapp.com/attachments/807588926332207136/838128472824086578/bg3.png");
     }
-    @keyframes walk3{
-      0%{transform: translate(0px, 0px);}
-      100%{transform: translate(0px, -150px);}
-    }
-    #money{
-      width:300px;
-      top:0%;
-      left:1%;
-      color:white;
-      font-size: 6em;
-      height:100px;
+
+    .chicken {
+      width: 160px;
       position: absolute;
     }
-    .scorechicken{
-      width:100px;
-      top:10%;
-      left:7%;
-      color:white;
-      font-size: 6em;
-      height:100px;
-      position: absolute;
-    }
-    #scorecorn{
-      width:100px;
-      top:22%;
-      left:7%;
-      color:white;
-      font-size: 6em;
-      height:100px;
-      position: absolute;
-    }
-    #tutorial{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838329377095680035/tutorial.png");
+  
+    .dirt {
+      background-image: url("https://cdn.discordapp.com/attachments/803995130008436776/844592855909662810/dirt2.png");
       background-size: contain;
-      background-repeat:no-repeat;
-      width: 1200px;
-      height: 700px;
-      top:25%;
-      left:17%;
+      background-repeat: no-repeat;
       position: absolute;
-      cursor:pointer;
+      width: 140px;
+      height: 140px;
     }
-    #showwait{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840912566553280512/f802e80f27320f36.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width: 900px;
-      height: 300px;
-      top:25%;
-      left:17%;
-      position: absolute;
-      cursor:pointer;
-      display: none;
+    .dirt:hover {
+      filter: brightness(120%);
+      transform: scale(1.02);
+    }
+
+    #introduction {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      background: hsl(0, 0%, 0%, 60%);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
     #gamename{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/839210241693712456/GameName.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width: 60%;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 1100px;
       height: 20%;
-      top:6%;
-      left:18%;
-      position: absolute;
     }
-    #guide{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840906273196736532/Guide.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width: 11%;
-      height: 10%;
-      top:86%;
-      left:85%;
-      position: absolute;
+    .button { 
+      width: 580px;
+      height: 84px;
+      background: linear-gradient(228deg, rgba(148,114,36,1) 0%, rgba(242,178,28,1) 100%);
+      box-shadow: 4px 4px 0px 4px hsl(0, 0%, 0%, 20%);
+      border-radius: 60px;
+      margin: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #eee;
+      font-size: 36px;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Paytone One', sans-serif;
     }
-    .cornlogo{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128363230855168/corn.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:300px;
-      height:150px;
-      top:22%;
-      left:1.5%;
-      position: absolute;
+    .button:hover {
+      transform: scale(1.05);
+      cursor: pointer;
     }
-    .chickenlogo{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:300px;
-      height:150px;
-      top:10%;
-      left:1.5%;
-      position: absolute;
-    }
-    .chicken1{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:200px;
-      top:70%;
-      left:50%;
-      height:200px;
-      position: absolute;
-      animation: walk1 2s infinite alternate;
-    }
-    .chicken2{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:200px;
-      top:60%;
-      left:65%;
-      height:200px;
-      position: absolute;
-      animation: walk2 5s infinite alternate;
-    }
-    .chicken3{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:200px;
-      top:70%;
-      left:80%;
-      height:200px;
-      position: absolute;
-      animation: walk3 1s infinite alternate;
-    }
-    #dirt1{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/839212621286735933/dirt.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:120px;
-      height:120px;
-      top:65%;
-      left:12%;
-      position: absolute;
-    }
-    #dirt2{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/839212621286735933/dirt.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:120px;
-      height:120px;
-      top:65%;
-      left:20%;
-      position: absolute;
-    }
-    #dirt3{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/839212621286735933/dirt.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:120px;
-      height:120px;
-      top:65%;
-      left:28%;
-      position: absolute;
-    }
-    #dirt4{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/839212621286735933/dirt.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:120px;
-      height:120px;
-      top:80%;
-      left:10%;
-      position: absolute;
-    }
-    #dirt5{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/839212621286735933/dirt.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:120px;
-      height:120px;
-      top:80%;
-      left:18%;
-      position: absolute;
-    }
-    #dirt6{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/839212621286735933/dirt.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:120px;
-      height:120px;
-      top:80%;
-      left:26%;
-      position: absolute;
-    }
-    .dirt:hover{
-    cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.2);
-    -webkit-filter: drop-shadow(2px 2px 0 white)
-                  drop-shadow(-2px -2px 0 white);
-    filter: drop-shadow(2px 2px 0 white) 
-          drop-shadow(-2px -2px 0 white);
-    }
-    .seed{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128426979819540/cornseed.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      height:150px;
-      top:50%;
-      left:40%;
-      position: absolute;
-    }
-    .watercan{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128421468897310/watercan.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:170px;
-      top:62%;
-      left:37%;
-      height:170px;
-      position: absolute;
-    }
-    .coin{
-      background-image:url("pic/coin.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:140px;
-      top:-0.5%;
-      left:13%;
-      height:140px;
-      position: absolute;
-    }
-    #grow{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840890408551579698/grow.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      top:80%;
-      left:35%;
-      height:150px;
-      position: absolute;
-    }
-    .seed:hover {
-    cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.2);
-    }
-    #grow:hover {
-    cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.2);
-    }
-    .watercan:hover {
-    cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.2);
-    }
-    .environment{
-    width:530px;
-    top:0%;
-    left:70%;
-    color:white;
-    font-size: 4em;
-    height:150px;
-    position: absolute;
-    }
-    #corngrow01{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840874382506459136/corngrow.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:80px;
-      height:110px;
-      visibility: hidden;
-    }
-    #corngrow02{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840874382506459136/corngrow.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:80px;
-      height:110px;
-      visibility: hidden;
-    }
-    #corngrow03{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840874382506459136/corngrow.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:80px;
-      height:110px;
-      visibility: hidden;
-    }
-    #corngrow04{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840874382506459136/corngrow.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:80px;
-      height:110px;
-      visibility: hidden;
-    }
-    #corngrow05{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840874382506459136/corngrow.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:80px;
-      height:110px;
-      visibility: hidden;
-    }
-    #corngrow06{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840874382506459136/corngrow.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:80px;
-      height:110px;
-      visibility: hidden;
-    }
-    #corngrow1{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:70px;
-      height:100px;
-      visibility: hidden;
-    }
-    #corngrow2{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:70px;
-      height:100px;
-      visibility: hidden;
-    }
-    #corngrow3{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:70px;
-      height:100px;
-      visibility: hidden;
-    }
-    #corngrow4{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:70px;
-      height:100px;
-      visibility: hidden;
-    }
-    #corngrow5{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:70px;
-      height:100px;
-      visibility: hidden;
-    }
-    #corngrow6{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:70px;
-      height:100px;
-      visibility: hidden;
-    }
-    #corngrow11{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128387532128306/corngrow2.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:90px;
-      height:120px;
-      visibility: hidden;
-    }
-    #corngrow12{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128387532128306/corngrow2.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:90px;
-      height:120px;
-      visibility: hidden;
-    }
-    #corngrow13{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128387532128306/corngrow2.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:90px;
-      height:120px;
-      visibility: hidden;
-    }
-    #corngrow14{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128387532128306/corngrow2.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:90px;
-      height:120px;
-      visibility: hidden;
-    }
-    #corngrow15{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128387532128306/corngrow2.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:90px;
-      height:120px;
-      visibility: hidden;
-    }
-    #corngrow16{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128387532128306/corngrow2.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:90px;
-      height:120px;
-      visibility: hidden;
-    }
-    #corngrow21{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128395543379999/corngrow3.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      height:200px;
-      visibility: hidden;
-    }
-    #corngrow22{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128395543379999/corngrow3.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      height:200px;
-      visibility: hidden;
-    }
-    #corngrow23{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128395543379999/corngrow3.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      height:200px;
-      visibility: hidden;
-    }
-    #corngrow24{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128395543379999/corngrow3.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      height:200px;
-      visibility: hidden;
-    }
-    #corngrow25{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128395543379999/corngrow3.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      height:200px;
-      visibility: hidden;
-    }
-    #corngrow26{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128395543379999/corngrow3.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      height:200px;
-      visibility: hidden;
-    }
-    #corngrow31{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128403177275432/corngrow4.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      height:200px;
-      visibility: hidden;
-    }
-    #corngrow32{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128403177275432/corngrow4.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      height:200px;
-      visibility: hidden;
-    }
-    #corngrow33{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128403177275432/corngrow4.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      height:200px;
-      visibility: hidden;
-    }
-    #corngrow34{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128403177275432/corngrow4.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      height:200px;
-      visibility: hidden;
-    }
-    #corngrow35{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128403177275432/corngrow4.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      height:200px;
-      visibility: hidden;
-    }
-    #corngrow36{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/838128403177275432/corngrow4.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width:150px;
-      height:200px;
-      visibility: hidden;
-    } 
-    #wait{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840908181311586344/wait.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width: 15%;
-      height: 8%;
-      top:92%;
-      left:15%;
-      position: absolute;
-    }
-    #showharvest{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840895706340261918/3e1abfd1d14ee11c.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width: 900px;
-      height: 300px;
-      top:25%;
-      left:17%;
-      position: absolute;
-      cursor:pointer;
-      display: none;
-    }
-    #choice{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840917217168064532/choice.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      background-color: white;
-      width: 1350px;
-      height: 900px;
-      top:10%;
-      border: black solid;
-      border-width: 0.5em;
-      left:17%;
-      position: absolute;
-      display: none;
-    }
-    #carchoice{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840918575018672188/car.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width: 500px;
-      height: 500px;
-      top:45%;
-      left:55%;
-      position: absolute;
-      display: none;
-    }
-    #carchoice:hover{
-    cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.2);
-    }
-    #firechoice{
-      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/840919492439834634/fire.png");
-      background-size: contain;
-      background-repeat:no-repeat;
-      width: 400px;
-      height: 400px;
-      top:42%;
-      left:25%;
-      position: absolute;
-      display: none;
-    }
-    #firechoice:hover{
-    cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.2);
-    }
-  </style>  
-</head>
-<body>
-  <div class="bg3"></div>
-  <div class="bg2"></div>
-  <div class="bg1"></div>
-  <div class="chicken3"></div>
-  <div class="chicken2"></div>
-  <div class="chicken1"></div>
-  <div class="chickenlogo"></div>
-  <div class="cornlogo"></div>
-  <div class="coin"></div>
-  <div class="dirt"></div>
-    <div id="dirt1" onclick="grow1()"></div>
-    <div id="dirt2" onclick="grow2()"></div>
-    <div id="dirt3" onclick="grow3()"></div>
-    <div id="dirt4" onclick="grow4()"></div>
-    <div id="dirt5" onclick="grow5()"></div>
-    <div id="dirt6" onclick="grow6()"></div>
-  </div>
-  <div id="grow" onclick="supergrow()"></div>
-  <div style="position:absolute; top:57%; left:11%;" id="corngrow31" onclick="harvest()"></div>
-  <div style="position:absolute; top:57%; left:19%;" id="corngrow32" onclick="harvest()"></div>
-  <div style="position:absolute; top:57%; left:27%;" id="corngrow33" onclick="harvest()"></div>
-  <div style="position:absolute; top:72%; left:9%;" id="corngrow34" onclick="harvest()"></div>
-  <div style="position:absolute; top:72%; left:17%;" id="corngrow35" onclick="harvest()"></div>
-  <div style="position:absolute; top:72%; left:25%;" id="corngrow36" onclick="harvest()"></div>
-  <div style="position:absolute; top:57%; left:11%;" id="corngrow21" ></div>
-  <div style="position:absolute; top:57%; left:19%;" id="corngrow22"></div>
-  <div style="position:absolute; top:57%; left:27%;" id="corngrow23"></div>
-  <div style="position:absolute; top:72%; left:9%;" id="corngrow24"></div>
-  <div style="position:absolute; top:72%; left:17%;" id="corngrow25"></div>
-  <div style="position:absolute; top:72%; left:25%;" id="corngrow26"></div>
-  <div style="position:absolute; top:63%; left:13%;" id="corngrow11" onclick="corngrow21()"></div>
-  <div style="position:absolute; top:63%; left:21%;" id="corngrow12" onclick="corngrow22()"></div>
-  <div style="position:absolute; top:63%; left:29%;" id="corngrow13" onclick="corngrow23()"></div>
-  <div style="position:absolute; top:78%; left:11%;" id="corngrow14" onclick="corngrow24()"></div>
-  <div style="position:absolute; top:78%; left:19%;" id="corngrow15" onclick="corngrow25()"></div>
-  <div style="position:absolute; top:78%; left:27%;" id="corngrow16" onclick="corngrow26()"></div>
-  <div style="position:absolute; top:63%; left:14%;" id="corngrow1" onclick="corngrow11()"></div>
-  <div style="position:absolute; top:63%; left:22%;" id="corngrow2" onclick="corngrow12()"></div>
-  <div style="position:absolute; top:63%; left:30%;" id="corngrow3" onclick="corngrow13()"></div>
-  <div style="position:absolute; top:78%; left:12%;" id="corngrow4" onclick="corngrow14()"></div>
-  <div style="position:absolute; top:78%; left:20%;" id="corngrow5" onclick="corngrow15()"></div>
-  <div style="position:absolute; top:78%; left:28%;" id="corngrow6" onclick="corngrow16()"></div>
-  <div style="position:absolute; top:66%; left:13%;" id="corngrow01" onclick="corngrow1()"></div>
-  <div style="position:absolute; top:66%; left:21%;" id="corngrow02" onclick="corngrow2()"></div>
-  <div style="position:absolute; top:66%; left:29%;" id="corngrow03" onclick="corngrow3()"></div>
-  <div style="position:absolute; top:80%; left:11%;" id="corngrow04" onclick="corngrow4()"></div>
-  <div style="position:absolute; top:80%; left:19%;" id="corngrow05" onclick="corngrow5()"></div>
-  <div style="position:absolute; top:80%; left:27%;" id="corngrow06" onclick="corngrow6()"></div>
-  <div class="watercan" onclick="change()"></div>
-  <div class="seed" onclick="checkcorngrow()"></div>
-  <div id="money">1000</div>
-  <div id="scorecorn"></div>
-  <div class="scorechicken">0</div>
-  <div class="environment">สภาพแวดล้อม: 100</div>
-  <div id="gamename"></div>
-  <div id="showwait" onclick="hidewait()"></div>
-  <div id="tutorial" onclick="hidetutorial()"></div>
-  <div id="guide" onclick="showharvest()"></div>
-  <div id="wait" onclick="corngrowfull()"></div>
-  <div id="showharvest"></div>
-  <div id="choice"></div>
-  <div id="carchoice"></div>
-  <div id="firechoice"></div>
-  <script>
-  var x = 0
-  var y = 0
-  var z = 0
-  var money = 1000
-  var scorecorn = 0
-  function showharvest() {
-  var x = document.getElementById("showharvest");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
 
-  document.getElementById("money").innerHTML = money;
-  function change() {
-    document.body.style.cursor = "url('https://cur.cursors-4u.net/others/oth-5/oth440.cur'), auto";
-    y=1;
-    x=0;
-  }
-  function checkcorngrow() {
-    document.body.style.cursor = "url('Game/pic/seed.cur'), auto";
-    x=1;
-    y=0;
-    z=0;
-  }
-  function supergrow() {
-    document.body.style.cursor = "url('https://cur.cursors-4u.net/others/oth-2/oth192.cur'), auto";
-    z=1;
-    y=0;
-    x=0;
-  }
-  function grow1(){
-    if (x === 1) {
-    document.getElementById("corngrow01").style.visibility="visible";
-    document.getElementById("money").innerHTML = money-=20;
-  }}
-  function grow2(){
-    if (x === 1) {
-    document.getElementById("corngrow02").style.visibility="visible";
-    document.getElementById("money").innerHTML = money-=20;
-  }}
-  function grow3(){
-    if (x === 1) {
-    document.getElementById("corngrow03").style.visibility="visible";
-    document.getElementById("money").innerHTML = money-=20;
-  }}
-  function grow4(){
-    if (x === 1) {
-    document.getElementById("corngrow04").style.visibility="visible";
-    document.getElementById("money").innerHTML = money-=20;
-  }}
-  function grow5(){
-    if (x === 1) {
-    document.getElementById("corngrow05").style.visibility="visible";
-    document.getElementById("money").innerHTML = money-=20;
-  }}
-  function grow6(){
-    if (x === 1) {
-    document.getElementById("corngrow06").style.visibility="visible";
-    document.getElementById("money").innerHTML = money-=20;
-  }}
-  function corngrow1(){
-    if (y === 1) {
-    document.getElementById("corngrow1").style.visibility="visible";
-    document.getElementById("corngrow01").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=30;
-  }}
-  function corngrow2(){
-    if (y === 1) {
-    document.getElementById("corngrow2").style.visibility="visible";
-    document.getElementById("corngrow02").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=30;
-  }}
-  function corngrow3(){
-    if (y === 1) {
-    document.getElementById("corngrow3").style.visibility="visible";
-    document.getElementById("corngrow03").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=30;
-  }}
-  function corngrow4(){
-    if (y === 1) {
-    document.getElementById("corngrow4").style.visibility="visible";
-    document.getElementById("corngrow04").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=30;
-  }}
-  function corngrow5(){
-    if (y === 1) {
-    document.getElementById("corngrow5").style.visibility="visible";
-    document.getElementById("corngrow05").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=30;
-    }}
-  function corngrow6(){
-    if (y === 1) {
-    document.getElementById("corngrow6").style.visibility="visible";
-    document.getElementById("corngrow06").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=30;
-  }}
-  function corngrow11(){
-    if (z === 1) {
-    document.getElementById("corngrow11").style.visibility="visible";
-    document.getElementById("corngrow1").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=40;
-  }}
-  function corngrow12(){
-    if (z === 1) {
-    document.getElementById("corngrow12").style.visibility="visible";
-    document.getElementById("corngrow2").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=40;
-  }}
-  function corngrow13(){
-    if (z === 1) {
-    document.getElementById("corngrow13").style.visibility="visible";
-    document.getElementById("corngrow3").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=40;
-  }}
-  function corngrow14(){
-    if (z === 1) {
-    document.getElementById("corngrow14").style.visibility="visible";
-    document.getElementById("corngrow4").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=40;
-  }}
-  function corngrow15(){
-    if (z === 1) {
-    document.getElementById("corngrow15").style.visibility="visible";
-    document.getElementById("corngrow5").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=40;
-    }}
-  function corngrow16(){
-    if (z === 1) {
-    document.getElementById("corngrow16").style.visibility="visible";
-    document.getElementById("corngrow6").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=40;
-  }}
-  function corngrow21(){
-    if (y === 1) {
-    document.getElementById("corngrow21").style.visibility="visible";
-    document.getElementById("corngrow11").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=30
-    if (money === 280){
-    var x = document.getElementById("showwait");
-    x.style.display = "block";
-  };
-  }}
-  function corngrow22(){
-    if (y === 1) {
-    document.getElementById("corngrow22").style.visibility="visible";
-    document.getElementById("corngrow12").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=30
-    if (money === 280){
-    var x = document.getElementById("showwait");
-    x.style.display = "block";
-  };
-  }}
-  function corngrow23(){
-    if (y === 1) {
-    document.getElementById("corngrow23").style.visibility="visible";
-    document.getElementById("corngrow13").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=30
-    if (money === 280){
-    var x = document.getElementById("showwait");
-    x.style.display = "block";
-  };
-  }}
-  function corngrow24(){
-    if (y === 1) {
-    document.getElementById("corngrow24").style.visibility="visible";
-    document.getElementById("corngrow14").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=30
-    if (money === 280){
-    var x = document.getElementById("showwait");
-    x.style.display = "block";
-  };
-  }}
-  function corngrow25(){
-    if (y === 1) {
-    document.getElementById("corngrow25").style.visibility="visible";
-    document.getElementById("corngrow15").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=30
-    if (money === 280){
-    var x = document.getElementById("showwait");
-    x.style.display = "block";
-  };
-  }}
-  function corngrow26(){
-    if (y === 1) {
-    document.getElementById("corngrow26").style.visibility="visible";
-    document.getElementById("corngrow16").style.visibility="hidden";
-    document.getElementById("money").innerHTML = money-=30
-    if (money === 280){
-    var x = document.getElementById("showwait");
-    x.style.display = "block";
-  };
-  }}
-  function corngrowfull(){
-    if (money === 280){
-    document.getElementById("corngrow31").style.visibility="visible";
-    document.getElementById("corngrow21").style.visibility="hidden";
-    document.getElementById("corngrow32").style.visibility="visible";
-    document.getElementById("corngrow22").style.visibility="hidden";
-    document.getElementById("corngrow33").style.visibility="visible";
-    document.getElementById("corngrow23").style.visibility="hidden";
-    document.getElementById("corngrow34").style.visibility="visible";
-    document.getElementById("corngrow24").style.visibility="hidden";
-    document.getElementById("corngrow35").style.visibility="visible";
-    document.getElementById("corngrow25").style.visibility="hidden";
-    document.getElementById("corngrow36").style.visibility="visible";
-    document.getElementById("corngrow26").style.visibility="hidden";
+    #tutorial {
+      width: 46%;
+      height: 76%;
+      padding: 2%;
+      top: 10%;
+      left: 25%;
+      transition: 0.25s;
+      background: linear-gradient(282deg, rgba(66,33,19,1) 50%, rgba(64,44,36,1) 100%);
+      transform: scale(0);
+      position: fixed;
+      box-shadow: 6px 6px hsl(0, 0%, 0%, 20%);
+      font-family: 'Paytone One', sans-serif;
+      color: #eee;
+      font-size: 1.5em;
+      border-radius: 60px;
     }
-  }
-  function harvest(){
-    document.getElementById("corngrow21").style.visibility="visible";
-    document.getElementById("corngrow31").style.visibility="hidden";
-    document.getElementById("corngrow22").style.visibility="visible";
-    document.getElementById("corngrow32").style.visibility="hidden";
-    document.getElementById("corngrow23").style.visibility="visible";
-    document.getElementById("corngrow33").style.visibility="hidden";
-    document.getElementById("corngrow24").style.visibility="visible";
-    document.getElementById("corngrow34").style.visibility="hidden";
-    document.getElementById("corngrow25").style.visibility="visible";
-    document.getElementById("corngrow35").style.visibility="hidden";
-    document.getElementById("corngrow26").style.visibility="visible";
-    document.getElementById("corngrow36").style.visibility="hidden";
-    document.getElementById("scorecorn").innerHTML += 6;
-    document.getElementById("choice").style.display="block";
-    document.getElementById("carchoice").style.display="block";
-    document.getElementById("firechoice").style.display="block";
-  }
-  function hidetutorial() {
-    document.getElementById("tutorial").style.display = "none";
-    document.getElementById("tutorial").style.height="0%";
-  }
-  function hidewait() {
-    document.getElementById("showwait").style.display = "none";
-  }
+
+    #scoreboard {
+      display: none;
+      width: 1152px;
+      height: 64px;
+      border-radius: 32px;
+      background: linear-gradient(282deg, rgba(66, 33, 19,80%) 50%, rgba(64, 44, 36, 80%) 100%);
+      position: absolute;
+      justify-content: flex-start;
+      align-items: center;
+      left: 384px;
+      top: 16px;
+      animation: slide-down 1s;
+    }
+    .scorebox {
+      width: 20%;
+      padding-right: 5%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: #eee;
+      text-shadow: 2px 2px 0px black, -2px 2px 0px black, 2px -2px 0px black, -2px -2px 0px black;
+      font-family: 'Paytone One', sans-serif;
+    }
+
+    #toolbar {
+      display: none;
+      width: 96px;
+      height: 480px;
+      background: rgb(200, 200, 200, 40%);
+      top: 300px;
+      left: 16px;
+      position: absolute;
+      border-radius: 16px;
+      animation: slide-right 1s;
+    }
+    .tools {
+      width: 100%;
+      height: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #seed, #grow, #watercan, #sickle {
+      width: 80%;
+    }
+    #seed:hover, #grow:hover, #watercan:hover, #sickle:hover {
+      cursor: pointer;
+      transition: 0.1s;
+      transform: scale(1.2) translateX(12px);
+      filter: brightness(120%)
+    }
+    #seed:active, #grow:active, #watercan:active, #sickle:active {
+      cursor: pointer;
+      transition: 0.1s;
+      transform: scale(0.9) translateX(12px);
+    }
+
+    #inseminate, #manure, #corngrow0, #corngrow1, #corngrow2, #corngrow3 {
+      position: absolute;
+      transform-origin: bottom;
+      animation: growing 0.5s;
+    }
+    #inseminate {
+      width: 70%;
+      top: 10%;
+      left: 15%;
+    }
+    #manure {
+      width: 80%;
+      bottom: -20%;
+    }
+    #corngrow0, #corngrow1 {
+      width: 80%;
+      left: 10%;
+      bottom: 20%;
+    }
+    #corngrow2, #corngrow3 {
+      width: 100%;
+      left: 2%;
+      bottom: 10%;
+    }
+
+    #clearchoice {
+      width: 56%;
+      height: 66%;
+      padding: 2%;
+      top: 15%;
+      left: 20%;
+      border-radius: 60px;
+      transition: 0.25s;
+      background: linear-gradient(282deg, rgba(66,33,19,1) 50%, rgba(64,44,36,1) 100%);
+      transform: scale(0);
+      text-align: center;
+      box-shadow: 6px 6px hsl(0, 0%, 0%, 20%);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: fixed;
+    }
+    .clearchoice-text {
+      font-family: 'Itim', cursive;
+      color: #eee;
+      font-size: 3em;
+      width: 100%;
+      height: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .clearchoice-button {
+      width: 320px;
+      height: 320px;
+      margin: 5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 60px;
+      border: 40px solid rgba(158, 124, 16,1);
+      box-shadow: 6px 6px hsl(0, 0%, 0%, 20%);
+      background: linear-gradient(228deg, rgba(148,114,36,1) 0%, rgba(242,178,28,1) 100%);
+    }
+    .clearchoice-button:hover {
+      transform: scale(1.01);
+      cursor: pointer;
+    }
+
+    .tractor {
+		  position: absolute;
+      width: 300px;
+      opacity: 0;
+      top: 58%;
+      left: 26%;
+      animation: driving 18s linear;
+    }
+    .tractor-body {
+		  width: 88%;
+      animation: vibrating-engine 100ms infinite linear alternate;
+    }
+    .wheel-front {
+		  width: 28%;
+      bottom: 5%;
+      left: 9%;
+      position: absolute;
+      animation: spinning-wheel 1s infinite linear;
+    }
+    .wheel-back {
+		  width: 35%;
+      bottom: 5%;
+      right: 14%;
+      position: absolute;
+      animation: spinning-wheel 1s infinite linear;
+    }
+    @keyframes days-passed {
+      0% {opacity: 1;}
+      50% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    @keyframes walk-jump {
+      0% {transform: translate(0px, -12px) scaleX(1);}
+      8% {transform: translate(-64px, 0px) scaleX(1);}
+      10% {transform: translate(-80px, -12px) scaleX(1);}
+      18% {transform: translate(-144px, 0px) scaleX(1);}
+      20% {transform: translate(-160px, -12px) scaleX(1);}
+      28% {transform: translate(-224px, 0px) scaleX(1);}
+      30% {transform: translate(-240px, -12px) scaleX(1);}
+      38% {transform: translate(-304px, 0px) scaleX(1);}
+      40% {transform: translate(-320px, -12px) scaleX(1);}
+      48% {transform: translate(-384px, 0px) scaleX(1);}
+      50% {transform: translate(-400px, -12px) scaleX(1);}
+      51% {transform: translate(-400px, -12px) scaleX(-1);}
+      58% {transform: translate(-336px, 0px) scaleX(-1);}
+      60% {transform: translate(-310px, -12px) scaleX(-1);}
+      68% {transform: translate(-246px, 0px) scaleX(-1);}
+      70% {transform: translate(-230px, -12px) scaleX(-1);}
+      78% {transform: translate(-166px, 0px) scaleX(-1);}
+      80% {transform: translate(-150px, -12px) scaleX(-1);}
+      88% {transform: translate(-86px, 0px) scaleX(-1);}
+      90% {transform: translate(-70px, -12px) scaleX(-1);}
+      98% {transform: translate(-6px, 0px) scaleX(-1);}
+      100% {transform: translate(0px, -12px) scaleX(-1);}
+    }
+    @keyframes walk-step {
+      0% {transform: translateX(0px) scaleX(1)}
+      10% {transform: translateX(-200px) scaleX(1)}
+      20% {transform: translateX(-200px) scaleX(1)}
+      30% {transform: translateX(-200px) scaleX(1)}
+      40% {transform: translateX(-400px) scaleX(1)}
+      41% {transform: translateX(-400px) scaleX(-1)}
+      50% {transform: translateX(-400px) scaleX(-1)}
+      60% {transform: translateX(-200px) scaleX(-1)}
+      70% {transform: translateX(-200px) scaleX(-1)}
+      80% {transform: translateX(-200px) scaleX(-1)}
+      90% {transform: translateX(0px) scaleX(-1)}
+      100% {transform: translateX(0px) scaleX(-1)}
+    }
+    @keyframes walk-normal {
+      0% {transform: translate(0px) scaleX(-1);}
+      50% {transform: translate(300px) scaleX(-1);}
+      51% {transform: translate(300px) scaleX(1);}
+      100% {transform: translate(0px) scaleX(1);}
+    }
+    @keyframes slide-down {
+      from {
+        transform: translateY(-128px);
+      }
+      to {
+        transform: translateY(0px);
+      }
+    }
+    @keyframes slide-right {
+      from {
+        transform: translateX(-128px);
+      }
+      to {
+        transform: translateX(0px);
+      }
+    }
+    @keyframes growing {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+    @keyframes vibrating-engine {
+      to {
+        transform: translateY(4px);
+      }
+    }
+    @keyframes spinning-wheel {
+      to {
+        transform: rotateZ(-360deg);
+      }
+    }
+    @keyframes driving {
+      0% {
+        opacity: 1;
+      }
+      50.9999% {
+        transform: rotateY(0deg) translateX(-400px);
+        opacity: 1;
+      }
+      51% {
+        transform: rotateY(180deg) translateX(400px) translateY(160px);
+        opacity: 1;
+      }
+      99.99% {transform: rotateY(180deg) translateX(0px) translateY(160px);
+        opacity: 1;
+      }
+      100% {
+        transform: rotateY(180deg) translateX(0px) translateY(160px);
+        opacity: 0;
+      }
+    }
+  </style>
+
+  <body>
+    <div class="background-3"></div>
+    <div class="background-2"></div>
+    <div class="background-1"></div>
+
+    <img id="chicken1" class="chicken" style="top: 80%; right: 10%; animation: walk-jump 12s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
+    <img id="chicken2" class="chicken" style="top: 65%; right: 15%; animation: walk-step 10s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
+    <img id="chicken3" class="chicken" style="top: 50%; right: 30%; animation: walk-normal 8s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
+
+    <div id="scoreboard">
+      <div class="scorebox">
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844605652902739968/money.png" style="height: 60%; margin-right: 6%;">
+        <div id="money">100</div>
+      </div>
+      <div class="scorebox">
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844608248694308864/planet-earth.png" style="height: 70%; margin-right: 6%;">
+        <div id="environment">100</div>
+      </div>
+      <div class="scorebox">
+        <img src="https://cdn.discordapp.com/attachments/807588926332207136/838128363230855168/corn.png" style="height: 80%; margin-right: 6%;">
+        <div id="scorecorn">0</div>
+      </div>
+      <div class="scorebox">
+        <img src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png" style="height: 80%; margin-right: 6%;">
+        <div id="scorechicken">0</div>
+      </div>
+    </div>
+
+    <div id="toolbar"> <!-- เครื่องมือ 3 ชนิด -->
+      <div class="tools">
+        <img id="seed" onclick="pickingSeed()" src="https://cdn.discordapp.com/attachments/807588926332207136/838128426979819540/cornseed.png">
+      </div>
+      <div class="tools">
+        <img id="grow" onclick="pickingManure()" src="https://cdn.discordapp.com/attachments/807588926332207136/840890408551579698/grow.png">
+      </div>
+      <div class="tools">
+        <img id="watercan" onclick="pickingWater()" src="https://cdn.discordapp.com/attachments/807588926332207136/838128421468897310/watercan.png">
+      </div>
+      <div class="tools">
+        <img id="sickle" onclick="pickingSickle()" src="https://cdn.discordapp.com/attachments/750412142351614163/844621448055357450/sickle.png">
+      </div>
+    </div>
+
+    <div class="dirt" onclick="cornPlanting(this, 0)" style="top: 65%; left: 10%;"></div> <!-- this คือ ส่งค่า Element ไปยังฟังชัน -->
+    <div class="dirt" onclick="cornPlanting(this, 1)" style="top: 64%; left: 18%;"></div>
+    <div class="dirt" onclick="cornPlanting(this, 2)" style="top: 63%; left: 26%;"></div>
+    <div class="dirt" onclick="cornPlanting(this, 3)" style="top: 62%; left: 34%;"></div>
+    <div class="dirt" onclick="cornPlanting(this, 4)" style="top: 80%; left: 8%;"></div>
+    <div class="dirt" onclick="cornPlanting(this, 5)" style="top: 79%; left: 16%;"></div>
+    <div class="dirt" onclick="cornPlanting(this, 6)" style="top: 78%; left: 24%;"></div>
+    <div class="dirt" onclick="cornPlanting(this, 7)" style="top: 77%; left: 32%;"></div>
+
+    <div id="introduction"> <!-- หน้าโหลดเกมทั้งหมด -->
+      <div id="gamename"></div>
+      <div class="button" onclick="startGame(); body.requestFullscreen();">START</div> <!-- เปิดโหมดเต็มจอ fullscreen -->
+      <div class="button" onclick="javascript: tutorial.style.transform = `scale(1)`">HOW TO PLAY</div>
+        <div id="tutorial">
+          <h1>Tutorial</h1>
+          <p>how to play<br>
+            bla bla bla bla
+          </p>
+          <div class="button" onclick="javascript: tutorial.style.transform = `scale(0)`" style="position: absolute; bottom: 1%; left: 1%; width: 20%; height: 64px; font-size: 24px;">BACK</div>
+        </div>
+      <a class="button" href="n.html" target="_blank">LANDING PAGE</a>
+      <div class="button" onclick="clearCorn()">CREDIT</div>
+    </div>
+
+    <div id="clearchoice">
+      <div class="clearchoice-text">ข้าวโพดหลังจากเก็บเกี่ยวแล้วยังเหลือซากข้าวโพดอยู่<br>คุณต้องการทำลายซากข้าวโพดด้วยวิธีไหน</div>
+      <div class="clearchoice-button">
+        <img src="https://cdn.discordapp.com/attachments/807588926332207136/840919492439834634/fire.png" width="75%">
+      </div>
+      <div class="clearchoice-button" onclick="tractor()">
+        <img src="https://cdn.discordapp.com/attachments/807588926332207136/840918575018672188/car.png" width="90%">
+      </div>
+    </div>
+  </body>
+
+  <script>
+    /* Array แสดงว่า แปลงดินไหนมีสถานะอะไรบ้าง (มี 6 แปลง) */
+    var level = [0, 0, 0, 0, 0, 0, 0, 0]; // ระดับความโตของต้นข้าวโพก
+    var manured = [false, false, false, false, false, false, false, false]; // สถานะว่าใส่ปุ๋ยหรือยัง (ใส่ก่อนรดน้ำ)
+    var empty = [true, true, true, true, true, true, true, true]; // สถานะความว่างของแปลงดิน
+    var pick = "none"; // สถานะการหยิบเครื่องมือ
+    var harvested = 0; // จำนวนต้นที่พร้อมเก็บเกี่ยว
+    var ready = [false, false, false, false, false, false, false, false]; // สถานะพร้อมเก็บเกี่ยว
+    var growImage = ["https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png",
+                    "https://cdn.discordapp.com/attachments/807588926332207136/838128387532128306/corngrow2.png",
+                    "https://cdn.discordapp.com/attachments/807588926332207136/838128395543379999/corngrow3.png",
+                    "https://cdn.discordapp.com/attachments/807588926332207136/838128403177275432/corngrow4.png"
+                    ];
+    var money = 1000;
+    var scorecorn = 0;
+
+    function startGame() {
+      introduction.style.display = `none`;
+      scoreboard.style.display = `flex`;
+      document.getElementById("toolbar").style.display = `initial`;
+    }
+
+    function showHarvest() {
+      var x = document.getElementById("showharvest");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+
+    function pickingSeed() { // หยิบเมล็ด
+      if (pick == "seed") { // ถ้าในมือหยิบเมล็ดอยู่แล้วกดอีกรอบ มือที่หยิบจะเป็นมือเปล่า
+        pick = "none";
+        document.body.style.cursor = "initial";
+      } else {
+        pick = "seed";
+        document.body.style.cursor = "url('https://ani.cursors-4u.net/games/gam-16/gam1549.cur'), auto";
+      }
+    }
+
+    function pickingManure() { // ถ้าในมือหยิบปุ๋ยอยู่แล้วกดอีกรอบ มือที่หยิบจะเป็นมือเปล่า
+      if (pick == "manure") {
+        pick = "none";
+        document.body.style.cursor = "initial";
+      } else {
+        pick = "manure";
+        document.body.style.cursor = "url('https://cur.cursors-4u.net/others/oth-2/oth192.cur'), auto";
+      }
+    }
+
+    function pickingWater() { // ถ้าในมือหยิบบัวรดน้ำอยู่แล้วกดอีกรอบ มือที่หยิบจะเป็นมือเปล่า
+      if (pick == "water") {
+        pick = "none";
+        document.body.style.cursor = "initial";
+      } else {
+        pick = "water";
+        document.body.style.cursor = "url('https://cur.cursors-4u.net/others/oth-5/oth440.cur'), auto";
+      }
+    }
+
+    function pickingSickle() { // ถ้าในมือหยิบปุ๋ยอยู่แล้วกดอีกรอบ มือที่หยิบจะเป็นมือเปล่า
+      if (pick == "sickle") {
+        pick = "none";
+        document.body.style.cursor = "initial";
+      } else {
+        pick = "sickle";
+        document.body.style.cursor = "pointer";
+      }
+    }
+
+    function cornPlanting(obj, n) { // obj คือค่า Elements ที่รับมากจาก HTMl, n คือ ทำแหน่งของแปลงนั้นๆ (0-5)
+      if (pick == "seed" && empty[n]) { // เช็คว่าหยิบเมล็ดอยู่ และแปลงดินว่างไหม
+        obj.innerHTML = `<img id="inseminate" src="https://cdn.discordapp.com/attachments/807588926332207136/840874382506459136/corngrow.png">`;
+        money -= 5;
+        empty[n] = false; // ทำให้แปลงดินไม่ว่าง
+      } else if (pick == "water" && manured[n] && !empty[n] && !ready[n]) { // เช็คว่าหยิบน้ำ และใส่ปุ๋ยแล้ว และแปลงดิน *ไม่* ว่าง และข้าวโพดยังไม่พร้อมเก็บ
+        obj.innerHTML = `<img id="corngrow${level[n]}" src="${growImage[level[n]]}">`;
+        money -= 7;
+        if (level[n] == 3) { // ถ้าค่าความโตเท่ากับ 4 ให้ทำ สถานะข้าวโพดพร้อมเก็บเกี่ยว
+          ready[n] = true; // สถานะพร้อมเก็บเกี่ยวเป็นจริง
+          level[n] = 0; // รีเซ็ตค่าความโต
+          return 0; // จบการทำงาน function()
+        }
+        manured[n] = false; // ให้ค่าใส่ปุ๋ยแล้วเป็นเท็จ
+        level[n]++; // เพิ่มระดับการโตเพื่อใช้ในรอบถัดไป
+      } else if (pick == "manure" && !manured[n] && !empty[n] && !ready[n]) {
+        obj.innerHTML += `<img id="manure" src="https://cdn.discordapp.com/attachments/750412142351614163/844506227077021716/soil-for-growing-plants-pile-ground-heap-of-vector-35431631-removebg-preview.png">`;
+        money -= 16;
+        manured[n] = true; // ให้ค่าใส่ปุ๋ยแล้วเป็นจริง
+      } else if (pick == "sickle" && ready[n]) {
+        obj.innerHTML = `<img id="corngrow2" src="${growImage[2]}" style="filter: sepia(100%)">`;
+        ready[n] = false; // รีเซ็ตค่า
+        harvested++; // เพิ่มต้นที่เก็บแล้ว
+        if (harvested == 8) { // เงื่อนที่เตรียมเก็บเกี่ยวฟาร์ม
+          clearCorn();
+        }
+      }
+      document.getElementById("money").innerHTML = money;
+    }
+
+
+    function clearCorn(){
+      document.getElementById("scorecorn").innerHTML += 6;
+      clearchoice.style.transform = "scale(1)";
+    }
+
+    function tractor() {
+      clearchoice.style.transform = "scale(0)";
+      document.body.innerHTML += `<div class="tractor">
+                                  <img class="tractor-body" src="https://cdn.discordapp.com/attachments/807588926332207136/840918575018672188/car.png">
+                                  <img class="wheel-front" src="https://cdn.discordapp.com/attachments/750412142351614163/844514104131321897/vector-tractor-tire-illustration-removebg-preview.png">
+                                  <img class="wheel-back" src="https://cdn.discordapp.com/attachments/750412142351614163/844514104131321897/vector-tractor-tire-illustration-removebg-preview.png">
+                                </div>`;
+    }
   </script>
-</body>
 </html>
