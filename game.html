@@ -14,28 +14,28 @@
       height: 1080px;
       position: relative;
     }
-    .background-1, .background-2, .background-3 {
+    #backgroundnoon, #backgrounddust, #backgroundnight {
       width: 100%;
       height: 100%;
       background-size: 100% 100%;
       background-repeat: no-repeat;
       position: absolute;
     }
-    .background-1 {
+    #backgroundnoon {
       background-image: url("https://cdn.discordapp.com/attachments/807588926332207136/838128453827035186/bg1.png");
-      animation: days-passed 20s infinite;
     }
-    .background-2 {
-      background-image: url("https://cdn.discordapp.com/attachments/807588926332207136/838128469472444456/bg2.png");
-      animation: days-passed 20s infinite;
+    #backgrounddust {
+      background-image: url("https://cdn.discordapp.com/attachments/807588926332207136/838128453827035186/bg1.png");
     }
-    .background-3 {
+    #backgroundnight {
       background-image: url("https://cdn.discordapp.com/attachments/807588926332207136/838128472824086578/bg3.png");
+      animation: days-passed 60s infinite alternate;
     }
 
     .chicken {
       width: 160px;
       position: absolute;
+      filter: drop-shadow(4px 10px 2px hsl(0, 0%, 0%, 20%));
     }
   
     .dirt {
@@ -166,29 +166,33 @@
       transform: scale(0.9) translateX(12px);
     }
 
-    #inseminate, #manure, #corngrow0, #corngrow1, #corngrow2, #corngrow3 {
-      position: absolute;
-      transform-origin: bottom;
-      animation: growing 0.5s;
-    }
     #inseminate {
       width: 70%;
       top: 10%;
       left: 15%;
+      position: absolute;
+      animation: sprinkle 0.5s;
     }
     #manure {
       width: 80%;
       bottom: -20%;
+      position: absolute;
     }
     #corngrow0, #corngrow1 {
       width: 80%;
       left: 10%;
       bottom: 20%;
+      position: absolute;
+      transform-origin: bottom;
+      animation: zoom-out 0.5s;
     }
     #corngrow2, #corngrow3 {
       width: 100%;
       left: 2%;
       bottom: 10%;
+      position: absolute;
+      transform-origin: bottom;
+      animation: zoom-out 0.5s;
     }
 
     #clearchoice {
@@ -205,6 +209,7 @@
       box-shadow: 6px 6px hsl(0, 0%, 0%, 20%);
       display: flex;
       justify-content: center;
+      align-items: flex-start;
       flex-wrap: wrap;
       position: fixed;
     }
@@ -213,26 +218,58 @@
       color: #eee;
       font-size: 3em;
       width: 100%;
-      height: 25%;
+      height: 16%;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     .clearchoice-button {
-      width: 320px;
-      height: 320px;
-      margin: 5%;
+      width: 280px;
+      height: 280px;
+      margin: 0% 5% 0% 5%;
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 60px;
-      border: 40px solid rgba(158, 124, 16,1);
+      border: 20px solid rgba(188, 154, 46, 100%);
+      background: rgba(168, 134, 56, 100%);
       box-shadow: 6px 6px hsl(0, 0%, 0%, 20%);
-      background: linear-gradient(228deg, rgba(148,114,36,1) 0%, rgba(242,178,28,1) 100%);
+    }
+    .caption {
+      width: 320px;
+      height: 64px;
+      color: #eee;
+      margin: 0% 5% 0% 5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3em;
+      font-family: 'Itim', cursive;
+      bottom: -40%;
+      /* background: red; */
     }
     .clearchoice-button:hover {
       transform: scale(1.01);
+      filter: brightness(110%);
       cursor: pointer;
+    }
+
+    .fire {
+      width: 120px;
+      position: absolute;
+      transform: scale(0);
+      animation: fire 0.2s alternate;
+      animation-iteration-count: 40;
+      transform-origin: bottom;
+    }
+    #smoke {
+      width: 720px;
+      left: 5%;
+      bottom: 10%;
+      opacity: 80%;
+      position: absolute;
+      transform: scale(0);
+      animation: floating 8s linear;
     }
 
     .tractor {
@@ -241,7 +278,8 @@
       opacity: 0;
       top: 58%;
       left: 26%;
-      animation: driving 18s linear;
+      transform: translateY(-1200px); /* แทรกเตอร์มันบังแปลงเลยย้ายไปไว้ไกล */
+      animation: driving 16s linear;
     }
     .tractor-body {
 		  width: 88%;
@@ -261,124 +299,95 @@
       position: absolute;
       animation: spinning-wheel 1s infinite linear;
     }
+
     @keyframes days-passed {
-      0% {opacity: 1;}
-      50% {opacity: 0;}
-      100% {opacity: 1;}
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
-    @keyframes walk-jump {
-      0% {transform: translate(0px, -12px) scaleX(1);}
-      8% {transform: translate(-64px, 0px) scaleX(1);}
-      10% {transform: translate(-80px, -12px) scaleX(1);}
-      18% {transform: translate(-144px, 0px) scaleX(1);}
-      20% {transform: translate(-160px, -12px) scaleX(1);}
-      28% {transform: translate(-224px, 0px) scaleX(1);}
-      30% {transform: translate(-240px, -12px) scaleX(1);}
-      38% {transform: translate(-304px, 0px) scaleX(1);}
-      40% {transform: translate(-320px, -12px) scaleX(1);}
-      48% {transform: translate(-384px, 0px) scaleX(1);}
-      50% {transform: translate(-400px, -12px) scaleX(1);}
-      51% {transform: translate(-400px, -12px) scaleX(-1);}
-      58% {transform: translate(-336px, 0px) scaleX(-1);}
-      60% {transform: translate(-310px, -12px) scaleX(-1);}
-      68% {transform: translate(-246px, 0px) scaleX(-1);}
-      70% {transform: translate(-230px, -12px) scaleX(-1);}
-      78% {transform: translate(-166px, 0px) scaleX(-1);}
-      80% {transform: translate(-150px, -12px) scaleX(-1);}
-      88% {transform: translate(-86px, 0px) scaleX(-1);}
-      90% {transform: translate(-70px, -12px) scaleX(-1);}
-      98% {transform: translate(-6px, 0px) scaleX(-1);}
-      100% {transform: translate(0px, -12px) scaleX(-1);}
+    @keyframes slide-down {
+      from {transform: translateY(-128px);}
+      to {transform: translateY(0px);}
+    }
+    @keyframes slide-right {
+      from {transform: translateX(-128px);}
+      to {transform: translateX(0px);}
+    }
+    @keyframes zoom-out {
+      from {transform: scale(0);}
+      to {transform: scale(1);}
+    }
+    @keyframes disappear {
+      0% {transform: scale(1);}
+      99% {transform: scale(1);}
+      100% {transform: scale(0);}
     }
     @keyframes walk-step {
       0% {transform: translateX(0px) scaleX(1)}
       10% {transform: translateX(-200px) scaleX(1)}
-      20% {transform: translateX(-200px) scaleX(1)}
       30% {transform: translateX(-200px) scaleX(1)}
       40% {transform: translateX(-400px) scaleX(1)}
       41% {transform: translateX(-400px) scaleX(-1)}
       50% {transform: translateX(-400px) scaleX(-1)}
       60% {transform: translateX(-200px) scaleX(-1)}
-      70% {transform: translateX(-200px) scaleX(-1)}
       80% {transform: translateX(-200px) scaleX(-1)}
       90% {transform: translateX(0px) scaleX(-1)}
       100% {transform: translateX(0px) scaleX(-1)}
     }
-    @keyframes walk-normal {
-      0% {transform: translate(0px) scaleX(-1);}
-      50% {transform: translate(300px) scaleX(-1);}
-      51% {transform: translate(300px) scaleX(1);}
-      100% {transform: translate(0px) scaleX(1);}
+    @keyframes walk {
+      50% {transform: translateX(-300px) scaleX(1);}
+      51% {transform: translateX(-300px) scaleX(-1);}
+      100% {transform: translateX(0px) scaleX(-1);}
     }
-    @keyframes slide-down {
-      from {
-        transform: translateY(-128px);
-      }
-      to {
-        transform: translateY(0px);
-      }
+    @keyframes jump {
+      50% {top: 78%;}
+      100% {top: 80%;}
     }
-    @keyframes slide-right {
-      from {
-        transform: translateX(-128px);
-      }
-      to {
-        transform: translateX(0px);
-      }
+    @keyframes sprinkle {
+      from {transform: translateY(-32px); opacity: 0;}
+      to {transform: translateY(0px); opacity: 1;}
     }
-    @keyframes growing {
-      from {
-        transform: scale(0);
-      }
-      to {
-        transform: scale(1);
-      }
+    @keyframes fire {
+      from {transform: scale(1.2, 1); filter: drop-shadow(0px -32px 32px hsl(0, 100%, 50%, 100%));}
+      to {transform: scale(1, 1.2); filter: drop-shadow(0px -32px 32px hsl(0, 100%, 50%, 60%));}
+    }
+    @keyframes floating {
+      from {transform: translateY(0px) scale(1);}
+      99% {transform: translateY(-128px) scale(1);}
+      100% {transform: scale(0);}
+    }
+    @keyframes burn {
+      from {filter: sepia(100%) brightness(100%); transform: scale(1);}
+      99% {filter: sepia(100%) brightness(0%); transform: scale(1);}
+      100% {transform: scale(0);}
     }
     @keyframes vibrating-engine {
-      to {
-        transform: translateY(4px);
-      }
+      to {transform: translateY(4px);}
     }
     @keyframes spinning-wheel {
-      to {
-        transform: rotateZ(-360deg);
-      }
+      to {transform: rotateZ(-360deg);}
     }
     @keyframes driving {
-      0% {
-        opacity: 1;
-      }
-      50.9999% {
-        transform: rotateY(0deg) translateX(-400px);
-        opacity: 1;
-      }
-      51% {
-        transform: rotateY(180deg) translateX(400px) translateY(160px);
-        opacity: 1;
-      }
-      99.99% {transform: rotateY(180deg) translateX(0px) translateY(160px);
-        opacity: 1;
-      }
-      100% {
-        transform: rotateY(180deg) translateX(0px) translateY(160px);
-        opacity: 0;
-      }
+      0% {transform: scaleX(1) translateX(0px); opacity: 1;}
+      50.9999% {transform: scaleX(1) translateX(-400px); opacity: 1;}
+      51% {transform: scaleX(-1) translateX(400px) translateY(160px); opacity: 1;}
+      99.99% {transform: scaleX(-1) translateX(0px) translateY(160px); opacity: 1;}
+      100% {transform: scaleX(-1) translateX(0px) translateY(160px); opacity: 0;}
     }
   </style>
 
   <body>
-    <div class="background-3"></div>
-    <div class="background-2"></div>
-    <div class="background-1"></div>
+    <div id="backgroundnoon"></div>
+    <div id="backgrounddust"></div> <!-- ในครั้งแรกจะเป็นรูปเดียวกับ backgroundnoon แต่เมื่อเผาค่อยทำการเปลี่ยนรูป -->
+    <div id="backgroundnight"></div>
 
-    <img id="chicken1" class="chicken" style="top: 80%; right: 10%; animation: walk-jump 12s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
-    <img id="chicken2" class="chicken" style="top: 65%; right: 15%; animation: walk-step 10s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
-    <img id="chicken3" class="chicken" style="top: 50%; right: 30%; animation: walk-normal 8s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
+    <img id="chicken0" class="chicken" style="top: 80%; right: 20%; animation: walk 6s infinite linear, jump 1s infinite ease-out;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
+    <img id="chicken1" class="chicken" style="top: 65%; right: 15%; animation: walk-step 12s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
+    <img id="chicken2" class="chicken" style="top: 50%; right: 25%; animation: walk 8s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
 
     <div id="scoreboard">
       <div class="scorebox">
         <img src="https://cdn.discordapp.com/attachments/750412142351614163/844605652902739968/money.png" style="height: 60%; margin-right: 6%;">
-        <div id="money">100</div>
+        <div id="money">1000</div>
       </div>
       <div class="scorebox">
         <img src="https://cdn.discordapp.com/attachments/750412142351614163/844608248694308864/planet-earth.png" style="height: 70%; margin-right: 6%;">
@@ -389,23 +398,23 @@
         <div id="scorecorn">0</div>
       </div>
       <div class="scorebox">
-        <img src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png" style="height: 80%; margin-right: 6%;">
-        <div id="scorechicken">0</div>
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/845224823583932446/egg.png" style="height: 60%; margin-right: 6%;">
+        <div id="scoreegg">0/6</div> <!-- target -->
       </div>
     </div>
 
     <div id="toolbar"> <!-- เครื่องมือ 3 ชนิด -->
       <div class="tools">
-        <img id="seed" onclick="pickingSeed()" src="https://cdn.discordapp.com/attachments/807588926332207136/838128426979819540/cornseed.png">
+        <img id="seed" onclick="pickingItem('seed')" src="https://cdn.discordapp.com/attachments/807588926332207136/838128426979819540/cornseed.png">
       </div>
       <div class="tools">
-        <img id="grow" onclick="pickingManure()" src="https://cdn.discordapp.com/attachments/807588926332207136/840890408551579698/grow.png">
+        <img id="grow" onclick="pickingItem('manure')" src="https://cdn.discordapp.com/attachments/807588926332207136/840890408551579698/grow.png">
       </div>
       <div class="tools">
-        <img id="watercan" onclick="pickingWater()" src="https://cdn.discordapp.com/attachments/807588926332207136/838128421468897310/watercan.png">
+        <img id="watercan" onclick="pickingItem('water')" src="https://cdn.discordapp.com/attachments/807588926332207136/838128421468897310/watercan.png">
       </div>
       <div class="tools">
-        <img id="sickle" onclick="pickingSickle()" src="https://cdn.discordapp.com/attachments/750412142351614163/844621448055357450/sickle.png">
+        <img id="sickle" onclick="pickingItem('sickle')" src="https://cdn.discordapp.com/attachments/750412142351614163/844621448055357450/sickle.png">
       </div>
     </div>
 
@@ -430,35 +439,53 @@
           <div class="button" onclick="javascript: tutorial.style.transform = `scale(0)`" style="position: absolute; bottom: 1%; left: 1%; width: 20%; height: 64px; font-size: 24px;">BACK</div>
         </div>
       <a class="button" href="index.html" target="_blank">LANDING PAGE</a>
-      <div class="button" onclick="clearCorn()">CREDIT</div>
+      <div class="button" onclick="clearCorn()">CREDIT</div> <!-- ปุ่มสำหรับทดสอบ clearCorn() -->
     </div>
-
-    <div id="clearchoice">
+ 
+    <div id="clearchoice"> <!-- เงื่อนไขการกำจัดซากข้าวโพด (ถูกซ่อนอยู่ โดย scale(0)) -->
       <div class="clearchoice-text">ข้าวโพดหลังจากเก็บเกี่ยวแล้วยังเหลือซากข้าวโพดอยู่<br>คุณต้องการทำลายซากข้าวโพดด้วยวิธีไหน</div>
-      <div class="clearchoice-button">
+      <div onclick="burning()" class="clearchoice-button">
         <img src="https://cdn.discordapp.com/attachments/807588926332207136/840919492439834634/fire.png" width="75%">
       </div>
-      <div class="clearchoice-button" onclick="tractor()">
+      <div onclick="tractor()" class="clearchoice-button">
         <img src="https://cdn.discordapp.com/attachments/807588926332207136/840918575018672188/car.png" width="90%">
+      </div>
+      <div class="caption"> <!-- ค่าสิ่งแวดล้อมที่ต้องจ่าย -->
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844608248694308864/planet-earth.png" style="height: 80%; margin-right: 5%;">
+        -76
+      </div>
+      <div class="caption"> <!-- ราคาที่ต้องจ่าย -->
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844605652902739968/money.png" style="height: 70%; margin-right: 5%;">
+        -399
       </div>
     </div>
   </body>
 
   <script>
-    /* Array แสดงว่า แปลงดินไหนมีสถานะอะไรบ้าง (มี 6 แปลง) */
-    var level = [0, 0, 0, 0, 0, 0, 0, 0]; // ระดับความโตของต้นข้าวโพก
+    /* Array แสดงว่า แปลงดินไหนมีสถานะอะไรบ้าง (มี 8 แปลง) */
+    var level = [0, 0, 0, 0, 0, 0, 0, 0]; // ระดับความโตของต้นข้าวโพด
     var manured = [false, false, false, false, false, false, false, false]; // สถานะว่าใส่ปุ๋ยหรือยัง (ใส่ก่อนรดน้ำ)
     var empty = [true, true, true, true, true, true, true, true]; // สถานะความว่างของแปลงดิน
+    var ready = [false, false, false, false, false, false, false, false]; // สถานะพร้อมเก็บเกี่ยว
+
     var pick = "none"; // สถานะการหยิบเครื่องมือ
     var harvested = 0; // จำนวนต้นที่พร้อมเก็บเกี่ยว
-    var ready = [false, false, false, false, false, false, false, false]; // สถานะพร้อมเก็บเกี่ยว
     var growImage = ["https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png",
-                    "https://cdn.discordapp.com/attachments/807588926332207136/838128387532128306/corngrow2.png",
-                    "https://cdn.discordapp.com/attachments/807588926332207136/838128395543379999/corngrow3.png",
-                    "https://cdn.discordapp.com/attachments/807588926332207136/838128403177275432/corngrow4.png"
-                    ];
+                     "https://cdn.discordapp.com/attachments/807588926332207136/838128387532128306/corngrow2.png",
+                     "https://cdn.discordapp.com/attachments/807588926332207136/838128395543379999/corngrow3.png",
+                     "https://cdn.discordapp.com/attachments/807588926332207136/838128403177275432/corngrow4.png"
+                    ]; // รูปลำดับการโตข้าวโพด
+
+    var cursor = {seed:"url('https://ani.cursors-4u.net/games/gam-16/gam1549.cur'), auto",
+                  manure:"url('https://cur.cursors-4u.net/others/oth-2/oth192.cur'), auto",
+                  water:"url('https://cur.cursors-4u.net/others/oth-5/oth440.cur'), auto",
+                  sickle:"move" // ยังหา sickle ไม่ได้
+                 }; // เปลี่ยน cursor ตามชื่อ item (คล้ายๆ dict ใน Python)
+
     var money = 1000;
+    var environment = 100;
     var scorecorn = 0;
+    var scoreegg = 0;
 
     function startGame() {
       introduction.style.display = `none`;
@@ -466,52 +493,13 @@
       document.getElementById("toolbar").style.display = `initial`;
     }
 
-    function showHarvest() {
-      var x = document.getElementById("showharvest");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-
-    function pickingSeed() { // หยิบเมล็ด
-      if (pick == "seed") { // ถ้าในมือหยิบเมล็ดอยู่แล้วกดอีกรอบ มือที่หยิบจะเป็นมือเปล่า
+    function pickingItem(item) { // หยิบไอเท็ม
+      if (pick == item) { // ถ้ายังหยิบไอเท็มเดิมอยู่ให้ ทำมือให้ว่าง
         pick = "none";
         document.body.style.cursor = "initial";
-      } else {
-        pick = "seed";
-        document.body.style.cursor = "url('https://ani.cursors-4u.net/games/gam-16/gam1549.cur'), auto";
-      }
-    }
-
-    function pickingManure() { // ถ้าในมือหยิบปุ๋ยอยู่แล้วกดอีกรอบ มือที่หยิบจะเป็นมือเปล่า
-      if (pick == "manure") {
-        pick = "none";
-        document.body.style.cursor = "initial";
-      } else {
-        pick = "manure";
-        document.body.style.cursor = "url('https://cur.cursors-4u.net/others/oth-2/oth192.cur'), auto";
-      }
-    }
-
-    function pickingWater() { // ถ้าในมือหยิบบัวรดน้ำอยู่แล้วกดอีกรอบ มือที่หยิบจะเป็นมือเปล่า
-      if (pick == "water") {
-        pick = "none";
-        document.body.style.cursor = "initial";
-      } else {
-        pick = "water";
-        document.body.style.cursor = "url('https://cur.cursors-4u.net/others/oth-5/oth440.cur'), auto";
-      }
-    }
-
-    function pickingSickle() { // ถ้าในมือหยิบปุ๋ยอยู่แล้วกดอีกรอบ มือที่หยิบจะเป็นมือเปล่า
-      if (pick == "sickle") {
-        pick = "none";
-        document.body.style.cursor = "initial";
-      } else {
-        pick = "sickle";
-        document.body.style.cursor = "pointer";
+      } else { // common condition
+        pick = item;
+        document.body.style.cursor = cursor[item]; 
       }
     }
 
@@ -523,41 +511,62 @@
       } else if (pick == "water" && manured[n] && !empty[n] && !ready[n]) { // เช็คว่าหยิบน้ำ และใส่ปุ๋ยแล้ว และแปลงดิน *ไม่* ว่าง และข้าวโพดยังไม่พร้อมเก็บ
         obj.innerHTML = `<img id="corngrow${level[n]}" src="${growImage[level[n]]}">`;
         money -= 7;
+        manured[n] = false; // ให้ค่าใส่ปุ๋ยแล้วเป็นเท็จ
         if (level[n] == 3) { // ถ้าค่าความโตเท่ากับ 4 ให้ทำ สถานะข้าวโพดพร้อมเก็บเกี่ยว
           ready[n] = true; // สถานะพร้อมเก็บเกี่ยวเป็นจริง
           level[n] = 0; // รีเซ็ตค่าความโต
           return 0; // จบการทำงาน function()
         }
-        manured[n] = false; // ให้ค่าใส่ปุ๋ยแล้วเป็นเท็จ
         level[n]++; // เพิ่มระดับการโตเพื่อใช้ในรอบถัดไป
       } else if (pick == "manure" && !manured[n] && !empty[n] && !ready[n]) {
-        obj.innerHTML += `<img id="manure" src="https://cdn.discordapp.com/attachments/750412142351614163/844506227077021716/soil-for-growing-plants-pile-ground-heap-of-vector-35431631-removebg-preview.png">`;
-        money -= 16;
+        obj.innerHTML += `<img id="manure" src="https://cdn.discordapp.com/attachments/750412142351614163/844506227077021716/soil-for-growing-plants-pile-ground-heap-of-vector-35431631-removebg-preview.png">`; // แสดงปุ๋ยในแปลง
+        money -= 9;
         manured[n] = true; // ให้ค่าใส่ปุ๋ยแล้วเป็นจริง
       } else if (pick == "sickle" && ready[n]) {
-        obj.innerHTML = `<img id="corngrow2" src="${growImage[2]}" style="filter: sepia(100%)">`;
+        obj.innerHTML = `<img id="corngrow2" src="${growImage[2]}" style="filter: sepia(100%)">`; // แสดงต้นข้าวโพดที่แห้งแล้ว (เหลือแต่ซาก)
+        money += 36;
+        document.getElementById("scorecorn").innerText = scorecorn++; // ข้าวโพดเพิ่ม 1
         ready[n] = false; // รีเซ็ตค่า
         harvested++; // เพิ่มต้นที่เก็บแล้ว
-        if (harvested == 8) { // เงื่อนที่เตรียมเก็บเกี่ยวฟาร์ม
-          clearCorn();
+        if (harvested == 8) { // เงื่อนไขที่เตรียมเก็บเกี่ยวฟาร์ม
+          harvested = 0; // รีเซ็ตค่าเก็บเกี่ยวแล้ว
+          clearCorn(); // เรียก fn() แสดงเงื่อนไขการทำลายซาก
         }
       }
-      document.getElementById("money").innerHTML = money;
+      document.getElementById("money").innerText = money; // แสดงค่าเงินในทุกๆ รอบที่มี action 
     }
 
+    function clearCorn() {
+      clearchoice.style.transform = "scale(1)"; // แสดงเงื่อนไขการเก็บเกี่ยว
+    }
 
-    function clearCorn(){
-      document.getElementById("scorecorn").innerHTML += 6;
-      clearchoice.style.transform = "scale(1)";
+    function burning() {
+      clearchoice.style.transform = "scale(0)"; // ซ่อนเงื่อนไขการเก็บเกี่ยว 
+      document.getElementById("environment").innerText = environment-=76; // สิ่งแวดล้อมลด
+      document.body.innerHTML += `<img id="smoke" src="https://cdn.discordapp.com/attachments/750412142351614163/845201893747326987/Pngtreesmoke_cartoon_creative_smoke_brush_3846011.png">`; // ควัน
+      backgrounddust.style.animation = "days-passed 8s"; // เปลี่ยนพื้นหลัง
+      backgrounddust.style.filter = "grayscale(40%) sepia(10%)"; // เปลี่ยนพื้นหลัง
+      backgrounddust.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/807588926332207136/838128469472444456/bg2.png')"; // เปลี่ยนพื้นหลัง
+      for (let i=0; i<8; i++) {
+        empty[i] = true; // ให้ดินทุกแปลงว่าง
+        document.getElementsByClassName("dirt")[i].innerHTML = `<img id="corngrow2" src="${growImage[2]}" style="transform: scale(0); animation: burn 8s linear;">`; // ต้นข้าวโพดที่ไหม้เกรียม
+        document.getElementsByClassName("dirt")[i].innerHTML += `<img class="fire" style="width:${100 + Math.floor(Math.random() * 41)}px" src="https://cdn.discordapp.com/attachments/807588926332207136/840919492439834634/fire.png">`; // ไฟ
+      }
     }
 
     function tractor() {
-      clearchoice.style.transform = "scale(0)";
+      clearchoice.style.transform = "scale(0)"; // ซ่อนเงื่อนไขการเก็บเกี่ยว
+      let dirt = [3, 2, 1, 0, 4, 5, 6, 7], timing = [1, 3, 5, 7.5, 9, 11, 13, 15.5]; // dirt คือตำแหน่งของ class 'dirt' ที่เรียงตามรถไถวิ่งผ่าน, timing คือ เวลาที่จะให้ข้าวโพดหายไป
+      document.getElementById("money").innerText = money-=399;
       document.body.innerHTML += `<div class="tractor">
-                                  <img class="tractor-body" src="https://cdn.discordapp.com/attachments/807588926332207136/840918575018672188/car.png">
-                                  <img class="wheel-front" src="https://cdn.discordapp.com/attachments/750412142351614163/844514104131321897/vector-tractor-tire-illustration-removebg-preview.png">
-                                  <img class="wheel-back" src="https://cdn.discordapp.com/attachments/750412142351614163/844514104131321897/vector-tractor-tire-illustration-removebg-preview.png">
-                                </div>`;
+                                    <img class="tractor-body" src="https://cdn.discordapp.com/attachments/807588926332207136/840918575018672188/car.png">
+                                    <img class="wheel-front" src="https://cdn.discordapp.com/attachments/750412142351614163/844514104131321897/vector-tractor-tire-illustration-removebg-preview.png">
+                                    <img class="wheel-back" src="https://cdn.discordapp.com/attachments/750412142351614163/844514104131321897/vector-tractor-tire-illustration-removebg-preview.png">
+                                  </div>`;
+      for (let i=0; i<8; i++) { // loop เพื่อลดบรรทัด
+        empty[i] = true; // ให้ดินทุกแปลงว่าง
+        document.getElementsByClassName("dirt")[dirt[i]].innerHTML = `<img id="corngrow2" src="${growImage[2]}" style="filter: sepia(100%); transform: scale(0); animation: disappear ${timing[i]}s;">`; // ใส่ animation ให้ต้นโพดค่อยๆ หาย
+      }
     }
   </script>
 </html>
