@@ -29,13 +29,22 @@
     }
     #backgroundnight {
       background-image: url("https://cdn.discordapp.com/attachments/807588926332207136/838128472824086578/bg3.png");
-      animation: days-passed 60s infinite alternate;
+      /* animation: days-passed 60s infinite alternate; */
     }
 
     .chicken {
       width: 160px;
       position: absolute;
       filter: drop-shadow(4px 10px 2px hsl(0, 0%, 0%, 20%));
+    }
+    .egg {
+      width: 60px;
+      position: absolute;
+      transform-origin: bottom;
+      animation: zoom-out 0.5s, dug-dig 1s infinite linear;
+    }
+    .chicken:hover, .egg:hover {
+      filter: brightness(80%);
     }
   
     .dirt {
@@ -51,15 +60,17 @@
       transform: scale(1.02);
     }
 
-    #introduction {
+    .screen {
       width: 100%;
       height: 100%;
+      z-index: 1;
       position: fixed;
       background: hsl(0, 0%, 0%, 60%);
       display: flex;
       justify-content: center;
       flex-direction: column;
       align-items: center;
+      animation: days-passed 0.75s;
     }
     #gamename{
       background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/839210241693712456/GameName.png");
@@ -85,12 +96,39 @@
       text-decoration: none;
       font-family: 'Paytone One', sans-serif;
     }
-    .button:hover {
+    .mini-button {
+      width: 200px;
+      height: 64px;
+      background: linear-gradient(228deg, rgba(148,114,36,1) 0%, rgba(242,178,28,1) 100%);
+      box-shadow: 4px 4px 0px 4px hsl(0, 0%, 0%, 20%);
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #eee;
+      margin: 12px;
+      font-size: 24px;
+      font-family: 'Paytone One', sans-serif;
+      position: absolute;
+      bottom: 2%;
+    }
+    .exit-button {
+      width: 48px;
+      margin: 12px;
+      position: absolute;
+      top: 2%;
+      right: 2%;
+    }
+    .button:hover, .mini-button:hover, .exit-button:hover {
       transform: scale(1.05);
       cursor: pointer;
     }
+    .button:active, .mini-button:active, .exit-button:active {
+      transform: scale(0.9);
+      cursor: pointer;
+    }
 
-    #tutorial {
+    .text-box {
       width: 46%;
       height: 76%;
       padding: 2%;
@@ -98,8 +136,8 @@
       left: 25%;
       transition: 0.25s;
       background: linear-gradient(282deg, rgba(66,33,19,1) 50%, rgba(64,44,36,1) 100%);
-      transform: scale(0);
       position: fixed;
+      transform: scale(0);
       box-shadow: 6px 6px hsl(0, 0%, 0%, 20%);
       font-family: 'Paytone One', sans-serif;
       color: #eee;
@@ -133,37 +171,58 @@
       font-family: 'Paytone One', sans-serif;
     }
 
-    #toolbar {
-      display: none;
+    .toolbar {
       width: 96px;
-      height: 480px;
+      display: none;
+      height: auto;
       background: rgb(200, 200, 200, 40%);
-      top: 300px;
-      left: 16px;
       position: absolute;
       border-radius: 16px;
-      animation: slide-right 1s;
+      animation: display 1s;
     }
     .tools {
       width: 100%;
-      height: 25%;
+      height: 120px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    #seed, #grow, #watercan, #sickle {
+    .cost {
+      width: 100%;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: #eee;
+      font-family: 'Paytone One', sans-serif;
+      text-shadow: 1px 1px 0px black, -1px 1px 0px black, 1px -1px 0px black, -1px -1px 0px black; 
+    }
+
+    #seed, #grow, #watercan, #sickle, #feed, #basket {
       width: 80%;
     }
     #seed:hover, #grow:hover, #watercan:hover, #sickle:hover {
       cursor: pointer;
-      transition: 0.1s;
-      transform: scale(1.2) translateX(12px);
+      transition: 0.25s;
+      transform: scale(1.1) translateX(8px);
+      filter: brightness(120%)
+    }
+    #feed:hover, #basket:hover {
+      cursor: pointer;
+      transition: 0.25s;
+      transform: scale(1.1) translateX(-8px);
       filter: brightness(120%)
     }
     #seed:active, #grow:active, #watercan:active, #sickle:active {
       cursor: pointer;
-      transition: 0.1s;
-      transform: scale(0.9) translateX(12px);
+      transition: 0.25s;
+      transform: scale(0.9) translateX(8px);
+    }
+    #feed:active, #basket:active {
+      cursor: pointer;
+      transition: 0.25s;
+      transform: scale(0.9) translateX(-8px);
     }
 
     #inseminate {
@@ -300,6 +359,16 @@
       animation: spinning-wheel 1s infinite linear;
     }
 
+    #endingtext {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12em;
+      font-family: 'Itim', cursive;
+      animation: text-ending 1s infinite;
+      text-shadow: 8px 8px 4px black, -8px 8px 4px black, 8px -8px 4px black, -8px -8px 4px black;
+    }
+
     @keyframes days-passed {
       from {opacity: 0;}
       to {opacity: 1;}
@@ -308,18 +377,34 @@
       from {transform: translateY(-128px);}
       to {transform: translateY(0px);}
     }
-    @keyframes slide-right {
-      from {transform: translateX(-128px);}
-      to {transform: translateX(0px);}
+    @keyframes display {
+      from {transform: scaleX(0);}
+      to {transform: scaleX(1);}
     }
     @keyframes zoom-out {
       from {transform: scale(0);}
       to {transform: scale(1);}
     }
+    @keyframes dug-dig {
+      20% {transform: rotateZ(0deg);}
+      40% {transform: rotateZ(-25deg);}
+      60% {transform: rotateZ(25deg);}
+      80% {transform: rotateZ(0deg);}
+    }
+    @keyframes text-ending {
+      20% {transform: rotateZ(0deg);}
+      40% {transform: rotateZ(-5deg);}
+      60% {transform: rotateZ(5deg);}
+      80% {transform: rotateZ(0deg);}
+    }
     @keyframes disappear {
       0% {transform: scale(1);}
       99% {transform: scale(1);}
       100% {transform: scale(0);}
+    }
+    @keyframes collect {
+      from {transform: translateY(0px); opacity: 1;}
+      to {transform: translateY(-1200px); opacity: 1;}
     }
     @keyframes walk-step {
       0% {transform: translateX(0px) scaleX(1)}
@@ -339,8 +424,8 @@
       100% {transform: translateX(0px) scaleX(-1);}
     }
     @keyframes jump {
-      50% {top: 78%;}
-      100% {top: 80%;}
+      50% {top: 74%;}
+      100% {top: 76%;}
     }
     @keyframes sprinkle {
       from {transform: translateY(-32px); opacity: 0;}
@@ -378,11 +463,25 @@
   <body>
     <div id="backgroundnoon"></div>
     <div id="backgrounddust"></div> <!-- ในครั้งแรกจะเป็นรูปเดียวกับ backgroundnoon แต่เมื่อเผาค่อยทำการเปลี่ยนรูป -->
-    <div id="backgroundnight"></div>
+    <!-- <div id="backgroundnight"></div> -->
 
-    <img id="chicken0" class="chicken" style="top: 80%; right: 20%; animation: walk 6s infinite linear, jump 1s infinite ease-out;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
-    <img id="chicken1" class="chicken" style="top: 65%; right: 15%; animation: walk-step 12s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
-    <img id="chicken2" class="chicken" style="top: 50%; right: 25%; animation: walk 8s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
+    <div id="introduction" class="screen"> <!-- หน้าโหลดเกมทั้งหมด -->
+      <div id="gamename"></div>
+      <div class="button" onclick="startGame(); body.requestFullscreen();">START</div> <!-- เปิดโหมดเต็มจอ fullscreen -->
+      <div id="howtoplay" class="button" onclick="javascript: tutorial.style.transform = 'scale(1)'">HOW TO PLAY</div>
+      <div id="tutorial" class="text-box">
+        <h2>Tutorial</h2>
+        <p>asdasdasdasdasdasd123456</p>
+        <img class="exit-button" onclick="javascript: tutorial.style.transform = 'scale(0)'" src="https://cdn.discordapp.com/attachments/750412142351614163/845647750783565844/remove.png">
+      </div>
+      <a class="button" href="index.html" target="_blank">LANDING PAGE</a>
+      <div class="button" onclick="gameOver('bad')">CREDIT</div> <!-- ปุ่มสำหรับทดสอบ clearCorn() -->
+    </div>
+
+    <img onclick="chickenFeeding(this)" class="chicken" style="top: 76%; right: 10%; animation: jump 0.5s infinite linear alternate;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
+    <img onclick="chickenFeeding(this)" class="chicken" style="top: 50%; right: 25%; animation: walk 8s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
+    <img onclick="chickenFeeding(this)" class="chicken" style="top: 64%; right: 15%; animation: walk-step 12s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
+    <img onclick="chickenFeeding(this)" class="chicken" style="top: 76%; right: 20%; animation: walk 6s infinite linear, jump 1s infinite ease-out;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
 
     <div id="scoreboard">
       <div class="scorebox">
@@ -399,23 +498,50 @@
       </div>
       <div class="scorebox">
         <img src="https://cdn.discordapp.com/attachments/750412142351614163/845224823583932446/egg.png" style="height: 60%; margin-right: 6%;">
-        <div id="scoreegg">0/6</div> <!-- target -->
+        <div id="scoreegg">0/8</div> <!-- target -->
       </div>
     </div>
 
-    <div id="toolbar"> <!-- เครื่องมือ 3 ชนิด -->
+    <div class="toolbar" style="top: 204px; left: 16px;"> <!-- เครื่องมือ 3 ชนิด -->
       <div class="tools">
         <img id="seed" onclick="pickingItem('seed')" src="https://cdn.discordapp.com/attachments/807588926332207136/838128426979819540/cornseed.png">
+      </div>
+      <div class="cost">
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844605652902739968/money.png" style="height: 50%; margin-right: 8%;">
+        2
       </div>
       <div class="tools">
         <img id="grow" onclick="pickingItem('manure')" src="https://cdn.discordapp.com/attachments/807588926332207136/840890408551579698/grow.png">
       </div>
+      <div class="cost">
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844605652902739968/money.png" style="height: 50%; margin-right: 8%;">
+        9
+      </div>
       <div class="tools">
         <img id="watercan" onclick="pickingItem('water')" src="https://cdn.discordapp.com/attachments/807588926332207136/838128421468897310/watercan.png">
+      </div>
+      <div class="cost">
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844605652902739968/money.png" style="height: 50%; margin-right: 8%;">
+        3
       </div>
       <div class="tools">
         <img id="sickle" onclick="pickingItem('sickle')" src="https://cdn.discordapp.com/attachments/750412142351614163/844621448055357450/sickle.png">
       </div>
+      <div class="cost">FREE</div>
+    </div>
+
+    <div class="toolbar" style="top: 372px; right: 16px;">
+      <div class="tools">
+        <img id="feed" onclick="pickingItem('feed')" src="https://cdn.discordapp.com/attachments/750412142351614163/845246018999025704/chicken-rice.png">
+      </div>
+      <div class="cost">
+        <img src="https://cdn.discordapp.com/attachments/807588926332207136/838128363230855168/corn.png" style="height: 80%; margin-right: 8%;">
+        2
+      </div>
+      <div class="tools">
+        <img id="basket" onclick="pickingItem('basket')" src="https://cdn.discordapp.com/attachments/750412142351614163/845225254392823818/wicker-basket.png">
+      </div>
+      <div class="cost">FREE</div>
     </div>
 
     <div class="dirt" onclick="cornPlanting(this, 0)" style="top: 65%; left: 10%;"></div> <!-- this คือ ส่งค่า Element ไปยังฟังชัน -->
@@ -426,21 +552,6 @@
     <div class="dirt" onclick="cornPlanting(this, 5)" style="top: 79%; left: 16%;"></div>
     <div class="dirt" onclick="cornPlanting(this, 6)" style="top: 78%; left: 24%;"></div>
     <div class="dirt" onclick="cornPlanting(this, 7)" style="top: 77%; left: 32%;"></div>
-
-    <div id="introduction"> <!-- หน้าโหลดเกมทั้งหมด -->
-      <div id="gamename"></div>
-      <div class="button" onclick="startGame(); body.requestFullscreen();">START</div> <!-- เปิดโหมดเต็มจอ fullscreen -->
-      <div class="button" onclick="javascript: tutorial.style.transform = `scale(1)`">HOW TO PLAY</div>
-        <div id="tutorial">
-          <h1>Tutorial</h1>
-          <p>how to play<br>
-            bla bla bla bla
-          </p>
-          <div class="button" onclick="javascript: tutorial.style.transform = `scale(0)`" style="position: absolute; bottom: 1%; left: 1%; width: 20%; height: 64px; font-size: 24px;">BACK</div>
-        </div>
-      <a class="button" href="index.html" target="_blank">LANDING PAGE</a>
-      <div class="button" onclick="clearCorn()">CREDIT</div> <!-- ปุ่มสำหรับทดสอบ clearCorn() -->
-    </div>
  
     <div id="clearchoice"> <!-- เงื่อนไขการกำจัดซากข้าวโพด (ถูกซ่อนอยู่ โดย scale(0)) -->
       <div class="clearchoice-text">ข้าวโพดหลังจากเก็บเกี่ยวแล้วยังเหลือซากข้าวโพดอยู่<br>คุณต้องการทำลายซากข้าวโพดด้วยวิธีไหน</div>
@@ -452,13 +563,31 @@
       </div>
       <div class="caption"> <!-- ค่าสิ่งแวดล้อมที่ต้องจ่าย -->
         <img src="https://cdn.discordapp.com/attachments/750412142351614163/844608248694308864/planet-earth.png" style="height: 80%; margin-right: 5%;">
-        -76
+        38
       </div>
       <div class="caption"> <!-- ราคาที่ต้องจ่าย -->
         <img src="https://cdn.discordapp.com/attachments/750412142351614163/844605652902739968/money.png" style="height: 70%; margin-right: 5%;">
-        -399
+        399
       </div>
     </div>
+
+    <div id="gameover" class="screen" style="visibility: hidden;">
+      <div id="endingtext"></div>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <div class="button" onclick="javascript: showDialog(); dialog.style.transform = 'scale(1)';" style="width: 240px">Result</div>
+        <div class="button" style="width: 240px; background: #009900;">Restart</div>
+      </div>
+      <div id="dialog" class="text-box" style="display: flex; justify-content: center; align-items: center; height: 56%; top: 20%;">
+        <p id="message"></p>
+        <img class="exit-button" onclick="javascript: dialog.style.transform = 'scale(0)'" src="https://cdn.discordapp.com/attachments/750412142351614163/845647750783565844/remove.png">
+        <div id="backbutton" class="mini-button" onclick="javascript: next--; showDialog()" style="left: 2%;">Back</div>
+        <div id="nextbutton" class="mini-button" onclick="javascript: next++;  showDialog()" style="right: 2%;">Next</div>
+      </div>
+    </div>
+
+    <div id="cornfield"></div>
+    <div id="chickenfield"></div>
+
   </body>
 
   <script>
@@ -476,10 +605,12 @@
                      "https://cdn.discordapp.com/attachments/807588926332207136/838128403177275432/corngrow4.png"
                     ]; // รูปลำดับการโตข้าวโพด
 
-    var cursor = {seed:"url('https://ani.cursors-4u.net/games/gam-16/gam1549.cur'), auto",
+    var cursor = {seed:"url('Game/pic/sesame.svg'), auto",
                   manure:"url('https://cur.cursors-4u.net/others/oth-2/oth192.cur'), auto",
                   water:"url('https://cur.cursors-4u.net/others/oth-5/oth440.cur'), auto",
-                  sickle:"move" // ยังหา sickle ไม่ได้
+                  sickle:"move", // ยังหา sickle ไม่ได้
+                  feed:"help", // ยังหา feed ไม่ได้
+                  basket:"text" // ยังหา basket ไม่ได้
                  }; // เปลี่ยน cursor ตามชื่อ item (คล้ายๆ dict ใน Python)
 
     var money = 1000;
@@ -487,10 +618,25 @@
     var scorecorn = 0;
     var scoreegg = 0;
 
+    var next = 0;
+    var textBad = ["badbadbadbadbadbadb0",
+                   "badbadbadbadbadbabd1",
+                   "badbadbadbadbadbabd2",
+                   "badbadbadbadbadbabd3",
+                   "badbadbadbadbadbabd4"
+                  ];
+    var textGood = ["goodgoodgoodgoodgoodgoodb0",
+                   "goodgoodgoodgoodgoodbabd1",
+                   "goodgoodgoodgoodgoodbabd2",
+                   "goodgoodgoodgoodgoodbabd3",
+                   "goodgoodgoodgoodgoodbabd4"
+                  ];
+
     function startGame() {
-      introduction.style.display = `none`;
+      introduction.style.visibility = `hidden`;
       scoreboard.style.display = `flex`;
-      document.getElementById("toolbar").style.display = `initial`;
+      document.getElementsByClassName("toolbar")[0].style.display = `initial`;
+      document.getElementsByClassName("toolbar")[1].style.display = `initial`;
     }
 
     function pickingItem(item) { // หยิบไอเท็ม
@@ -506,26 +652,29 @@
     function cornPlanting(obj, n) { // obj คือค่า Elements ที่รับมากจาก HTMl, n คือ ทำแหน่งของแปลงนั้นๆ (0-5)
       if (pick == "seed" && empty[n]) { // เช็คว่าหยิบเมล็ดอยู่ และแปลงดินว่างไหม
         obj.innerHTML = `<img id="inseminate" src="https://cdn.discordapp.com/attachments/807588926332207136/840874382506459136/corngrow.png">`;
-        money -= 5;
+        money -= 2;
+        checkMoney(money);
         empty[n] = false; // ทำให้แปลงดินไม่ว่าง
       } else if (pick == "water" && manured[n] && !empty[n] && !ready[n]) { // เช็คว่าหยิบน้ำ และใส่ปุ๋ยแล้ว และแปลงดิน *ไม่* ว่าง และข้าวโพดยังไม่พร้อมเก็บ
         obj.innerHTML = `<img id="corngrow${level[n]}" src="${growImage[level[n]]}">`;
-        money -= 7;
+        money -= 3;
+        checkMoney(money);
         manured[n] = false; // ให้ค่าใส่ปุ๋ยแล้วเป็นเท็จ
         if (level[n] == 3) { // ถ้าค่าความโตเท่ากับ 4 ให้ทำ สถานะข้าวโพดพร้อมเก็บเกี่ยว
           ready[n] = true; // สถานะพร้อมเก็บเกี่ยวเป็นจริง
           level[n] = 0; // รีเซ็ตค่าความโต
-          return 0; // จบการทำงาน function()
+        } else { // common condition
+          level[n]++; // เพิ่มระดับการโตเพื่อใช้ในรอบถัดไป
         }
-        level[n]++; // เพิ่มระดับการโตเพื่อใช้ในรอบถัดไป
       } else if (pick == "manure" && !manured[n] && !empty[n] && !ready[n]) {
         obj.innerHTML += `<img id="manure" src="https://cdn.discordapp.com/attachments/750412142351614163/844506227077021716/soil-for-growing-plants-pile-ground-heap-of-vector-35431631-removebg-preview.png">`; // แสดงปุ๋ยในแปลง
         money -= 9;
+        checkMoney(money);
         manured[n] = true; // ให้ค่าใส่ปุ๋ยแล้วเป็นจริง
       } else if (pick == "sickle" && ready[n]) {
         obj.innerHTML = `<img id="corngrow2" src="${growImage[2]}" style="filter: sepia(100%)">`; // แสดงต้นข้าวโพดที่แห้งแล้ว (เหลือแต่ซาก)
-        money += 36;
-        document.getElementById("scorecorn").innerText = scorecorn++; // ข้าวโพดเพิ่ม 1
+        scorecorn++; // ข้าวโพดเพิ่ม 1
+        document.getElementById("scorecorn").innerText = scorecorn;
         ready[n] = false; // รีเซ็ตค่า
         harvested++; // เพิ่มต้นที่เก็บแล้ว
         if (harvested == 8) { // เงื่อนไขที่เตรียมเก็บเกี่ยวฟาร์ม
@@ -536,17 +685,61 @@
       document.getElementById("money").innerText = money; // แสดงค่าเงินในทุกๆ รอบที่มี action 
     }
 
+    function checkMoney(currentMoney) {
+      if (currentMoney <= 0) {
+        gameOver("good");
+      }
+    }
+
+    function chickenFeeding(obj) {
+      if (pick == "feed" && scorecorn >= 2) {
+        var egg = document.createElement("IMG");
+        egg.setAttribute("class", "egg");
+        egg.setAttribute("onclick", "collectEgg(this)");
+        egg.setAttribute("style", `top: ${60 + Math.floor(Math.random() * 30)}%; right: ${10 + Math.floor(Math.random() * 35)}%`);
+        egg.setAttribute("src", "https://cdn.discordapp.com/attachments/750412142351614163/845224823583932446/egg.png");
+        chickenfield.appendChild(egg);
+        scorecorn -= 2;
+        document.getElementById("scorecorn").innerText = scorecorn;
+      }
+    }
+
+    function collectEgg(obj) {
+      if (pick == "basket") {
+        scoreegg++;
+        obj.style.transform = "translateY(-1200px)";
+        obj.style.opacity = "0";
+        obj.style.animation = "collect 2s";
+        document.getElementById("scoreegg").innerText = `${scoreegg}/8`;
+        if (scoreegg == 8) {
+          gameOver("bad");
+        }
+      }
+    }
+
     function clearCorn() {
       clearchoice.style.transform = "scale(1)"; // แสดงเงื่อนไขการเก็บเกี่ยว
+      if (money < 399) {
+        document.getElementsByClassName("clearchoice-button")[1].style.filter = "grayscale(100%)";
+        document.getElementsByClassName("caption")[1].style.color = "red";
+      }
     }
 
     function burning() {
       clearchoice.style.transform = "scale(0)"; // ซ่อนเงื่อนไขการเก็บเกี่ยว 
-      document.getElementById("environment").innerText = environment-=76; // สิ่งแวดล้อมลด
-      document.body.innerHTML += `<img id="smoke" src="https://cdn.discordapp.com/attachments/750412142351614163/845201893747326987/Pngtreesmoke_cartoon_creative_smoke_brush_3846011.png">`; // ควัน
+      document.getElementById("environment").innerText = environment-=38; // สิ่งแวดล้อมลด
+      cornfield.innerHTML += `<img id="smoke" src="https://cdn.discordapp.com/attachments/750412142351614163/845201893747326987/Pngtreesmoke_cartoon_creative_smoke_brush_3846011.png">`; // ควัน
       backgrounddust.style.animation = "days-passed 8s"; // เปลี่ยนพื้นหลัง
       backgrounddust.style.filter = "grayscale(40%) sepia(10%)"; // เปลี่ยนพื้นหลัง
       backgrounddust.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/807588926332207136/838128469472444456/bg2.png')"; // เปลี่ยนพื้นหลัง
+      if (environment <= 24) {
+        backgroundnoon.style.filter = "grayscale(80%) sepia(20%)"; // เปลี่ยนพื้นหลัง
+        backgroundnoon.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/807588926332207136/838128469472444456/bg2.png')";
+        // backgrounddust.style.animation = "days-passed 8s"; // เปลี่ยนพื้นหลัง
+        backgrounddust.style.transition = "8s"; // เปลี่ยนพื้นหลัง
+        backgrounddust.style.filter = "opacity(40%)"; // เปลี่ยนพื้นหลัง
+        backgrounddust.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/807588926332207136/838128472824086578/bg3.png')"; // เปลี่ยนพื้นหลัง
+      }
       for (let i=0; i<8; i++) {
         empty[i] = true; // ให้ดินทุกแปลงว่าง
         document.getElementsByClassName("dirt")[i].innerHTML = `<img id="corngrow2" src="${growImage[2]}" style="transform: scale(0); animation: burn 8s linear;">`; // ต้นข้าวโพดที่ไหม้เกรียม
@@ -555,10 +748,13 @@
     }
 
     function tractor() {
+      if (money < 399) {
+        return 0;
+      }
       clearchoice.style.transform = "scale(0)"; // ซ่อนเงื่อนไขการเก็บเกี่ยว
       let dirt = [3, 2, 1, 0, 4, 5, 6, 7], timing = [1, 3, 5, 7.5, 9, 11, 13, 15.5]; // dirt คือตำแหน่งของ class 'dirt' ที่เรียงตามรถไถวิ่งผ่าน, timing คือ เวลาที่จะให้ข้าวโพดหายไป
       document.getElementById("money").innerText = money-=399;
-      document.body.innerHTML += `<div class="tractor">
+      cornfield.innerHTML += `<div class="tractor">
                                     <img class="tractor-body" src="https://cdn.discordapp.com/attachments/807588926332207136/840918575018672188/car.png">
                                     <img class="wheel-front" src="https://cdn.discordapp.com/attachments/750412142351614163/844514104131321897/vector-tractor-tire-illustration-removebg-preview.png">
                                     <img class="wheel-back" src="https://cdn.discordapp.com/attachments/750412142351614163/844514104131321897/vector-tractor-tire-illustration-removebg-preview.png">
@@ -566,6 +762,38 @@
       for (let i=0; i<8; i++) { // loop เพื่อลดบรรทัด
         empty[i] = true; // ให้ดินทุกแปลงว่าง
         document.getElementsByClassName("dirt")[dirt[i]].innerHTML = `<img id="corngrow2" src="${growImage[2]}" style="filter: sepia(100%); transform: scale(0); animation: disappear ${timing[i]}s;">`; // ใส่ animation ให้ต้นโพดค่อยๆ หาย
+      }
+    }
+
+    function gameOver(ending) {
+      gameover.style.visibility = "visible";
+      if (ending == "bad") {
+        endingtext.innerText = "You Won";
+        endingtext.style.color = "green";
+      } else if (ending == "good") {
+        endingtext.innerText = "You Failed";
+        endingtext.style.color = "red";
+      }
+      document.style.cursor = "initial";
+    }
+
+    function showDialog() { // ยังไม่เสร็จจจ
+      if (endingtext.innerText === "You Won") {
+        message.innerHTML = `${textBad[next]}`;
+      } else if (endingtext.innerText === "You Failed") { 
+        message.innerHTML = `${textGood[next]}`;
+      }
+      if (next < 4) {
+        nextbutton.style.visibility = "visible";
+      }
+      if (next == 4) {
+        nextbutton.style.visibility = "hidden";
+      }
+      if (next >= 1) {
+        backbutton.style.visibility = "visible";
+      }
+      if (next == 0) {
+        backbutton.style.visibility = "hidden";
       }
     }
   </script>
