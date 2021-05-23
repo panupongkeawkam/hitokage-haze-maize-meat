@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
   
   </head>
 
@@ -14,6 +15,16 @@
       width: 1920px;
       height: 1080px;
       position: relative;
+    }
+    
+    p,h2,h3{
+      line-height: 20px;
+    }
+    p {
+      text-indent: 20px;
+    }
+    h2 {
+      text-align: center;
     }
     #background1, #background2 {
       width: 100%;
@@ -123,22 +134,23 @@
 
     .text-box {
       z-index: 2;
-      width: 46%;
-      height: 76%;
-      padding: 2%;
-      top: 10%;
+      width: 40%;
+      height: 60%;
+      padding: 5%;
+      top: 15%;
       left: 25%;
       transition: 0.25s;
       background: linear-gradient(282deg, rgba(66,33,19,1) 50%, rgba(64,44,36,1) 100%);
       position: fixed;
       transform: scale(0);
       box-shadow: 6px 6px hsl(0, 0%, 0%, 20%);
-      font-family: 'Paytone One', sans-serif;
+      font-family: 'Itim', cursive;
       color: #eee;
-      font-size: 1.5em;
+      font-size: 1.4em;
       border-radius: 60px;
+      line-height: 40px;
     }
-
+    
     #settingbutton {
       display: none;
       width: 72px;
@@ -504,14 +516,23 @@
       <div class="button" onclick="startGame(); body.requestFullscreen();">START</div> <!-- เปิดโหมดเต็มจอ fullscreen -->
       <div id="howtoplay" class="button" onclick="javascript: tutorial.style.transform = 'scale(1)'">HOW TO PLAY</div>
       <a class="button" href="index.html" target="_blank">LANDING PAGE</a>
-      <!-- <div class="button" onclick="gameOver('bad')">TEST</div> -->
+      <div class="button" onclick="gameOver('good')">TEST</div> <!-- gameover button -->
     </div>
 
     <div id="tutorial" class="text-box">
-      <h2>Tutorial</h2>
-      <p>1. asdasdasdasdasdasd123456<br>
-         2. asdagakhrgilerghlerghgrg<br>
-         3. askjdkhgfaslfghkjdsfhg</p>
+      <h2>วิธีการเล่นและเป้าหมายของเกม</h2>
+      <h3>เป้าหมายของเกม</h3>
+        <p>ให้คุณปลูกข้าวโพดและเก็บไข่ให้ครบ 8 ฟอง<br></p>
+      <h3>วิธีการเล่น</h3>
+        <p>1.ปลูกเมล็ดข้าวโพดโดยเลือกรูปเมล็ดจากเมนูด้านซ้าย<br></p>
+        <p>2.ใส่ปุ๋ยลงที่ต้นข้าวโพดโดยเลือกรูปถุงปุ๋ยจากเมนูด้านซ้าย<br></p>
+        <p>3.รดน้ำลงที่ต้นข้าวโพดเพื่อให้ข้าวโพดโตขึ้นโดยเลือกรูปฝักบัวจากเมนูด้านซ้าย<br></p>
+        <p>4.เมื่อข้าวโพดโตเต็มที่ให้เลือกรูปเคียวเพื่อน้ำมาเก็บเกี่ยวข้าวโพดจากเมนูด้านซ้าย<br></p>
+        <p>5.เลือกวิธีการกำจัดซากข้าวโพดที่คุณต้องการ<br></p>
+        <p>6.นำข้าวโพดที่เก็บเกี่ยวมาให้อาหารไก่โดยเลือกรูปอาหารไก่จากเมนูด้านขวา<br>
+        <p>7.เก็บไข่ไก่หลังจากให้อาหารไก่จนไข่ไก่ครบ 8 ฟอง<br></p>
+      <h3>ข้อควรระวัง</h3>
+        <p>1.ถ้าหากเงินผู้เล่นหมดก่อนนั้นแสดงว่าผู้เล่นได้แพ้</p>
       <img class="exit-button" onclick="javascript: tutorial.style.transform = 'scale(0)'" src="https://cdn.discordapp.com/attachments/750412142351614163/845647750783565844/remove.png">
     </div>
 
@@ -622,7 +643,7 @@
         <div class="button" onclick="javascript: location.reload()" style="width: 240px; background: #009900;">Restart</div>
       </div>
       <div id="dialog" class="text-box" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; height: 56%; top: 20%;">
-        <p id="message"></p>
+        <div id="message"></div>
         <div id="learnmore" style="display: none; justify-content: center; align-items: center">
           <a class="button" href="index.html" target="_blank" style="width: 240px; font-size: 24px">Landing Page</a>
           <a class="button" href="https://www.greenpeace.org/thailand/" target="_blank" style="width: 240px; background: #009900; font-size: 24px">Greenpeace</a>
@@ -667,17 +688,19 @@
     var scoreegg = 0;
 
     var next = 0; // next dialog message (index)
-    var textBad = ["badbadbadbadbadbadb0<br>badbadbadbadbadbadbad0",
-                   "badbadbadbadbadbabd1",
-                   "badbadbadbadbadbabd2",
-                   "badbadbadbadbadbabd3",
-                   "badbadbadbadbadbabd4"
+    var textBad = ["ยินดีด้วยคุณชนะแล้ว<br>เพราะคุณได้ยอดถึงเป้าหมายตามที่กำหนดไว้<br>แต่คุณรู้ไหมว่า?...",
+                   "คุณลองดูสภาพอากาศและท้องฟ้าซิ :(<br>แม้คุณจะชนะก็ตามแต่...<br>สิ่งแวดล้อมและสภาพอากาศของคุณก็เต็มไปด้วยมลพิษ",
+                   "เพราะคุณเลือกใช้การเผาแทนที่การใช้รถไถในการกำจัดซากข้าวโพด<br>จีงทำให้คุณมีต้นทุนที่ต่ำกว่าแต่...<br>สภาพอากาศและสภาพแวดล้อมของคุณก็ย่ำแย่ T_T",
+                   "แต่ถ้าหากคุณเลือกใช้รถไถคุณอาจจะมีต้นทุนที่เพิ่มมากขึ้น<br>แต่คุณจะทำให้สิ่งแวดล้อมและสภาพอากาศไม่เป็นมลพิษและน่าอยู่ขึ้น",
+                   "แต่ถึงยังไงคุณก็เป็นผู้ชนะเราจึงขอยินดีด้วยที่...<br>คุณได้ทำลายสภาพอากาศและสิ่งแวดล้อม<br>จากการเผาซากข้าวโพดของคุณจนทำให้อากาศเป็นมลพิษ",
+                   "สามารถหาข้อมูลเพิ่มเกี่ยวกับปัญหาหมอกควันจากอุตสาหกรรมหรือ<br>Haze-Maze-Meat-Industry<br>ผ่าน Landing page ของเราหรือ Greenpeace Official ได้เลย"
                   ];
-    var textGood = ["goodgoodgoodgoodgoodgoodb0",
-                   "goodgoodgoodgoodgoodbabd1",
-                   "goodgoodgoodgoodgoodbabd2",
-                   "goodgoodgoodgoodgoodbabd3",
-                   "goodgoodgoodgoodgoodbabd4"
+    var textGood = ["เสียใจด้วยคุณแพ้แล้ว<br>เพราะคุณได้ยอดไม่ถึงเป้าหมายตามที่กำหนดไว้<br>แต่คุณรู้ไหมว่า?...",
+                   "คุณลองดูสภาพอากาศและท้องฟ้าซิ :D<br>แม้คุณจะแพ้แต่...<br>สภาพอากาศและท้องฟ้าของคุณก็แจ่มใส",
+                   "เพราะคุณเลือกใช้รถไถแทนการเผาในการกำจัดซากข้าวโพด<br>แม้จะมีต้นทุนที่สูงแต่ก็ช่วยให้สภาพอากาศน่าอยู่ขึ้น",
+                   "แต่ถ้าคุณเลือกการเผาต้นทุนของคุณจะน้อยลงแต่...<br>สิ่งแวดล้อมแถวนั้นจะเต็มไปด้วยมลพิษและไม่น่าอยู่",
+                   "ดังนั้นไม่ต้องเสียใจที่คุณแพ้และกำไรน้อย<br>เพราะคุณคือหนึ่งในคนที่ช่วยรักษาสิ่งแวดล้อมให้แก่โลกของเรา :)",
+                   "สามารถหาข้อมูลเพิ่มเกี่ยวกับปัญหาหมอกควันจากอุตสาหกรรมหรือ<br>Haze-Maze-Meat-Industry<br>ผ่าน Landing page ของเราหรือ Greenpeace Official ได้เลย"
                   ];
 
     function startGame() {
@@ -843,11 +866,11 @@
       } else if (endingtext.innerText === "You Failed") { 
         message.innerHTML = `${textGood[next]}`;
       }
-      if (next < 4) {
+      if (next < 5) {
         learnmore.style.display = "none";
         nextbutton.style.visibility = "visible";
       }
-      if (next == 4) {
+      if (next == 5) {
         learnmore.style.display = "flex";
         nextbutton.style.visibility = "hidden";
       }
