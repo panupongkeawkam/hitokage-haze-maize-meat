@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
   
   </head>
-
   <style>
     body {
       margin: 0%;
@@ -16,16 +15,20 @@
       height: 1080px;
       position: relative;
     }
-    
-    p,h2,h3{
+    p, h2, h3 {
       line-height: 20px;
     }
     p {
       text-indent: 20px;
     }
     h2 {
+      color: rgba(188, 154, 46, 100%);
       text-align: center;
     }
+    h3 {
+      font-style: italic;
+    }
+
     #background1, #background2 {
       width: 100%;
       height: 100%;
@@ -134,11 +137,11 @@
 
     .text-box {
       z-index: 2;
-      width: 40%;
-      height: 60%;
-      padding: 5%;
-      top: 15%;
-      left: 25%;
+      width: 840px;
+      height: 720px;
+      padding: 60px;
+      top: 120px;
+      left: 480px;
       transition: 0.25s;
       background: linear-gradient(282deg, rgba(66,33,19,1) 50%, rgba(64,44,36,1) 100%);
       position: fixed;
@@ -157,7 +160,6 @@
       position: absolute;
       top: 2%;
       right: 2%;
-      /* animation: zoom-out 0.25s, spinning-wheel 1s; */
     }
     #settingbutton:hover {
       transform: rotateZ(45deg);
@@ -506,7 +508,6 @@
       100% {transform: scaleX(-1) translateX(0px) translateY(160px); opacity: 0;}
     }
   </style>
-
   <body>
     <div id="background1"></div>
     <div id="background2"></div>
@@ -516,7 +517,7 @@
       <div class="button" onclick="startGame(); body.requestFullscreen();">START</div> <!-- เปิดโหมดเต็มจอ fullscreen -->
       <div id="howtoplay" class="button" onclick="javascript: tutorial.style.transform = 'scale(1)'">HOW TO PLAY</div>
       <a class="button" href="index.html" target="_blank">LANDING PAGE</a>
-      <div class="button" onclick="gameOver('good')">TEST</div> <!-- gameover button -->
+      <!-- <div class="button" onclick="gameOver('bad')">TEST</div> -->
     </div>
 
     <div id="tutorial" class="text-box">
@@ -524,15 +525,15 @@
       <h3>เป้าหมายของเกม</h3>
         <p>ให้คุณปลูกข้าวโพดและเก็บไข่ให้ครบ 8 ฟอง<br></p>
       <h3>วิธีการเล่น</h3>
-        <p>1.ปลูกเมล็ดข้าวโพดโดยเลือกรูปเมล็ดจากเมนูด้านซ้าย<br></p>
-        <p>2.ใส่ปุ๋ยลงที่ต้นข้าวโพดโดยเลือกรูปถุงปุ๋ยจากเมนูด้านซ้าย<br></p>
-        <p>3.รดน้ำลงที่ต้นข้าวโพดเพื่อให้ข้าวโพดโตขึ้นโดยเลือกรูปฝักบัวจากเมนูด้านซ้าย<br></p>
-        <p>4.เมื่อข้าวโพดโตเต็มที่ให้เลือกรูปเคียวเพื่อน้ำมาเก็บเกี่ยวข้าวโพดจากเมนูด้านซ้าย<br></p>
-        <p>5.เลือกวิธีการกำจัดซากข้าวโพดที่คุณต้องการ<br></p>
-        <p>6.นำข้าวโพดที่เก็บเกี่ยวมาให้อาหารไก่โดยเลือกรูปอาหารไก่จากเมนูด้านขวา<br>
-        <p>7.เก็บไข่ไก่หลังจากให้อาหารไก่จนไข่ไก่ครบ 8 ฟอง<br></p>
+        <p>1. ปลูกเมล็ดข้าวโพดโดยเลือกรูปเมล็ดจากเมนูด้านซ้าย<br></p>
+        <p>2. ใส่ปุ๋ยลงที่ต้นข้าวโพดโดยเลือกรูปถุงปุ๋ยจากเมนูด้านซ้าย<br></p>
+        <p>3. รดน้ำลงที่ต้นข้าวโพดเพื่อให้ข้าวโพดโตขึ้นโดยเลือกรูปฝักบัวจากเมนูด้านซ้าย<br></p>
+        <p>4. เมื่อข้าวโพดโตเต็มที่ให้เลือกรูปเคียวเพื่อน้ำมาเก็บเกี่ยวข้าวโพดจากเมนูด้านซ้าย<br></p>
+        <p>5. เลือกวิธีการกำจัดซากข้าวโพดที่คุณต้องการ<br></p>
+        <p>6. นำข้าวโพดที่เก็บเกี่ยวมาให้อาหารไก่โดยเลือกรูปอาหารไก่จากเมนูด้านขวา<br>
+        <p>7. เก็บไข่ไก่หลังจากให้อาหารไก่จนไข่ไก่ครบ 8 ฟอง<br></p>
       <h3>ข้อควรระวัง</h3>
-        <p>1.ถ้าหากเงินผู้เล่นหมดก่อนนั้นแสดงว่าผู้เล่นได้แพ้</p>
+        <p>ถ้าหากเงินผู้เล่นหมดก่อนนั้นแสดงว่าผู้เล่นได้แพ้</p>
       <img class="exit-button" onclick="javascript: tutorial.style.transform = 'scale(0)'" src="https://cdn.discordapp.com/attachments/750412142351614163/845647750783565844/remove.png">
     </div>
 
@@ -642,16 +643,22 @@
         <div class="button" onclick="javascript: showDialog(); dialog.style.transform = 'scale(1)';" style="width: 240px">Result</div>
         <div class="button" onclick="javascript: location.reload()" style="width: 240px; background: #009900;">Restart</div>
       </div>
-      <div id="dialog" class="text-box" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; height: 56%; top: 20%;">
-        <div id="message"></div>
+      <div id="dialog" class="text-box" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; height: 360px; top: 300px;">
+        <div id="message" style="font-size: 32px;"></div>
         <div id="learnmore" style="display: none; justify-content: center; align-items: center">
-          <a class="button" href="index.html" target="_blank" style="width: 240px; font-size: 24px">Landing Page</a>
-          <a class="button" href="https://www.greenpeace.org/thailand/" target="_blank" style="width: 240px; background: #009900; font-size: 24px">Greenpeace</a>
+          <a class="button" href="index.html" target="_blank" style="width: 240px; font-size: 24px; border-radius: 12px; background: #2c6c74;">Landing Page</a>
+          <a class="button" href="https://www.greenpeace.org/thailand/" target="_blank" style="width: 240px; background: #2c6c74; font-size: 24px; border-radius: 12px;">Greenpeace</a>
         </div>
         <img class="exit-button" onclick="javascript: dialog.style.transform = 'scale(0)'" src="https://cdn.discordapp.com/attachments/750412142351614163/845647750783565844/remove.png">
         <div id="backbutton" class="mini-button" onclick="javascript: next--; showDialog()" style="left: 2%;">Back</div>
         <div id="nextbutton" class="mini-button" onclick="javascript: next++;  showDialog()" style="right: 2%;">Next</div>
       </div>
+    </div>
+
+    <div id="errorcondition" class="text-box" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; height: 360px; top: 300px; font-size: 32px;">
+      <img class="exit-button" onclick="javascript: errorcondition.style.transform = 'scale(0)'" src="https://cdn.discordapp.com/attachments/750412142351614163/845647750783565844/remove.png">
+      เอ๊ะ! เหมือนคุณจะลืมให้อาหารไก่และเก็บไข่นะ<br>
+      ไปให้อาหารไก่และเก็บไข่ก่อนที่จะปลูกก่อนดีกว่าไหม
     </div>
 
     <div id="cornfield"></div>
@@ -723,6 +730,10 @@
 
     function cornPlanting(obj, n) { // obj คือค่า Elements ที่รับมากจาก HTMl, n คือ ทำแหน่งของแปลงนั้นๆ (0-5)
       if (pick == "seed" && empty[n]) { // เช็คว่าหยิบเมล็ดอยู่ และแปลงดินว่างไหม
+        if (scorecorn != 0 || stillegg) {
+          errorcondition.style.transform = "scale(1)";
+          return 0;
+        }
         obj.innerHTML = `<img id="inseminate" src="https://cdn.discordapp.com/attachments/807588926332207136/840874382506459136/corngrow.png">`;
         money -= 2;
         checkMoney();
@@ -763,6 +774,8 @@
       }
     }
 
+    var stillegg = false;
+
     function chickenFeeding(obj) {
       if (pick == "feed" && scorecorn >= 2) {
         var egg = document.createElement("IMG");
@@ -774,6 +787,7 @@
         scorecorn -= 2;
         document.getElementById("scorecorn").innerText = scorecorn;
       }
+      stillegg = true;
     }
 
     function collectEgg(obj) {
@@ -785,6 +799,9 @@
         document.getElementById("scoreegg").innerText = `${scoreegg}/8`;
         if (scoreegg == 8) {
           gameOver("bad");
+        }
+        if (scoreegg == 4) {
+          stillegg = false;
         }
       }
     }
@@ -850,6 +867,7 @@
 
     function gameOver(ending) {
       gameover.style.visibility = "visible";
+      document.body.style.cursor = "initial";
       if (ending == "bad") {
         endingtext.innerText = "You Won";
         endingtext.style.color = "green";
@@ -857,7 +875,6 @@
         endingtext.innerText = "You Failed";
         endingtext.style.color = "red";
       }
-      document.style.cursor = "initial";
     }
 
     function showDialog() {
