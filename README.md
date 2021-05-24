@@ -1,3 +1,3 @@
 # Hitokage - HAZE MAIZE MEAT
-[Landing](https://haze-maize-meat.netlify.app/)\
-[Game](https://haze-maize-meat.netlify.app/game.html)
+[Game](https://haze-maize-meat.netlify.app/)\
+[Landing](https://haze-maize-meat.netlify.app/landingpage.html)
