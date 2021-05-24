@@ -678,6 +678,7 @@
     var manured = [false, false, false, false, false, false, false, false]; // สถานะว่าใส่ปุ๋ยหรือยัง (ใส่ก่อนรดน้ำ)
     var empty = [true, true, true, true, true, true, true, true]; // สถานะความว่างของแปลงดิน
     var ready = [false, false, false, false, false, false, false, false]; // สถานะพร้อมเก็บเกี่ยว
+    var death = [false, false, false, false, false, false, false, false];
 
     var pick = "none"; // สถานะการหยิบเครื่องมือ
     var harvested = 0; // จำนวนต้นที่พร้อมเก็บเกี่ยว
@@ -756,7 +757,7 @@
         } else { // common condition
           level[n]++; // เพิ่มระดับการโตเพื่อใช้ในรอบถัดไป
         }
-      } else if (pick == "manure" && !manured[n] && !empty[n] && !ready[n]) {
+      } else if (pick == "manure" && !manured[n] && !empty[n] && !ready[n] && !death[n]) {
         obj.innerHTML += `<img id="manure" src="https://cdn.discordapp.com/attachments/750412142351614163/844506227077021716/soil-for-growing-plants-pile-ground-heap-of-vector-35431631-removebg-preview.png">`; // แสดงปุ๋ยในแปลง
         money -= 9;
         checkMoney();
@@ -766,6 +767,7 @@
         scorecorn++; // ข้าวโพดเพิ่ม 1
         document.getElementById("scorecorn").innerText = scorecorn;
         ready[n] = false; // รีเซ็ตค่า
+        death[n] = true;
         harvested++; // เพิ่มต้นที่เก็บแล้ว
         if (harvested == 8) { // เงื่อนไขที่เตรียมเก็บเกี่ยวฟาร์ม
           harvested = 0; // รีเซ็ตค่าเก็บเกี่ยวแล้ว
