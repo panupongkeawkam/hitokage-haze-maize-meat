@@ -36,7 +36,7 @@
       background-size: 100% 100%;
       background-repeat: no-repeat;
       position: absolute;
-      background-image: url("/Game/pic/bg1.png");
+      background-image: url("/Game/picture/bg1.png");
     }
 
     .chicken {
@@ -55,7 +55,7 @@
     }
   
     .dirt {
-      background-image: url("/Game/pic/dirt2.png");
+      background-image: url("/Game/picture/dirt2.png");
       background-size: contain;
       background-repeat: no-repeat;
       position: absolute;
@@ -80,7 +80,7 @@
       animation: days-passed 0.75s;
     }
     #gamename{
-      background-image:url("/Game/pic/GameName.png");
+      background-image:url("/Game/picture/GameName.png");
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center;
@@ -538,68 +538,68 @@
       <img class="exit-button" onclick="javascript: tutorial.style.transform = 'scale(0)'" src="/Game/picture/remove.png">
     </div>
 
-    <img onclick="chickenFeeding(this)" class="chicken" style="top: 76%; right: 10%; animation: jump 0.5s infinite linear alternate;" src="/Game/pic/chicken.png">
-    <img onclick="chickenFeeding(this)" class="chicken" style="top: 50%; right: 25%; animation: walk 8s infinite linear;" src="/Game/pic/chicken.png">
-    <img onclick="chickenFeeding(this)" class="chicken" style="top: 64%; right: 15%; animation: walk-step 12s infinite linear;" src="/Game/pic/chicken.png">
-    <img onclick="chickenFeeding(this)" class="chicken" style="top: 76%; right: 20%; animation: walk 6s infinite linear, jump 1s infinite ease-out;" src="/Game/pic/chicken.png">
+    <img onclick="chickenFeeding(this)" class="chicken" style="top: 76%; right: 10%; animation: jump 0.5s infinite linear alternate;" src="/Game/picture/chicken.png">
+    <img onclick="chickenFeeding(this)" class="chicken" style="top: 50%; right: 25%; animation: walk 8s infinite linear;" src="/Game/picture/chicken.png">
+    <img onclick="chickenFeeding(this)" class="chicken" style="top: 64%; right: 15%; animation: walk-step 12s infinite linear;" src="/Game/picture/chicken.png">
+    <img onclick="chickenFeeding(this)" class="chicken" style="top: 76%; right: 20%; animation: walk 6s infinite linear, jump 1s infinite ease-out;" src="/Game/picture/chicken.png">
 
     <div id="scoreboard">
       <div class="scorebox">
-        <img src="/Game/pic/money.png" style="height: 60%; margin-right: 6%;">
+        <img src="/Game/picture/money.png" style="height: 60%; margin-right: 6%;">
         <div id="money">1000</div>
       </div>
       <div class="scorebox">
-        <img src="/Game/pic/planet-earth.png" style="height: 70%; margin-right: 6%;">
+        <img src="/Game/picture/planet-earth.png" style="height: 70%; margin-right: 6%;">
         <div id="environment">100</div>
       </div>
       <div class="scorebox">
-        <img src="/Game/pic/corn.png" style="height: 80%; margin-right: 6%;">
+        <img src="/Game/picture/corn.png" style="height: 80%; margin-right: 6%;">
         <div id="scorecorn">0</div>
       </div>
       <div class="scorebox">
-        <img src="/Game/pic/egg.png" style="height: 60%; margin-right: 6%;">
+        <img src="/Game/picture/egg.png" style="height: 60%; margin-right: 6%;">
         <div id="scoreegg">0/8</div> <!-- goal -->
       </div>
     </div>
 
     <div class="toolbar" style="top: 204px; left: 16px;">
       <div class="tools">
-        <img id="seed" onclick="pickingItem('seed')" src="/Game/pic/cornseed.png">
+        <img id="seed" onclick="pickingItem('seed')" src="/Game/picture/cornseed.png">
       </div>
       <div class="cost">
         <img src="/Game/pic/money.png" style="height: 50%; margin-right: 8%;">
         2
       </div>
       <div class="tools">
-        <img id="grow" onclick="pickingItem('manure')" src="/Game/pic/grow.png">
+        <img id="grow" onclick="pickingItem('manure')" src="/Game/picture/grow.png">
       </div>
       <div class="cost">
         <img src="/Game/pic/money.png" style="height: 50%; margin-right: 8%;">
         9
       </div>
       <div class="tools">
-        <img id="watercan" onclick="pickingItem('water')" src="/Game/pic/watercan.png">
+        <img id="watercan" onclick="pickingItem('water')" src="/Game/picture/watercan.png">
       </div>
       <div class="cost">
         <img src="/Game/pic/money.png" style="height: 50%; margin-right: 8%;">
         3
       </div>
       <div class="tools">
-        <img id="sickle" onclick="pickingItem('sickle')" src="/Game/pic/sickle.png">
+        <img id="sickle" onclick="pickingItem('sickle')" src="/Game/picture/sickle.png">
       </div>
       <div class="cost">FREE</div>
     </div>
 
     <div class="toolbar" style="top: 372px; right: 16px;">
       <div class="tools">
-        <img id="feed" onclick="pickingItem('feed')" src="/Game/pic/chicken-rice.png">
+        <img id="feed" onclick="pickingItem('feed')" src="/Game/picture/chicken-rice.png">
       </div>
       <div class="cost">
-        <img src="https://cdn.discordapp.com/attachments/807588926332207136/838128363230855168/corn.png" style="height: 80%; margin-right: 8%;">
+        <img src="/Game/picture/corn.png" style="height: 80%; margin-right: 8%;">
         2
       </div>
       <div class="tools">
-        <img id="basket" onclick="pickingItem('basket')" src="/Game/pic/wicker-basket.png">
+        <img id="basket" onclick="pickingItem('basket')" src="/Game/picture/wicker-basket.png">
       </div>
       <div class="cost">FREE</div>
     </div>
@@ -616,22 +616,22 @@
     <div id="clearchoice"> <!-- เงื่อนไขการกำจัดซากข้าวโพด (ถูกซ่อนอยู่ โดย scale(0)) -->
       <div class="clearchoice-text">ข้าวโพดหลังจากเก็บเกี่ยวแล้วยังเหลือซากข้าวโพดอยู่<br>คุณต้องการทำลายซากข้าวโพดด้วยวิธีไหน</div>
       <div onclick="burning()" class="clearchoice-button">
-        <img src="/Game/pic/fire.png" width="75%">
+        <img src="/Game/picture/fire.png" width="75%">
       </div>
       <div onclick="tractor()" class="clearchoice-button">
-        <img src="/Game/pic/car.png" width="90%">
+        <img src="/Game/picture/car.png" width="90%">
       </div>
       <div class="caption"> <!-- ค่าสิ่งแวดล้อมที่ต้องจ่าย -->
-        <img src="/Game/pic/planet-earth.png" style="height: 80%; margin-right: 5%;">
+        <img src="/Game/picture/planet-earth.png" style="height: 80%; margin-right: 5%;">
         38
       </div>
       <div class="caption"> <!-- ราคาที่ต้องจ่าย -->
-        <img src="/Game/pic/money.png" style="height: 70%; margin-right: 5%;">
+        <img src="/Game/picture/money.png" style="height: 70%; margin-right: 5%;">
         399
       </div>
     </div>
 
-    <img id="settingbutton" onclick="setting()" src="/Game/pic/settings_1.png">
+    <img id="settingbutton" onclick="setting()" src="/Game/picture/settings_1.png">
     <div id="settingmenu">
       <div class="mini-button" onclick="location.reload()" style="position: relative; width: 160px; height: 48px; font-size: 16px;">RESTART</div>
       <div class="mini-button" onclick="javascript: tutorial.style.transform = 'scale(1)'" style="position: relative; width: 160px; height: 48px; font-size: 16px;">HOW TO PLAY</div>
@@ -650,14 +650,14 @@
           <a class="button" href="landingpage.html" target="_blank" style="width: 240px; font-size: 24px; border-radius: 12px; background: #2c6c74;">Landing Page</a>
           <a class="button" href="https://www.greenpeace.org/thailand/publication/16490/food-agriculture-haze-and-maize-report/" target="_blank" style="width: 240px; background: #2c6c74; font-size: 24px; border-radius: 12px;">Greenpeace</a>
         </div>
-        <img class="exit-button" onclick="javascript: dialog.style.transform = 'scale(0)'" src="/Game/pic/remove.png">
+        <img class="exit-button" onclick="javascript: dialog.style.transform = 'scale(0)'" src="/Game/picture/remove.png">
         <div id="backbutton" class="mini-button" onclick="javascript: next--; showDialog()" style="left: 2%;">Back</div>
         <div id="nextbutton" class="mini-button" onclick="javascript: next++;  showDialog()" style="right: 2%;">Next</div>
       </div>
     </div>
 
     <div id="errorcondition" class="text-box" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; height: 360px; top: 300px; font-size: 32px;">
-      <img class="exit-button" onclick="javascript: errorcondition.style.transform = 'scale(0)'" src="/Game/pic/remove.png">
+      <img class="exit-button" onclick="javascript: errorcondition.style.transform = 'scale(0)'" src="/Game/picture/remove.png">
       เอ๊ะ! เหมือนคุณจะลืมให้อาหารไก่และเก็บไข่นะ<br>
       ไปให้อาหารไก่และเก็บไข่ก่อนที่จะปลูกก่อนดีกว่าไหม
     </div>
@@ -680,10 +680,10 @@
 
     var pick = "none"; // สถานะการหยิบเครื่องมือ
     var harvested = 0; // จำนวนต้นที่พร้อมเก็บเกี่ยว
-    var growImage = ["/Game/pic/corngrow1.png",
-                     "/Game/pic/corngrow2.png",
-                     "/Game/pic/corngrow3.png",
-                     "/Game/pic/corngrow4.png"
+    var growImage = ["/Game/picture/corngrow1.png",
+                     "/Game/picture/corngrow2.png",
+                     "/Game/picture/corngrow3.png",
+                     "/Game/picture/corngrow4.png"
                     ]; // รูปลำดับการโตข้าวโพด
 
     var cursor = {seed:"url('/Game/cursor/cornseed2.png'), auto",
