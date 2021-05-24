@@ -14,6 +14,7 @@
       width: 1920px;
       height: 1080px;
       position: relative;
+      overflow: hidden;
     }
     p, h2, h3 {
       line-height: 20px;
@@ -514,10 +515,10 @@
 
     <div id="introduction" class="screen"> <!-- หน้าโหลดเกมทั้งหมด -->
       <div id="gamename"></div>
-      <div class="button" onclick="startGame(); body.requestFullscreen();">START</div> <!-- เปิดโหมดเต็มจอ fullscreen -->
+      <div class="button" onclick="startGame()">START</div> <!-- เปิดโหมดเต็มจอ fullscreen -->
       <div id="howtoplay" class="button" onclick="javascript: tutorial.style.transform = 'scale(1)'">HOW TO PLAY</div>
-      <a class="button" href="index.html" target="_blank">LANDING PAGE</a>
-      <!-- <div class="button" onclick="gameOver('bad')">TEST</div> -->
+      <a class="button" href="landingpage.html" target="_blank">LANDING PAGE</a>
+      <div class="button" onclick="gameOver('bad')">TEST</div>
     </div>
 
     <div id="tutorial" class="text-box">
@@ -634,7 +635,7 @@
     <div id="settingmenu">
       <div class="mini-button" onclick="location.reload()" style="position: relative; width: 160px; height: 48px; font-size: 16px;">RESTART</div>
       <div class="mini-button" onclick="javascript: tutorial.style.transform = 'scale(1)'" style="position: relative; width: 160px; height: 48px; font-size: 16px;">HOW TO PLAY</div>
-      <a class="mini-button" href="index.html" target="_blank" style="position: relative; width: 160px; height: 48px; font-size: 16px; text-decoration: none;">LADING PAGE</a>
+      <a class="mini-button" href="landingpage.html" target="_blank" style="position: relative; width: 160px; height: 48px; font-size: 16px; text-decoration: none;">LADING PAGE</a>
     </div>
 
     <div id="gameover" class="screen" style="visibility: hidden;">
@@ -646,8 +647,8 @@
       <div id="dialog" class="text-box" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; height: 360px; top: 300px;">
         <div id="message" style="font-size: 32px;"></div>
         <div id="learnmore" style="display: none; justify-content: center; align-items: center">
-          <a class="button" href="index.html" target="_blank" style="width: 240px; font-size: 24px; border-radius: 12px; background: #2c6c74;">Landing Page</a>
-          <a class="button" href="https://www.greenpeace.org/thailand/" target="_blank" style="width: 240px; background: #2c6c74; font-size: 24px; border-radius: 12px;">Greenpeace</a>
+          <a class="button" href="landingpage.html" target="_blank" style="width: 240px; font-size: 24px; border-radius: 12px; background: #2c6c74;">Landing Page</a>
+          <a class="button" href="https://www.greenpeace.org/thailand/publication/16490/food-agriculture-haze-and-maize-report/" target="_blank" style="width: 240px; background: #2c6c74; font-size: 24px; border-radius: 12px;">Greenpeace</a>
         </div>
         <img class="exit-button" onclick="javascript: dialog.style.transform = 'scale(0)'" src="https://cdn.discordapp.com/attachments/750412142351614163/845647750783565844/remove.png">
         <div id="backbutton" class="mini-button" onclick="javascript: next--; showDialog()" style="left: 2%;">Back</div>
@@ -667,6 +668,10 @@
   </body>
 
   <script>
+    var screenwidth = screen.width / 1920;
+    document.body.style.transform = `scale(${screenwidth})`;
+    document.body.style.transformOrigin = 'top left';
+
     /* Array แสดงว่า แปลงดินไหนมีสถานะอะไรบ้าง (มี 8 แปลง) */
     var level = [0, 0, 0, 0, 0, 0, 0, 0]; // ระดับความโตของต้นข้าวโพด
     var manured = [false, false, false, false, false, false, false, false]; // สถานะว่าใส่ปุ๋ยหรือยัง (ใส่ก่อนรดน้ำ)
