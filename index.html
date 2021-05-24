@@ -1,3 +1,4 @@
+
 <html>
   <head>
     <title>Corndew Valley - Hitokage</title>
@@ -36,7 +37,7 @@
       background-size: 100% 100%;
       background-repeat: no-repeat;
       position: absolute;
-      background-image: url("/Game/picture/bg1.png");
+      background-image: url("https://raw.githubusercontent.com/panupongkeawkam/hitokage-haze_maize_meat/main/Game/picture/bg1.png");
     }
 
     .chicken {
@@ -55,7 +56,7 @@
     }
   
     .dirt {
-      background-image: url("/Game/picture/dirt2.png");
+      background-image: url("https://cdn.discordapp.com/attachments/803995130008436776/844592855909662810/dirt2.png");
       background-size: contain;
       background-repeat: no-repeat;
       position: absolute;
@@ -80,7 +81,7 @@
       animation: days-passed 0.75s;
     }
     #gamename{
-      background-image:url("/Game/picture/GameName.png");
+      background-image:url("https://cdn.discordapp.com/attachments/807588926332207136/839210241693712456/GameName.png");
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center;
@@ -517,7 +518,7 @@
       <div id="gamename"></div>
       <div class="button" onclick="startGame()">START</div> <!-- เปิดโหมดเต็มจอ fullscreen -->
       <div id="howtoplay" class="button" onclick="javascript: tutorial.style.transform = 'scale(1)'">HOW TO PLAY</div>
-      <a class="button" href="landingpage.html" target="_blank">DUST PROBLEM</a>
+      <a class="button" href="landingpage.html" target="_blank">LANDING PAGE</a>
       <!-- <div class="button" onclick="gameOver('bad')">TEST</div> -->d
     </div>
 
@@ -535,71 +536,71 @@
         <p>7. เก็บไข่ไก่หลังจากให้อาหารไก่จนไข่ไก่ครบ 8 ฟอง<br></p>
       <h3>ข้อควรระวัง</h3>
         <p>ถ้าหากเงินผู้เล่นหมดก่อนนั้นแสดงว่าผู้เล่นได้แพ้</p>
-      <img class="exit-button" onclick="javascript: tutorial.style.transform = 'scale(0)'" src="/Game/picture/remove.png">
+      <img class="exit-button" onclick="javascript: tutorial.style.transform = 'scale(0)'" src="https://cdn.discordapp.com/attachments/750412142351614163/845647750783565844/remove.png">
     </div>
 
-    <img onclick="chickenFeeding(this)" class="chicken" style="top: 76%; right: 10%; animation: jump 0.5s infinite linear alternate;" src="/Game/picture/chicken.png">
-    <img onclick="chickenFeeding(this)" class="chicken" style="top: 50%; right: 25%; animation: walk 8s infinite linear;" src="/Game/picture/chicken.png">
-    <img onclick="chickenFeeding(this)" class="chicken" style="top: 64%; right: 15%; animation: walk-step 12s infinite linear;" src="/Game/picture/chicken.png">
-    <img onclick="chickenFeeding(this)" class="chicken" style="top: 76%; right: 20%; animation: walk 6s infinite linear, jump 1s infinite ease-out;" src="/Game/picture/chicken.png">
+    <img onclick="chickenFeeding(this)" class="chicken" style="top: 76%; right: 10%; animation: jump 0.5s infinite linear alternate;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
+    <img onclick="chickenFeeding(this)" class="chicken" style="top: 50%; right: 25%; animation: walk 8s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
+    <img onclick="chickenFeeding(this)" class="chicken" style="top: 64%; right: 15%; animation: walk-step 12s infinite linear;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
+    <img onclick="chickenFeeding(this)" class="chicken" style="top: 76%; right: 20%; animation: walk 6s infinite linear, jump 1s infinite ease-out;" src="https://cdn.discordapp.com/attachments/807588926332207136/837670367009964072/chicken.png">
 
     <div id="scoreboard">
       <div class="scorebox">
-        <img src="/Game/picture/money.png" style="height: 60%; margin-right: 6%;">
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844605652902739968/money.png" style="height: 60%; margin-right: 6%;">
         <div id="money">1000</div>
       </div>
       <div class="scorebox">
-        <img src="/Game/picture/planet-earth.png" style="height: 70%; margin-right: 6%;">
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844608248694308864/planet-earth.png" style="height: 70%; margin-right: 6%;">
         <div id="environment">100</div>
       </div>
       <div class="scorebox">
-        <img src="/Game/picture/corn.png" style="height: 80%; margin-right: 6%;">
+        <img src="https://cdn.discordapp.com/attachments/807588926332207136/838128363230855168/corn.png" style="height: 80%; margin-right: 6%;">
         <div id="scorecorn">0</div>
       </div>
       <div class="scorebox">
-        <img src="/Game/picture/egg.png" style="height: 60%; margin-right: 6%;">
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/845224823583932446/egg.png" style="height: 60%; margin-right: 6%;">
         <div id="scoreegg">0/8</div> <!-- goal -->
       </div>
     </div>
 
     <div class="toolbar" style="top: 204px; left: 16px;">
       <div class="tools">
-        <img id="seed" onclick="pickingItem('seed')" src="/Game/picture/cornseed.png">
+        <img id="seed" onclick="pickingItem('seed')" src="https://cdn.discordapp.com/attachments/807588926332207136/838128426979819540/cornseed.png">
       </div>
       <div class="cost">
-        <img src="/Game/picture/money.png" style="height: 50%; margin-right: 8%;">
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844605652902739968/money.png" style="height: 50%; margin-right: 8%;">
         2
       </div>
       <div class="tools">
-        <img id="grow" onclick="pickingItem('manure')" src="/Game/picture/grow.png">
+        <img id="grow" onclick="pickingItem('manure')" src="https://cdn.discordapp.com/attachments/807588926332207136/840890408551579698/grow.png">
       </div>
       <div class="cost">
-        <img src="/Game/picture/money.png" style="height: 50%; margin-right: 8%;">
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844605652902739968/money.png" style="height: 50%; margin-right: 8%;">
         9
       </div>
       <div class="tools">
-        <img id="watercan" onclick="pickingItem('water')" src="/Game/picture/watercan.png">
+        <img id="watercan" onclick="pickingItem('water')" src="https://cdn.discordapp.com/attachments/807588926332207136/838128421468897310/watercan.png">
       </div>
       <div class="cost">
-        <img src="/Game/picture/money.png" style="height: 50%; margin-right: 8%;">
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844605652902739968/money.png" style="height: 50%; margin-right: 8%;">
         3
       </div>
       <div class="tools">
-        <img id="sickle" onclick="pickingItem('sickle')" src="/Game/picture/sickle.png">
+        <img id="sickle" onclick="pickingItem('sickle')" src="https://cdn.discordapp.com/attachments/750412142351614163/844621448055357450/sickle.png">
       </div>
       <div class="cost">FREE</div>
     </div>
 
     <div class="toolbar" style="top: 372px; right: 16px;">
       <div class="tools">
-        <img id="feed" onclick="pickingItem('feed')" src="/Game/picture/chicken-rice.png">
+        <img id="feed" onclick="pickingItem('feed')" src="https://cdn.discordapp.com/attachments/750412142351614163/845246018999025704/chicken-rice.png">
       </div>
       <div class="cost">
-        <img src="/Game/picture/corn.png" style="height: 80%; margin-right: 8%;">
+        <img src="https://cdn.discordapp.com/attachments/807588926332207136/838128363230855168/corn.png" style="height: 80%; margin-right: 8%;">
         2
       </div>
       <div class="tools">
-        <img id="basket" onclick="pickingItem('basket')" src="/Game/picture/wicker-basket.png">
+        <img id="basket" onclick="pickingItem('basket')" src="https://cdn.discordapp.com/attachments/750412142351614163/845225254392823818/wicker-basket.png">
       </div>
       <div class="cost">FREE</div>
     </div>
@@ -616,26 +617,26 @@
     <div id="clearchoice"> <!-- เงื่อนไขการกำจัดซากข้าวโพด (ถูกซ่อนอยู่ โดย scale(0)) -->
       <div class="clearchoice-text">ข้าวโพดหลังจากเก็บเกี่ยวแล้วยังเหลือซากข้าวโพดอยู่<br>คุณต้องการทำลายซากข้าวโพดด้วยวิธีไหน</div>
       <div onclick="burning()" class="clearchoice-button">
-        <img src="/Game/picture/fire.png" width="75%">
+        <img src="https://cdn.discordapp.com/attachments/807588926332207136/840919492439834634/fire.png" width="75%">
       </div>
       <div onclick="tractor()" class="clearchoice-button">
-        <img src="/Game/picture/car.png" width="90%">
+        <img src="https://cdn.discordapp.com/attachments/807588926332207136/840918575018672188/car.png" width="90%">
       </div>
       <div class="caption"> <!-- ค่าสิ่งแวดล้อมที่ต้องจ่าย -->
-        <img src="/Game/picture/planet-earth.png" style="height: 80%; margin-right: 5%;">
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844608248694308864/planet-earth.png" style="height: 80%; margin-right: 5%;">
         38
       </div>
       <div class="caption"> <!-- ราคาที่ต้องจ่าย -->
-        <img src="/Game/picture/money.png" style="height: 70%; margin-right: 5%;">
+        <img src="https://cdn.discordapp.com/attachments/750412142351614163/844605652902739968/money.png" style="height: 70%; margin-right: 5%;">
         399
       </div>
     </div>
 
-    <img id="settingbutton" onclick="setting()" src="/Game/picture/settings_1.png">
+    <img id="settingbutton" onclick="setting()" src="https://cdn.discordapp.com/attachments/750412142351614163/845666151110934528/settings_1.png">
     <div id="settingmenu">
       <div class="mini-button" onclick="location.reload()" style="position: relative; width: 160px; height: 48px; font-size: 16px;">RESTART</div>
       <div class="mini-button" onclick="javascript: tutorial.style.transform = 'scale(1)'" style="position: relative; width: 160px; height: 48px; font-size: 16px;">HOW TO PLAY</div>
-      <a class="mini-button" href="landingpage.html" target="_blank" style="position: relative; width: 160px; height: 48px; font-size: 16px; text-decoration: none;">INFOMATION</a>
+      <a class="mini-button" href="landingpage.html" target="_blank" style="position: relative; width: 160px; height: 48px; font-size: 16px; text-decoration: none;">LADING PAGE</a>
     </div>
 
     <div id="gameover" class="screen" style="visibility: hidden;">
@@ -647,17 +648,17 @@
       <div id="dialog" class="text-box" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; height: 360px; top: 300px;">
         <div id="message" style="font-size: 32px;"></div>
         <div id="learnmore" style="display: none; justify-content: center; align-items: center">
-          <a class="button" href="landingpage.html" target="_blank" style="width: 240px; font-size: 24px; border-radius: 12px; background: #2c6c74;">HITOKAGE</a>
+          <a class="button" href="landingpage.html" target="_blank" style="width: 240px; font-size: 24px; border-radius: 12px; background: #2c6c74;">Landing Page</a>
           <a class="button" href="https://www.greenpeace.org/thailand/publication/16490/food-agriculture-haze-and-maize-report/" target="_blank" style="width: 240px; background: #2c6c74; font-size: 24px; border-radius: 12px;">Greenpeace</a>
         </div>
-        <img class="exit-button" onclick="javascript: dialog.style.transform = 'scale(0)'" src="/Game/picture/remove.png">
+        <img class="exit-button" onclick="javascript: dialog.style.transform = 'scale(0)'" src="https://cdn.discordapp.com/attachments/750412142351614163/845647750783565844/remove.png">
         <div id="backbutton" class="mini-button" onclick="javascript: next--; showDialog()" style="left: 2%;">Back</div>
         <div id="nextbutton" class="mini-button" onclick="javascript: next++;  showDialog()" style="right: 2%;">Next</div>
       </div>
     </div>
 
     <div id="errorcondition" class="text-box" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; height: 360px; top: 300px; font-size: 32px;">
-      <img class="exit-button" onclick="javascript: errorcondition.style.transform = 'scale(0)'" src="/Game/picture/remove.png">
+      <img class="exit-button" onclick="javascript: errorcondition.style.transform = 'scale(0)'" src="https://cdn.discordapp.com/attachments/750412142351614163/845647750783565844/remove.png">
       เอ๊ะ! เหมือนคุณจะลืมให้อาหารไก่และเก็บไข่นะ<br>
       ไปให้อาหารไก่และเก็บไข่ก่อนที่จะปลูกก่อนดีกว่าไหม
     </div>
@@ -680,18 +681,18 @@
 
     var pick = "none"; // สถานะการหยิบเครื่องมือ
     var harvested = 0; // จำนวนต้นที่พร้อมเก็บเกี่ยว
-    var growImage = ["/Game/picture/corngrow1.png",
-                     "/Game/picture/corngrow2.png",
-                     "/Game/picture/corngrow3.png",
-                     "/Game/picture/corngrow4.png"
+    var growImage = ["https://cdn.discordapp.com/attachments/807588926332207136/838128371086131231/corngrow1.png",
+                     "https://cdn.discordapp.com/attachments/807588926332207136/838128387532128306/corngrow2.png",
+                     "https://cdn.discordapp.com/attachments/807588926332207136/838128395543379999/corngrow3.png",
+                     "https://cdn.discordapp.com/attachments/807588926332207136/838128403177275432/corngrow4.png"
                     ]; // รูปลำดับการโตข้าวโพด
 
-    var cursor = {seed:"url('/Game/cursor/cornseed2.png'), auto",
-                  manure:"url('/Game/cursor/growCUR.png'), auto",
-                  water:"url('/Game/cursor/watercanCUR.png'), auto",
-                  sickle:"url('/Game/cursor/sickleCUR.png'), auto",
-                  feed:"url('/Game/cursor/chicken-riceCUR.png'), auto",
-                  basket:"url('/Game/cursor/wicker-basketCUR.png'), auto"
+    var cursor = {seed:"url('https://cdn.discordapp.com/attachments/803995130008436776/845660954216759306/cornseed2.png'), auto",
+                  manure:"url('https://cdn.discordapp.com/attachments/803995130008436776/845662474882646016/growCUR.png'), auto",
+                  water:"url('https://cdn.discordapp.com/attachments/803995130008436776/845662470382157844/watercanCUR.png'), auto",
+                  sickle:"url('https://cdn.discordapp.com/attachments/803995130008436776/845711524408459304/sickleCUR.png'), auto",
+                  feed:"url('https://cdn.discordapp.com/attachments/803995130008436776/845711543793877042/chicken-riceCUR.png'), auto",
+                  basket:"url('https://cdn.discordapp.com/attachments/803995130008436776/845711461367152700/wicker-basketCUR.png'), auto"
                  }; // เปลี่ยน cursor ตามชื่อ item (คล้ายๆ dict ใน Python)
 
     var money = 1000;
@@ -735,11 +736,12 @@
 
     function cornPlanting(obj, n) { // obj คือค่า Elements ที่รับมากจาก HTMl, n คือ ทำแหน่งของแปลงนั้นๆ (0-5)
       if (pick == "seed" && empty[n]) { // เช็คว่าหยิบเมล็ดอยู่ และแปลงดินว่างไหม
-        if (scorecorn != 0 || stillegg) {
+        if ((scorecorn != 0 || stillegg) && cleared) {
           errorcondition.style.transform = "scale(1)";
           return 0;
         }
-        obj.innerHTML = `<img id="inseminate" src="/Game/picture/corngrow.png">`;
+        cleared = false;
+        obj.innerHTML = `<img id="inseminate" src="https://cdn.discordapp.com/attachments/807588926332207136/840874382506459136/corngrow.png">`;
         money -= 2;
         checkMoney();
         empty[n] = false; // ทำให้แปลงดินไม่ว่าง
@@ -755,7 +757,7 @@
           level[n]++; // เพิ่มระดับการโตเพื่อใช้ในรอบถัดไป
         }
       } else if (pick == "manure" && !manured[n] && !empty[n] && !ready[n]) {
-        obj.innerHTML += `<img id="manure" src="/Game/picture/soil-for-growing-plants-pile-ground-heap-of-vector-35431631-removebg-preview.png">`; // แสดงปุ๋ยในแปลง
+        obj.innerHTML += `<img id="manure" src="https://cdn.discordapp.com/attachments/750412142351614163/844506227077021716/soil-for-growing-plants-pile-ground-heap-of-vector-35431631-removebg-preview.png">`; // แสดงปุ๋ยในแปลง
         money -= 9;
         checkMoney();
         manured[n] = true; // ให้ค่าใส่ปุ๋ยแล้วเป็นจริง
@@ -787,7 +789,7 @@
         egg.setAttribute("class", "egg");
         egg.setAttribute("onclick", "collectEgg(this)");
         egg.setAttribute("style", `top: ${60 + Math.floor(Math.random() * 30)}%; right: ${10 + Math.floor(Math.random() * 35)}%`);
-        egg.setAttribute("src", "/Game/picture/egg.png");
+        egg.setAttribute("src", "https://cdn.discordapp.com/attachments/750412142351614163/845224823583932446/egg.png");
         chickenfield.appendChild(egg);
         scorecorn -= 2;
         document.getElementById("scorecorn").innerText = scorecorn;
@@ -811,8 +813,11 @@
       }
     }
 
+    var cleared = false;
+
     function clearCorn() {
       clearchoice.style.transform = "scale(1)"; // แสดงเงื่อนไขการเก็บเกี่ยว
+      cleared = true;
       if (money < 399) {
         document.getElementsByClassName("clearchoice-button")[1].style.filter = "grayscale(100%)";
         document.getElementsByClassName("caption")[1].style.color = "red";
@@ -822,21 +827,21 @@
     function burning() {
       clearchoice.style.transform = "scale(0)"; // ซ่อนเงื่อนไขการเก็บเกี่ยว 
       document.getElementById("environment").innerText = environment-=38; // สิ่งแวดล้อมลด
-      cornfield.innerHTML += `<img id="smoke" src="/Game/picture/Pngtreesmoke_cartoon_creative_smoke_brush_3846011.png">`; // ควัน
+      cornfield.innerHTML += `<img id="smoke" src="https://cdn.discordapp.com/attachments/750412142351614163/845201893747326987/Pngtreesmoke_cartoon_creative_smoke_brush_3846011.png">`; // ควัน
       background2.style.animation = "days-passed 8s"; // เปลี่ยนพื้นหลัง
       background2.style.filter = "grayscale(40%) sepia(10%)"; // เปลี่ยนพื้นหลัง
-      background2.style.backgroundImage = "url('/Game/picture/bg2.png')"; // เปลี่ยนพื้นหลัง
+      background2.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/807588926332207136/838128469472444456/bg2.png')"; // เปลี่ยนพื้นหลัง
       if (environment <= 24) {
         background1.style.filter = "grayscale(80%) sepia(20%)"; // เปลี่ยนพื้นหลัง
-        background1.style.backgroundImage = "url('/Game/picture/bg2.png')";
+        background1.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/807588926332207136/838128469472444456/bg2.png')";
         background2.style.transition = "8s"; // เปลี่ยนพื้นหลัง
         background2.style.filter = "opacity(40%)"; // เปลี่ยนพื้นหลัง
-        background2.style.backgroundImage = "url('/Game/picture/bg3.png')"; // เปลี่ยนพื้นหลัง
+        background2.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/807588926332207136/838128472824086578/bg3.png')"; // เปลี่ยนพื้นหลัง
       }
       for (let i=0; i<8; i++) {
         empty[i] = true; // ให้ดินทุกแปลงว่าง
         document.getElementsByClassName("dirt")[i].innerHTML = `<img id="corngrow2" src="${growImage[2]}" style="transform: scale(0); animation: burn 8s linear;">`; // ต้นข้าวโพดที่ไหม้เกรียม
-        document.getElementsByClassName("dirt")[i].innerHTML += `<img class="fire" style="width:${100 + Math.floor(Math.random() * 41)}px" src="/Game/picture/fire.png">`; // ไฟ
+        document.getElementsByClassName("dirt")[i].innerHTML += `<img class="fire" style="width:${100 + Math.floor(Math.random() * 41)}px" src="https://cdn.discordapp.com/attachments/807588926332207136/840919492439834634/fire.png">`; // ไฟ
       }
     }
 
@@ -848,9 +853,9 @@
       let dirt = [3, 2, 1, 0, 4, 5, 6, 7], timing = [1, 3, 5, 7.5, 9, 11, 13, 15.5]; // dirt คือตำแหน่งของ class 'dirt' ที่เรียงตามรถไถวิ่งผ่าน, timing คือ เวลาที่จะให้ข้าวโพดหายไป
       document.getElementById("money").innerText = money-=399;
       cornfield.innerHTML += `<div class="tractor">
-                                    <img class="tractor-body" src="/Game/picture/car.png">
-                                    <img class="wheel-front" src="/Game/picture/vector-tractor-tire-illustration-removebg-preview.png">
-                                    <img class="wheel-back" src="/Game/picture/vector-tractor-tire-illustration-removebg-preview.png">
+                                    <img class="tractor-body" src="https://cdn.discordapp.com/attachments/807588926332207136/840918575018672188/car.png">
+                                    <img class="wheel-front" src="https://cdn.discordapp.com/attachments/750412142351614163/844514104131321897/vector-tractor-tire-illustration-removebg-preview.png">
+                                    <img class="wheel-back" src="https://cdn.discordapp.com/attachments/750412142351614163/844514104131321897/vector-tractor-tire-illustration-removebg-preview.png">
                                   </div>`;
       for (let i=0; i<8; i++) { // loop เพื่อลดบรรทัด
         empty[i] = true; // ให้ดินทุกแปลงว่าง
@@ -885,7 +890,7 @@
     function showDialog() {
       if (endingtext.innerText === "You Won") {
         message.innerHTML = `${textBad[next]}`;
-      } else if (endingtext.innerText === "You Failed") { 
+      } else if (endingtext.innerText === "You Failed") {
         message.innerHTML = `${textGood[next]}`;
       }
       if (next < 5) {
