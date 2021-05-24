@@ -842,6 +842,7 @@
       }
       for (let i=0; i<8; i++) {
         empty[i] = true; // ให้ดินทุกแปลงว่าง
+        death[i] = false;
         document.getElementsByClassName("dirt")[i].innerHTML = `<img id="corngrow2" src="${growImage[2]}" style="transform: scale(0); animation: burn 8s linear;">`; // ต้นข้าวโพดที่ไหม้เกรียม
         document.getElementsByClassName("dirt")[i].innerHTML += `<img class="fire" style="width:${100 + Math.floor(Math.random() * 41)}px" src="https://cdn.discordapp.com/attachments/807588926332207136/840919492439834634/fire.png">`; // ไฟ
       }
@@ -861,6 +862,7 @@
                                   </div>`;
       for (let i=0; i<8; i++) { // loop เพื่อลดบรรทัด
         empty[i] = true; // ให้ดินทุกแปลงว่าง
+        death[i] = false;
         document.getElementsByClassName("dirt")[dirt[i]].innerHTML = `<img id="corngrow2" src="${growImage[2]}" style="filter: sepia(100%); transform: scale(0); animation: disappear ${timing[i]}s;">`; // ใส่ animation ให้ต้นโพดค่อยๆ หาย
       }
     }
