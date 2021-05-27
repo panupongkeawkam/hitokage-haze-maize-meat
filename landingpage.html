@@ -1,639 +1,704 @@
 <html>
-  <title>Landing Page - ฮิโตคาเงะ</title>
+<title>Landing Page - ฮิโตคาเงะ</title>
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=K2D:wght@200&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=K2D:wght@300&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@200;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=K2D:wght@200&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=K2D:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Maitree:wght@200;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Athiti:wght@600;700&display=swap" rel="stylesheet">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<body>
-    <div class="focus-1"></div>
-    <div class="focus-2"></div>
-    <!-- <div class="scroll-value">scroll = <span id="test">0</span></div> -->
+<body>
+  <div class="focus-1"></div>
+  <div class="focus-2"></div>
 
-    <div class="direc-contain">
-      <div class="direc-button" onclick="window.scrollTo(0, 0)" onmouseenter="showInfo(this, 0)" onmouseleave="javascript: this.innerHTML = ``" style="background: #2c6c74;;"></div>
-      <div class="direc-button" onclick="window.scrollTo(0, 1050)" onmouseenter="showInfo(this, 1)" onmouseleave="javascript: this.innerHTML = ``" style="background: #608016;;"></div>
-      <div class="direc-button" onclick="window.scrollTo(0, 1800)" onmouseenter="showInfo(this, 2)" onmouseleave="javascript: this.innerHTML = ``" style="background: #758046;;"></div>
-      <div class="direc-button" onclick="window.scrollTo(0, 4800)" onmouseenter="showInfo(this, 3)" onmouseleave="javascript: this.innerHTML = ``" style="background: #C0B637"></div>
-      <div class="direc-button" onclick="window.scrollTo(0, 5400)" onmouseenter="showInfo(this, 4)" onmouseleave="javascript: this.innerHTML = ``" style="background: #9D9449"></div>
-      <div class="direc-button" onclick="window.scrollTo(0, 6300)" onmouseenter="showInfo(this, 5)" onmouseleave="javascript: this.innerHTML = ``" style="background: #665318;"></div>
+  <div class="direc-contain">
+    <div class="direc-button" onclick="window.scrollTo(0, 0)" onmouseenter="showInfo(this, 0)"
+      onmouseleave="javascript: this.innerHTML = ``" style="background: #2c6c74;;"></div>
+    <div class="direc-button" onclick="window.scrollTo(0, 1050)" onmouseenter="showInfo(this, 1)"
+      onmouseleave="javascript: this.innerHTML = ``" style="background: #608016;;"></div>
+    <div class="direc-button" onclick="window.scrollTo(0, 1800)" onmouseenter="showInfo(this, 2)"
+      onmouseleave="javascript: this.innerHTML = ``" style="background: #758046;;"></div>
+    <div class="direc-button" onclick="window.scrollTo(0, 4800)" onmouseenter="showInfo(this, 3)"
+      onmouseleave="javascript: this.innerHTML = ``" style="background: #C0B637"></div>
+    <div class="direc-button" onclick="window.scrollTo(0, 5400)" onmouseenter="showInfo(this, 4)"
+      onmouseleave="javascript: this.innerHTML = ``" style="background: #9D9449"></div>
+    <div class="direc-button" onclick="window.scrollTo(0, 6300)" onmouseenter="showInfo(this, 5)"
+      onmouseleave="javascript: this.innerHTML = ``" style="background: #665318;"></div>
+  </div>
+
+  <div id="smoke1" class="smoke layer" style="z-index: -1;"></div>
+  <div id="corn1" class="corn layer" style="z-index: -2;"></div>
+  <div id="field1" class="front-field layer" style="z-index: -3;"></div>
+  <div id="smoke2" class="smoke layer" style="z-index: -4; transform: scaleX(-1);"></div>
+  <div id="field2" class="back-field layer" style="z-index: -5;"></div>
+  <div id="sky1" class="sky layer" style="z-index: -6;"></div>
+
+  <img class="show-menu" onclick="showMenu()" src="Landing/icon/menu.png">
+
+  <div id="listbar">
+    <div class="menu-title" style="border: none;">Game</div>
+    <a href="index.html" target="_blank" class="menu-button">
+      <img class="menu-icon" src="Landing/icon/game.png">
+      Corndew Valley
+    </a>
+    <div class="menu-title">GREENPEACE</div>
+    <a href="https://www.greenpeace.org/thailand/" target="_blank" class="menu-button">
+      <img class="menu-icon" src="Landing/icon/greenpeace.png" style="filter: brightness(500%) grayscale(100%)">
+      เว็บไซต์
+    </a>
+    <a href="https://act.greenpeace.org/page/43726/donate/1?ea.tracking.id=Planet4&utm_campaign=General&utm_source=Planet4&utm_medium=Planet4&utm_content=HeaderButton&utm_term=Visitor&_ga=2.268379470.1926028672.1620036642-465187033.1618999175"
+      target="_blank" class="menu-button">
+      <img class="menu-icon" src="Landing/icon/donate.png">
+      บริจาค
+    </a>
+    <a href="https://www.greenpeace.org/thailand/explore/" target="_blank" class="menu-button">
+      <img class="menu-icon" src="Landing/icon/call.png">
+      งานรณรงค์
+    </a>
+    <a href="https://www.greenpeace.org/thailand/act/" target="_blank" class="menu-button">
+      <img class="menu-icon" src="Landing/icon/team.png">
+      มีส่วนร่วม
+    </a>
+    <a href="https://www.greenpeace.org/thailand/publication/16490/food-agriculture-haze-and-maize-report/"
+      target="_blank" class="menu-button">
+      <img class="menu-icon" src="Landing/icon/burning.png">
+      มลพิษฝุ่นข้ามพรมแดน
+    </a>
+    <div class="menu-title">About</div>
+    <a href="https://github.com/panupongkeawkam/hitokage-haze_maize_meat" target="_blank" class="menu-button">
+      <img class="menu-icon" src="Landing/icon/github.png">
+      Hitokage
+    </a>
+  </div>
+
+  <div id="head" class="head-contain">
+    <div class="heading">
+      <span style="color: hsl(55, 93%, 38%, 100%); font-size: 6vw;">Haze Maize Meat</span>
+      <span class="heading">มลพิษข้ามพรมแดน</span>
+    </div>
+  </div>
+
+
+  <div id="main" class="main-contain">
+    <div class="material-contain-1">
+      <h1>ทำไมข้าวโพดเลี้ยงสัตว์จึงเกิดปัญหาฝุ่น ?</h1>
+      <p style="font-size: 28px">
+        ข้าวโพดเลี้ยงสัตว์เป็นพืชเศรษฐกิจที่สาคัญในอุตสาหกรรมอาหารสัตว์ที่ต้องมีการผลิตจำนวนมากๆ</p>
+      <p><span
+          style="color: #665318; font-size: 36px; line-height: 2em; font-style: italic;">และการที่จะเก็บเกี่ยวจำนวนมากๆ
+          ย่อมตามมาด้วยการเก็บกวาดซากข้าวโพดที่เก็บเกี่ยว
+          ทีละจำนวนมากๆ<br>ทำให้การเก็บกวาดซากข้าวโพดโดยการเผาเหมือนจะตัวเลือกที่ดีที่สุด ?</span></p>
     </div>
 
-    <div id="smoke1" class="smoke layer" style="z-index: -1;"></div>
-    <div id="corn1" class="corn layer" style="z-index: -2;"></div>
-    <div id="field1" class="front-field layer" style="z-index: -3;"></div>
-    <div id="smoke2" class="smoke layer" style="z-index: -4; transform: scaleX(-1);"></div>
-    <div id="field2" class="back-field layer" style="z-index: -5;"></div>
-    <div id="sky1" class="sky layer" style="z-index: -6;"></div>
+    <div class="material-contain-2">
+      <div class="side-material"></div>
+      <div class="material-2">
+        <div class="text-box" style="width: 100%">
+          <h2 style="text-indent: 48px;">ทำไมถึงเผา ?</h2>
+        </div>
+        <div class="text-box">
+          <h3>ประหยัดเวลา</h3>
+          <p>ข้าวโพดเป็นอาหารหลักของเนื้อสัตว์</p>
+          <p>ทำให้ชาวไร่ต้องปลูกแข่งกับเวลา</p>
 
-    <img class="show-menu" onclick="showMenu()" src="/Landing/pic/right-menu-bars.png">
-
-    <div id="listbar">
-      <div class="menu-title" style="border: none;">Game</div>
-      <a href="index.html" target="_blank" class="menu-button">
-        <img class="menu-icon" src="/Landing/pic/games.png">
-        Corndew Valley
-      </a>
-      <div class="menu-title">GREENPEACE</div>
-      <a href="https://www.greenpeace.org/thailand/" target="_blank" class="menu-button">
-        <img class="menu-icon" src="/Landing/pic/greenpeace-logo1-1-removebg-preview.png" style="filter: brightness(500%) grayscale(100%)">
-        เว็บไซต์
-      </a>
-      <a href="https://act.greenpeace.org/page/43726/donate/1?ea.tracking.id=Planet4&utm_campaign=General&utm_source=Planet4&utm_medium=Planet4&utm_content=HeaderButton&utm_term=Visitor&_ga=2.268379470.1926028672.1620036642-465187033.1618999175" target="_blank" class="menu-button">
-        <img class="menu-icon" src="/Landing/pic/coin.png">
-        บริจาค
-      </a>
-      <a href="https://www.greenpeace.org/thailand/explore/" target="_blank" class="menu-button">
-        <img class="menu-icon" src="/Landing/pic/megaphone.png">
-        งานรณรงค์
-      </a>
-      <a href="https://www.greenpeace.org/thailand/act/" target="_blank" class="menu-button">
-        <img class="menu-icon" src="/Landing/pic/group.png">
-        มีส่วนร่วม
-      </a>
-      <a href="https://www.greenpeace.org/thailand/publication/16490/food-agriculture-haze-and-maize-report/" target="_blank" class="menu-button">
-        <img class="menu-icon" src="/Landing/pic/harvest.png">
-        มลพิษฝุ่นข้ามพรมแดน
-      </a>
-      <div class="menu-title">About</div>
-      <a href="https://github.com/panupongkeawkam/hitokage-haze_maize_meat" target="_blank" class="menu-button">
-        <img class="menu-icon" src="/Landing/pic/github_1.png">
-        Hitokage
-      </a>
-    </div>
-
-    <div id="head" class="head-contain">
-      <div class="heading">
-        <span style="color: hsl(55, 93%, 38%, 100%); font-size: 96px;">Haze Maize Meat</span>
-        <span class="heading">GREENPEACE</span>
-        <span class="heading">Hitokage - Project</span>
-      </div>
-    </div>
-
-    
-    <div id="main" class="main-contain">
-      <div class="material-contain-1">
-        <h1>ข้าวโพดเลี้ยงสัตว์คืออะไร ?</h1>
-        <p>ข้าวโพดเลี้ยงสัตว์ คือหนึ่งในห่วงโซ่อุปทานของการผลิตเนื้อสัตว์เชิงอุตสาหกรรม โดยเกี่ยวโยงตั้งแต่ เมล็ดพันธุ์ ผู้ผลิต (ผู้ปลูก) ข้าวโพด การแปรรูป ฟาร์มปศุสัตว์ โรงงานแปรรูป การผลิตเนื้อสัตว์ไปจนถึงผู้บริโภค
-          ข้าวโพดเลี้ยงสัตว์เป็นพืชเศรษฐกิจที่สําคัญของไทย ปลูกง่าย มีความทนทาน ต้องการน้ำน้อย และเป็นวัตถุดิบที่สำคัญในอุตสาหกรรมอาหารสัตว์ ข้าวโพดเลี้ยงสัตว์ของไทยมีมูลค่าการส่งออกประมาณ 80,000 ล้านบาทต่อปี ตามมาจากการผลิตข้าวโพดเลี้ยงสัตว์คือการส่งออกสินค้าไก่เป็นอันดับสามของโลก ทำมูลค่า 3,116 ล้านเหรียญสหรัฐ หรือราว 97,903 ล้านบาท
-          ความต้องการในการบริโภคเนื้อสัตว์ในราคาที่ถูกและมีปริมาณมากนั้น คือเบื้องหลังของปัญหาสิ่งแวดล้อมนานับประการ พื้นที่ป่ามหาศาลในทั่วโลกถูกทำลายจนหมดเพื่อปลูกพืชเชิงเดี่ยวสำหรับอุตสาหกรรม เช่น ปาล์มน้ำมัน ข้าวโพด และถั่วเหลือง เป็นต้น ซึ่งเราอาจจะคุ้นตากันบ้างกับภาพภูเขาสีเขียวชอุ่มที่กลายเป็นเขาหัวโล้นจากการถูกแทนที่ด้วยพืชเชิงเดี่ยว ทิ้งแต่ความแห้งแล้งไว้ และก่อมลพิษทางอากาศ ดังเช่นที่เป็นหนึ่งในสาเหตุของหมอกควันพิษที่ปกคลุมภาคเหนือตอนบนของประเทศไทยช่วงต้นปีเป็นประจำทุกปี
-          </p>
-        <div class="line"></div>
-      </div>
-      
-      <div class="material-contain-2">
-        <div class="side-material"></div>
-        <div class="material-2">
-          <div class="text-box" style="width: 100%"><h2>การปลูกข้าวโพดเลี้ยงสัตว์<br>ก่อให้เกิดปัญหาหมอกควันพิษในภาคเหนือได้อย่างไร ?</h2></div>
-          <div class="text-box">
-           <p>ปัญหาหมอกควันพิษภาคเหนือรุนแรงผิดปกติ มีสาเหตุหลักมาจากการจุดไฟเผาพืชไร่หลังการเก็บเกี่ยวในหน้าแล้ง พืชที่นิยมปลูกกันมากในช่วงหน้าแล้งคือ ข้าวโพดเลี้ยงสัตว์ เพราะข้าวโพดเป็นพืชที่ใช้น้ำน้อย ทำให้เหมาะกับการปลูกในพื้นที่ราบและบนดอย<br><br></p>
-            <p>สาเหตุสำคัญที่ทำให้ชาวไร่ส่วนใหญ่นิยมปลูกข้าวโพดกันเป็นจำนวนมาก เป็นเพราะความต้องการของอุตสาหกรรมอาหารสัตว์ในประเทศสูง หลายปีที่ผ่านมา การขยายตัวของบริษัทที่ผลิตเนื้อสัตว์เพื่อการบริโภคมีปริมาณสูงขึ้นเรื่อย ๆ ทั้งบริโภคภายในประเทศและส่งออกนอกประเทศและกลายเป็นประเทศผู้ส่งออกเนื้อสัตว์อันดับต้น ๆ ของโลก</p>
-          </div>
-          <div class="picture-contain">
-            <img src="/Landing/pic/unknown.png" class="picture">
-            <div class="caption">รูปภาพเมืองที่ปกคลุมไปด้วยฝุ่นควัน</div>
-          </div>
-          <div class="picture-contain">
-            <img src="/Landing/pic/859bd164-gp04n2h.jpg" class="picture">
-            <div class="caption">เมืองที่เต็มไปด้วยตึกที่ถูกปกคลุมไปด้วยฝุ่นควัน</div>
-          </div>
-          <div class="text-box">
-            <p><span style="color: hsl(55, 93%, 38%, 100%)">ข้าวโพด </span>วัตถุดิบในการผลิตอาหารสัตว์ แต่ละปีมีความต้องการข้าวโพดมากถึง 8 ล้านตัน แต่ผลิตได้เพียง 5 ล้านตันเท่านั้น ทุก ๆ ปีจึงมีการส่งเสริมให้เกษตรกรปลูกข้าวโพดมากขึ้น เพราะอุตสาหกรรมเนื้อสัตว์โตขึ้นทุกปี<br><br></p>
-            <p>หากไปดูสถิติย้อนหลังจะพบว่า ปริมาณฝุ่นละอองทางภาคเหนือมีปริมาณเพิ่มมากขึ้นตามลำดับ หลังจากมีการส่งเสริมให้ปลูกข้าวโพดอย่างกว้างขวาง ส่งผลให้เกิดการบุกรุกป่า เผา ถาง เพื่อเปลี่ยนเป็นไร่ข้าวโพด
-            </p>
-          </div>
-          <div class="text-box" style="width: 100%;">
-            <p>นโยบายของรัฐบาลหลายยุคที่ผ่านมา ต่อเนื่องจนถึงปัจจุบันได้สนับสนุนพืชเศรษฐกิจสำคัญ 4 ชนิด คือ อ้อยข้าวโพด มันสำปะหลัง ปาล์มน้ำมัน ตามคำแนะนำของสภาหอการค้าไทย<br><br>
-            </p>
-            <p>ขณะเดียวกัน นอกจากการเผาข้าวโพดแล้ว การเผาอ้อยในช่วงหน้าแล้งก็เพิ่มปริมาณหมอกควันมากขึ้น เกือบทุกภาคนโยบายที่ผ่านมา รัฐบาลมีการสนับสนุนให้เกษตรกรเพิ่มพื้นที่ปลูกอ้อยอีกนับล้านไร่ เพื่อผลิตน้ำตาลส่งออกและทำพลังงานทดแทน ในช่วงเดือนมกราคมเมษายนของทุกปีจะมีการเผาอ้อยก่อนเข้าโรงหีบอ้อย ทำให้เกิดมลพิษทางอากาศมากขึ้น</p>
-          </div>
+        </div>
+        <div class="picture-contain">
+          <img src="Landing/icon/clock.svg" class="picture">
+        </div>
+        <div class="picture-contain">
+          <img src="Landing/icon/money-bag.svg" class="picture">
+        </div>
+        <div class="text-box">
+          <h3>ประหยัดต้นทุน</h3>
+          <p>การ<span style="color: red">เผา</span>ไม่จำเป็นต้องใช้แรงงานเยอะ</p>
+          <p>ทำให้ประหยัดค่าแรงงานได</p>
+          <p>รถไถมีมูลค่าที่สูง ชาวไร่ส่วนใหญ่จึงไม่นิยมใช้</p>
+        </div>
+        <div class="picture-contain">
+          <img src="Landing/icon/demand.svg" class="picture">
+        </div>
+        <div class="text-box">
+          <h3>ความต้องการที่มาก</h3>
+          <p>ในปัจจุบันผู้บริโภคนิยมบริโภคเนื้อสัตว์เป็นจำนวนมาก</p>
+          <p>ทำให้อาหารสัตว์เป็นที่ต้องการเป็นจำนวนมาก</p>
         </div>
       </div>
+    </div>
 
-      
-      <div class="material-contain-2">
-        <div class="side-material"></div>
-        <div class="material-2">
-          <div class="text-box">
-            <h2>กราฟแสดงจุดความร้อนจากพื้นที่ของไร่ข้าวโพด</h2>
-            <p>ที่เราเห็นนั้นคือกราฟที่แสดงจุดความร้อนของพื้นที่ในบริเวณไร่ข้าวโพด ซึ่งเราจะเห็นได้ว่าในช่วงเดือนมีนาคมเมษายน จะมีจุดความร้อนสูงขึ้นมาก เพราะเป็นเดือนที่เกษตรกรเริ่มเก็บเกี่ยวข้าวโพดและเผาซากข้าวโพด แทนที่จะใช้รถไถแล้วนำไปทิ้ง
-              <br><br><br></p>
-            <p>นี่เป็นกราฟแสดงจุดความร้อน 5 ประเทศในช่วงต้นปี 2019 ส่วนนึงในกราฟนั้นเกิดจากการเผาไร่ข้าวโพดของเกษตรกร เห็นได้ว่าประเทศไทยเป็นอันดับที่ 2 จากทั้งหมด นั่นหมายความว่าประเทศไทยเป็นหนึ่งในประเทศที่ทำให้เกิดปัญหามลพิษข้ามพรมแดนเป็นอันดับต้น ๆ เลยก็ว่าได้</p>
-          </div>
-          <div class="picture-contain">
-            <img src="/Landing/pic/กราฟ1.png" class="picture">
-            <span class="caption">กราฟแสดงจุดความร้อนในพื้นที่ไร่ข้าวโพด</span>
-            <img src="/Landing/pic/กราฟ2.png" class="picture">
-            <span class="caption">กราฟแสดงจุดความร้อนของ 5 ประเทศ</span>
-          </div>
-          <div class="picture-contain">
-            <img src="/Landing/pic/unknown1.png" class="picture">
-            <span class="caption">ภาพไร่ข้าวโพดที่เก็บเกี่ยวเสร็จแล้วเผา</span>
-          </div>
-          <div class="text-box">
-            <h2>มลพิษฝุ่นข้ามพรมแดน</h2>
-             <p>จากกราฟต่าง ๆ ด้านบนทำให้เราได้เห็นว่า ประเทศของเรานั้นเป็นหนึ่งในประเทศที่ทำให้เกิดมลพิษ ซึ่งมันทำให้เกิดฝุ่นควันทั้งในประเทศและประเทศใกล้เคียงอย่างแพร่หลายและฝุ่นเหล่านี้ไม่ดีต่อสุขภาพของคนที่ได้รับทั้งในระยะสั้นและระยะยาวเพราะสามารถทำให้เกิดโรคภัยต่างๆได้ถ้าหากได้รับฝุ่นเหล่านี้มากเกินไป
-            </p>
-          </div>
-        </div>
-      </div>
 
-      <div class="material-contain-1" style="height: 600px;">
-        <h1>ฝุ่นควันมีผลกระทบต่อมนุษย์อย่างไร ?</h1>
-        <p>ถ้าหากเป็นการได้รับในระยะสั้น จะทำให้เซลล์ผิวหนังผิดปกติ เกิดอาการระคายเคืองผิว มีการไอ เจ็บคอ และหายใจแล้วมีเสียงแปลก ๆ หรืออาจจะทำให้ตาแดงและแสบตาได้ แต่ถ้าแย่กว่านั้นอาจจะทำให้เลือดกำเดาไหลหรือคนที่มีโรคประจำตัวเช่น หอบและหืดนั้นมีโอกาสกำเริบได้
-          แต่ถ้าหากเป็นผลกระทบระยะยาวนั้นอาจทำให้ผิวหนังเสื่อมชรา ถ้าหากได้รับนานมากไปอาจจะทำให้เกิดโรคภัยที่อันตรายต่าง ๆ ได้เช่น โรคหลอดเลือดและหัวใจเรื้อรังและมะเร็งปอด ซึ่งโรคภัยเหล่านี้เป็นโรคที่ร้ายแรงและสามารถฆ่าชีวิตของผู้ที่ได้รับผลกระทบระยะยาวเหล่านี้ได้เลย</p>
-        <div class="line"></div>
-      </div>
-
-      <div class="material-contain-2" style="justify-content: flex-end; align-items: flex-end;">
-        <div class="about">
-          สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหาร ลาดกระบัง<br>
-          คณะเทคโนโลยีสารสนเทศ<br>
+    <div class="material-contain-2">
+      <div class="side-material"></div>
+      <div class="material-2"
+        style="background: linear-gradient(180deg, rgba(50, 52, 1, 95%) 40%, rgba(43, 52, 0, 95%) 100%);">
+        <div class="text-box" style="width: 80%">
+          <h3 style="font-size: 44px; color: #ba531c;">ดังนั้น เพื่อผลิตข้าวโพดให้ได้ในปริมาณมาก ภายในเวลาที่กำหนด
+            และไม่ขาดทุน จึงทำ
+            ให้ชาวไรส่วนใหญ่เลือกวิธีการเผา</h3>
         </div>
-        <div class="material-2" style="background: linear-gradient(90deg, rgb(53, 39, 14, 95%) 0%, rgb(68, 50, 12, 95%) 100%); box-shadow: -8px 0px 0px hsl(0, 0%, 0%, 10%); animation: slide-left 1s; height: 1800px;">
-          <div class="text-box" style="width: 90%;">
-            <span style="text-align: center;"><h2>เราจะช่วยกันแก้ปัญหามลพิษนี้ได้อย่างไร ?</h2></span>
-            <p>1.	ประเทศในอาเซียนต้องร่วมมือกันรวบรวมข้อมูล เพื่อจัดทำแผนที่และขอบเขตของพื้นที่สัมปทานของผู้ประกอบการและห่วงโซ่อุปทานของเกษตรพันธสัญญา เพื่อปรับปรุงนโยบายความโปร่งใสและการรับผิดชอบ<br></p>
-            <p>2.	เพิ่มและปรับปรุงนโยบายความโปร่งใส และมาตรการทางกฎหมายที่เอาผิดบริษัทอุตสาหกรรมที่เชื่อมโยงกับการเปลี่ยนแปลงผืนป่าและก่อหมอกควันพิษ ตลอดห่วงโซ่อุปทานการผลิตตั้งแต่การปลูกและรับซื้อพืชอาหารสัตว์ การทำปศุสัตว์ ไปจนถึงการแปรรูป และสามารถให้ประชาชนเข้าถึงข้อมูลดังกล่าวได้<br></p>
-            <p>3.	เพิ่มข้อกำหนดใน “มาตรฐานสัญญา” และ “การขึ้นทะเบียนผู้ประกอบการ” ในพระราชบัญญัติส่งเสริมและพัฒนาระบบเกษตรพันธสัญญา(หรือกฏหมายเกษตรพันธสัญญา) โดยเน้นขยายความรับผิดชอบของบริษัทและผู้ประกอบการเมื่อเกิดความเสียหายทางสิ่งแวดล้อมและสุขภาพที่เกิดขึ้น<br></p>
-            <p>4.	ออกกฎหมายติดฉลากผลิตภัณฑ์เนื้อสัตว์ทุกประเภท โดยเปิดเผยถึงข้อมูลการเลี้ยงสัตว์รวมถึงที่มาอาหารสัตว์ ว่าเชื่อมโยงกับการทำลายป่าและก่อหมอกควันพิษหรือไม่ตลอดห่วงโซ่การผลิตทุกขั้นตอน เพื่อให้ผู้บริโภคสามารถรับรู้ข้อมูลได้อย่างโปร่งใส<br></p>
-            <p>5.	สนับสนุนเกษตรกรรมเชิงนิเวศและเกษตรกรรายย่อย เพื่อขยายให้วิถีการเกษตรที่ยั่งยืนเป็นมิตรต่อสุขภาพของประชาชน และสิ่งแวดล้อมสามารถขยายตัวได้</p>
-          </div>
-          <div class="text-box">
-            <h2>ทางภาครัฐแก้ปัญหาอย่างไร ?</h2>
-            <p>ทั้งภาครัฐและภาคอุตสาหกรรมควรร่วมมือกันสนับสนุนนโยบาย และเปลี่ยนแปลงระบบโครงสร้างอาหารได้ด้วยวิธีการผลิตที่ยั่งยืน เพื่อปกป้องสุขภาพและสิ่งแวดล้อมของประชาชน
-              และหันมาสนับสนุนการผลิตอาหารที่เน้นพืชผักจากวิถึเกษตรกรรมเชิงนิเวศ ทำให้สามารถช่วยแก้ปัญหาภาวะโลกร้อน ลดการเปลี่ยนแปลงพื้นที่ป่า คืนความอุดมสมบูรณ์ให้กับผืนดิน
-              และหยุดมลพิษข้ามพรมแดน</p>
-          </div>
-          <div class="picture-contain">
-            <img src="/Landing/pic/รัฐบาล.png" class="picture">
-            <span class="caption">หน่วยงานรัฐกำลังหารือเรื่องปัญหาฝุ่นควัน</span>
-          </div>
-          <div class="text-box" style="width: 90%;">
-          </div>
+        <div class="text-box" style="width: 80%">
+          <h2>กราฟแสดงจุดความร้อน</h2>
         </div>
-        <div class="side-material" style="background: hsl(38, 87%, 25%, 50%); animation: slie-right 1s; height: 2000px"></div>
+        <div class="picture-contain" style="width: 99%">
+          <img src="Landing/image/graph.png" class="picture" style="width: 60%">
+        </div>
       </div>
     </div>
 
-    <img id="signcontain" src="/Landing/pic/dirt2.png">
-    <div id="signtext" >
-      “... ร่วมเป็นส่วนหนึ่งในการแก้ไขปัญหาเกี่ยวกับฝุ่น<br>
-      ผ่านเว็บไซต์ Greenpeace ...”
-      <a id="signbutton" href="https://act.greenpeace.org/page/44444/petition/1?ea.tracking.id=Planet4&_ga=2.145546036.1232744481.1619950586-746889309.1612951775" target="_blank">ร่วมลงชื่อ</a>
+    <div class="material-contain-1" style="height: 600px;">
+      <h1>มลพิษข้ามพรมแดนคืออะไร ?</h1>
+      <p>โดยลักษณะปัญหาของ มลพิษข้ามพรมแดนนี้ก็ คือ การที่มลพิษของที่ ที่หนึ่งไปสู่อีกที่หนึ่งหรือประเทศอื่น ๆ<br>
+        โดยสาเหตุหลักๆ มาจากการเผาพืชไร่บริเวณใกล้พรมแดนนี่เอง</p>
     </div>
-    
 
-  </body>
-  <style>
-    :root {
-      --screen-width: 100%;
+    <div class="material-contain-2" style="justify-content: flex-end; align-items: flex-end;">
+      <div class="material-2"
+        style="background: linear-gradient(180deg, rgba(55,48,27,95%) 0%, rgba(60,58,51,95%) 100%); box-shadow: -8px 0px 0px hsl(0, 0%, 0%, 10%); animation: slide-left 1s; height: 1800px; align-items: flex-start">
+        <div class="text-box" style="width: 90%;">
+          <p style="font-style: italic;">ซึ่งแน่นอน ทุกอย่างมีผลดีผลเสีย แต่ผลเสียของการเผามันค่อนข้างที่จะใหญ่ด้วยสิ
+            เกิดมลพิษทางอากาศ หรือที่พวกเราคุ้นเคยกันดี</p>
+          <h2 style="text-align: center; margin: 8px; font-size: 72px; color: #2c6c74;">PM 2.5</h2>
+        </div>
+        <div class="picture-contain">
+          <img src="Landing/icon/haze.svg" class="picture">
+        </div>
+        <div class="text-box">
+          <p>หนึ่งในสาเหตุของการเกิด ฝุ่น PM 2.5 ก็คือการเผาไร่ข้าวโพดนั่นเอง
+            ถ้าทุกคนติดตามข่าว จะทราบว่าที่เชียงใหม่นั้นเกิดฝุ่น PM 2.5
+            และส่วนหนึ่งของฝุ่น PM 2.5 ที่เชียงใหม่ ก็คือ</p>
+        </div>
+        <div class="text-box">
+          <h2 style="font-size: 40px; color: #2c6c74">ผลกระทบของฝุ่นควัน PM 2.5</h2>
+          <h3 style="text-indent: 32px; color: white">แสบจมูก คัดจมูก น้ำมูกไหล</h3>
+          <h3 style="text-indent: 32px; color: white">แน่นหน้าอก ภูมิแพ้กำเริบ</h3>
+        </div>
+        <div class="picture-contain">
+          <img src="Landing/icon/air-pollution.svg" class="picture">
+        </div>
+        <div class="text-box" style="width: 100%; text-align: center;">
+          <p style="font-size: 24px; color: #a3e3a3;">ไม่ใช่แค่ประเทศไทยเท่านั้นที่นิยมเผาไร่ข้าวโพด
+            ประเทศเพื่อนบ้านเราก็นิยมเผาไร่
+            ข้าวโพดเหมือนกัน</p>
+        </div>
+        <div class="picture-contain" style="width: 30%;">
+          <img src="Landing/icon/country-1.svg" class="picture">
+        </div>
+        <div class="picture-contain" style="width: 30%;">
+          <img src="Landing/icon/country-3.svg" class="picture">
+        </div>
+        <div class="picture-contain" style="width: 30%;">
+          <img src="Landing/icon/country-2.svg" class="picture">
+        </div>
+        <div class="picture-contain" style="width: 100%">
+        </div>
+        <div class="picture-contain" style="width: 100%">
+        </div>
+        <div class="picture-contain" style="width: 100%">
+        </div>
+        <div class="picture-contain" style="width: 100%">
+        </div>
+        <div class="picture-contain" style="width: 100%">
+        </div>
+      </div>
+      <div class="side-material" style="background: hsl(38, 87%, 25%, 50%); animation: slie-right 1s; height: 2000px">
+      </div>
+    </div>
+  </div>
+
+  <img id="signcontain" src="Landing/image/dirt.png">
+  <div id="signtext">
+    “... ร่วมเป็นส่วนหนึ่งในการแก้ไขปัญหาเกี่ยวกับฝุ่น<br>
+    ผ่านเว็บไซต์ Greenpeace ...”
+    <a id="signbutton"
+      href="https://act.greenpeace.org/page/44444/petition/1?ea.tracking.id=Planet4&_ga=2.145546036.1232744481.1619950586-746889309.1612951775"
+      target="_blank">ร่วมลงชื่อ</a>
+  </div>
+
+
+</body>
+<style>
+  :root {
+    --screen-width: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0%;
+    width: var(--screen-width);
+    height: auto;
+    transition: 0.75s;
+    font-family: 'Athiti', sans-serif;
+    /* font-family: 'Comfortaa', cursive; */
+    background-color: hsl(190, 100%, 50%);
+  }
+
+  h1 {
+    animation: slide-up 1.5s;
+    font-family: 'Mitr', sans-serif;
+    font-size: 2.5vw;
+    letter-spacing: 3px;
+  }
+
+  h2 {
+    animation: slide-up 1.5s;
+    font-family: 'Mitr', sans-serif;
+    font-size: 3vw;
+    color: hsl(55, 93%, 38%, 100%);
+  }
+
+  h3 {
+    animation: slide-up 1.5s;
+    font-family: 'Mitr', sans-serif;
+    font-size: 1.5vw;
+    color: hsl(55, 93%, 38%, 100%);
+  }
+
+  p {
+    animation: slide-left 1.5s;
+    line-height: 1.2em;
+    font-size: 1.5vw;
+    font-family: 'Mitr', sans-serif;
+  }
+
+  .scroll-value {
+    z-index: 7;
+    position: fixed;
+    top: 16px;
+    right: 64px;
+    font-size: 16px;
+    color: red;
+  }
+
+  .focus-1,
+  .focus-2 {
+    transition: 0.75s;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+  }
+
+  .focus-1 {
+    background-color: hsl(0, 0%, 0%, 30%);
+  }
+
+  .focus-2 {
+    background-color: hsl(0, 0%, 0%, 15%);
+  }
+
+  .head-contain {
+    width: 90%;
+    height: 100%;
+    padding: 0% 5% 0% 5%;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .heading {
+    display: block;
+    text-shadow: 4px 4px 2px hsl(0, 0%, 0%, 20%);
+    /* margin-top: 8px; */
+    line-height: 6vw;
+    font-size: 4vw;
+    font-weight: 1200;
+    color: white;
+    animation: slide-right 1s;
+  }
+
+  .main-contain {
+    width: 100%;
+    margin: 0%;
+    height: 6300px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    transition: 1s;
+  }
+
+  .side-material {
+    display: none;
+    width: 5%;
+    height: 1500px;
+    background: rgba(50, 52, 1, 50%);
+    transition: 0.5s;
+    animation: slide-left 1s;
+    animation-delay: 0.5s;
+  }
+
+  .material-contain-1 {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: black;
+    width: 90%;
+    font-size: 20px;
+    padding: 40px 5% 40px 5%;
+    margin: 0%;
+    height: 700px;
+    animation: slide-up 1s;
+    background: rgb(200, 200, 200, 90%);
+  }
+
+  .material-contain-2 {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .material-2 {
+    display: none;
+    transform-origin: left;
+    animation: slide-right 1s;
+    width: 60%;
+    padding: 100px 0% 100px 0%;
+    height: 1300px;
+    box-shadow: 8px 0px 0px hsl(0, 0%, 0%, 10%);
+    background: linear-gradient(0deg, rgba(50, 52, 1, 95%) 40%, rgba(43, 52, 0, 95%) 100%);
+    justify-content: center;
+    align-items: space-around;
+    flex-wrap: wrap;
+  }
+
+  .text-box {
+    width: 44%;
+    padding: 0px 40px 20px 20px;
+    height: auto;
+    color: white;
+  }
+
+  .show-menu {
+    z-index: 6;
+    height: 5%;
+    top: 0.5%;
+    bottom: 0.5%;
+    right: 0.5%;
+    filter: invert(100%);
+    position: fixed;
+    transform-origin: right;
+  }
+
+  #listbar {
+    z-index: 5;
+    height: 94%;
+    top: 6%;
+    right: 0%;
+    width: 18%;
+    background: hsl(0, 0%, 10%, 80%);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: 0.25s;
+    position: fixed;
+  }
+
+  .menu-title {
+    width: 100%;
+    height: 6%;
+    border-top: 1px solid rgba(170, 170, 170, 80%);
+    padding: 0% 0% 0% 6%;
+    margin-top: 2%;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .menu-button {
+    width: 100%;
+    height: 6%;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .menu-icon {
+    height: 60%;
+    margin: 0% 8% 0% 8%;
+    filter: invert(100%);
+  }
+
+  .show-menu:hover {
+    cursor: pointer;
+    transition: 0.25s;
+    filter: invert(100%) brightness(70%);
+  }
+
+  .menu-button:hover {
+    cursor: pointer;
+    background: hsl(0, 0%, 40%, 80%);
+  }
+
+  .direc-contain {
+    z-index: 2;
+    position: fixed;
+    right: 1%;
+    top: 40%;
+    width: 24px;
+    height: 200px;
+  }
+
+  .direc-button {
+    width: 24px;
+    height: 24px;
+    margin: 8px 0px 8px 0px;
+    border-radius: 100%;
+    box-shadow: 2px 2px 2px hsl(0, 0%, 0%, 20%);
+  }
+
+  .direc-text {
+    width: 8vw;
+    height: 24px;
+    margin-right: 32px;
+    text-align: right;
+    color: white;
+    font-family: 'K2D';
+    float: right;
+    animation: slide-left 0.5s;
+  }
+
+  .direc-button:hover {
+    transform: translateX(-4px) scale(1.1);
+    transition: 0.25s;
+    filter: brightness(110%);
+    cursor: pointer;
+  }
+
+  .direc-button:active {
+    transform: scale(0.9);
+    transition: 0.25s;
+  }
+
+  .picture-contain {
+    width: 40%;
+    border-radius: 4px;
+    animation: slide-left 1.5s;
+  }
+
+  .picture {
+    width: 60%;
+    margin: 0% 20% 0% 20%;
+    filter: drop-shadow(0px 0px 8px 10px rgb(0, 0, 0, 20%))
+  }
+
+  #signcontain {
+    width: 100%;
+    position: fixed;
+    bottom: -120%;
+    filter: grayscale(100%) sepia(10%) drop-shadow(0px -8px 2px hsl(0, 0%, 0%, 20%));
+    transition: 0.5s;
+  }
+
+  #signtext {
+    transition: 1s;
+    width: 100%;
+    height: 300px;
+    position: fixed;
+    bottom: 10%;
+    left: -100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 3vw;
+    font-style: italic;
+    color: hsl(55, 93%, 38%, 100%);
+    font-family: 'Maitree', sans-serif;
+  }
+
+  #signbutton {
+    width: 25%;
+    height: 4vw;
+    margin: 1% 0% 0% 2%;
+    background: #608016;
+    border-radius: 16px;
+    display: flex;
+    box-shadow: 8px 8px 2px hsl(0, 0%, 0%, 20%);
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+  }
+
+  #signbutton:hover {
+    filter: brightness(110%);
+    transition: 0.25s;
+    transform: scale(1.025);
+    text-decoration: initial;
+  }
+
+  .layer {
+    width: var(--screen-width);
+    background-size: 100%;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .smoke {
+    opacity: 80%;
+    height: 200%;
+    bottom: -90%;
+    background-image: url("Landing/image/background-smoke.png");
+  }
+
+  .corn {
+    height: 200%;
+    bottom: -100%;
+    background-image: url("Landing/image/background-corn.png");
+  }
+
+  .front-field {
+    height: 200%;
+    bottom: -105%;
+    background-image: url("Landing/image/background-field.png");
+  }
+
+  .back-field {
+    height: 200%;
+    bottom: -85%;
+    background-image: url("Landing/image/background-field.png");
+    transform: scaleX(-1);
+  }
+
+  .sky {
+    opacity: 60%;
+    height: 200%;
+    top: -15%;
+    background-image: url("Landing/image/background-sky.png");
+  }
+
+  @keyframes up-down {
+    to {
+      transform: translateY(8px);
     }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      margin: 0%;
-      width: var(--screen-width);
-      height: auto;
-      transition: 0.75s;
-      font-family: 'Comfortaa', cursive;
-      background-color: hsl(190, 100%, 50%);
-    }
-    h1 {
-      animation: slide-up 1.5s;
-      font-family: 'Maitree', sans-serif;
-      font-size: 2.5vw;
-      letter-spacing: 3px;
-    }
-    h2 {
-      animation: slide-up 1.5s;
-      font-family: 'Maitree', sans-serif;
-      font-size: 1.5vw;
-      color: hsl(55, 93%, 38%, 100%);
-    }
-    p {
-      text-align:justify;
-      animation: slide-left 1.5s;
-      line-height: 32px;
-      font-size: 1vw;
-      text-indent: 48px;
-      font-family: 'Maitree', sans-serif;
-    }
-    .scroll-value {
-      z-index: 7;
-      position: fixed;
-      top: 16px;
-      right: 64px;
-      font-size: 16px;
-      color: red;
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(64px);
+      opacity: 0%;
     }
 
-    .focus-1, .focus-2 {
-      transition: 0.75s;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      position: fixed;
+    to {
+      transform: translateY(0px);
+      opacity: 100%;
     }
-    .focus-1 {
-      background-color: hsl(0, 0%, 0%, 30%);
-    }
-    .focus-2 {
-      background-color: hsl(0, 0%, 0%, 15%);
+  }
+
+  @keyframes slide-right {
+    from {
+      transform: translateX(-20%);
+      opacity: 0%;
     }
 
-    .head-contain {
-      width: 90%;
-      height: 100%;
-      padding: 0% 5% 0% 5%;
-      transition: 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
+    to {
+      transform: translateX(0px);
+      opacity: 100%;
     }
-    .heading {
-      display: block;
-      text-shadow: 4px 4px 2px hsl(0, 0%, 0%, 20%);
-      margin-top: 16px;
-      font-size: 84px;
-      font-weight: 1200;
-      color: white;
-      animation: slide-right 1s;
+  }
+
+  @keyframes slide-left {
+    from {
+      transform: translateX(20%);
+      opacity: 0%;
     }
 
-    .main-contain {
-      width: 100%;
-      margin: 0%;
-      height: 6300px;
-      display: flex;
-      justify-content: flex-start;
-      flex-direction: column;
-      align-items: center;
-      transition: 1s;
+    to {
+      transform: translateX(0px);
+      opacity: 100%;
     }
-    .side-material {
-      display: none;
-      width: 5%;
-      height: 1500px;
-      background: rgba(50, 52, 1, 50%);
-      transition: 0.5s;
-      animation: slide-left 1s;
-      animation-delay: 0.5s;
+  }
+</style>
+<script>
+  window.onscroll = function () {
+    let value = window.scrollY;
+    // test.innerHTML = value;
+
+    smoke1.style.bottom = `${(-90 + (value / 80))}%`;
+    corn1.style.bottom = `${(-100 + (value / 76))}%`;
+    field1.style.bottom = `${(-105 + (value / 96))}%`;
+    smoke2.style.bottom = `${(-75 + (value / 64))}%`;
+    field2.style.bottom = `${(-85 + (value / 76))}%`;
+    sky1.style.top = `${(-15 - (value / 24))}%`;
+
+    corn1.style.filter = `grayscale(${(value / 100 * 3)}%) sepia(${(value / 100 * 1.8)}%)`;
+    field1.style.filter = `grayscale(${(value / 100 * 3)}%) blur(1px)`;
+    field2.style.filter = `grayscale(${(value / 100 * 3.5)}%) blur(3px)`;
+
+    document.getElementsByClassName("focus-2")[0].style.backgroundColor = `hsl(0, 0%, 0%, ${30 - value * 1.5}%)`;
+    document.getElementsByClassName("head-contain")[0].style.transform = `translateY(${0 - value / 10}%)`;
+
+    if (value > 400) {
+      document.getElementsByClassName("material-contain-1")[0].style.display = "flex";
     }
-    .material-contain-1 {
-      display: none;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      flex-wrap: wrap;
-      color: black;
-      width: 70%;
-      font-size: 20px;
-      padding: 40px 15% 40px 15%; 
-      margin: 0%;
-      height: 700px;
-      animation: slide-up 1s;
-      background: rgb(200, 200, 200, 90%);
+    if (value > 1400) {
+      document.getElementsByClassName("material-2")[0].style.display = "flex";
+      document.getElementsByClassName("side-material")[0].style.display = "initial";
     }
-    .material-contain-2 {
-      display: flex;
-      width: 100%;
-      height: auto;
-      justify-content: flex-start;
-      align-items: center;
+    if (value > 2400) {
+      document.getElementsByClassName("material-2")[1].style.display = "flex";
+      document.getElementsByClassName("side-material")[1].style.display = "initial";
     }
-    .material-2 {
-      display: none;
-      transform-origin: left;
-      animation: slide-right 1s;
-      width: 50%;
-      padding: 100px 5% 100px 5%;
-      height: 1300px;
-      box-shadow: 8px 0px 0px hsl(0, 0%, 0%, 10%);
-      background: linear-gradient(90deg, rgba(50, 52, 1, 95%) 40%, rgba(43, 52, 0, 95%) 100%);
-      justify-content: space-around;
-      align-items: space-between;
-      flex-wrap: wrap;
+    if (value > 4400) {
+      document.getElementsByClassName("material-contain-1")[1].style.display = "flex";
     }
-    .text-box {
-      width: 40%;
-      padding: 0px 40px 20px 40px;
-      height: auto;
-      color: white;
+    if (value > 5000) {
+      document.getElementsByClassName("material-2")[2].style.display = "flex";
+      document.getElementsByClassName("side-material")[2].style.display = "initial";
+    }
+    if (value > 5800) {
+      signcontain.style.bottom = `-24%`;
+      signtext.style.opacity = "100%";
+      signtext.style.left = "6%";
+    } else {
+      signcontain.style.bottom = "-100%";
+      signtext.style.opacity = "0%";
+      signtext.style.left = "-100%";
     }
 
-    .show-menu {
-      z-index: 6;
-      height: 5%;
-      top: 0.5%;
-      bottom: 0.5%;
-      right: 0.5%;
-      filter: invert(100%);
-      position: fixed;
-      transform-origin: right;
+    if (value < 600) {
+      document.body.style.backgroundColor = "hsl(190, 100%, 50%)";
+    } else if (value < 1600) {
+      document.body.style.backgroundColor = "hsl(190, 20%, 50%)";
+    } else if (value < 2600) {
+      document.body.style.backgroundColor = "hsl(36, 20%, 50%)";
+    } else if (value < 3600) {
+      document.body.style.backgroundColor = "hsl(19, 40%, 50%)";
     }
-    #listbar {
-      z-index: 5;
-      height: 94%;
-      top: 6%;
-      right: 0%;
-      width: 18%;
-      background: hsl(0, 0%, 10%, 80%);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: 0.25s;
-      position: fixed;
-    }
-    .menu-title {
-      width: 100%;
-      height: 6%;
-      border-top: 1px solid rgba(170, 170, 170, 80%);
-      padding: 0% 0% 0% 6%;
-      margin-top: 2%;
-      color: #aaa;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-    .menu-button {
-      width: 100%;
-      height: 6%;
-      color: white;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-    .menu-icon {
-      height: 60%;
-      margin: 0% 8% 0% 8%;
-      filter: invert(100%);
-    }
-    .show-menu:hover {
-      cursor: pointer;
-      transition: 0.25s;
-      filter: invert(100%) brightness(70%);
-    }
-    .menu-button:hover {
-      cursor: pointer;
-      background: hsl(0, 0%, 40%, 80%);
-    }
+  }
 
-    .direc-contain {
-      z-index: 2;
-      position: fixed;
-      right: 1%;
-      top: 40%;
-      width: 24px;
-      height: 200px;
-    }
-    .direc-button {
-      width: 24px;
-      height: 24px;
-      margin: 8px 0px 8px 0px;
-      border-radius: 100%;
-      box-shadow: 2px 2px 2px hsl(0, 0%, 0%, 20%);
-    }
-    .direc-text {
-      width: 10vw;
-      height: 24px;
-      margin-right: 32px;
-      text-align: right;
-      color: white;
-      font-family: 'K2D';
-      float: right;
-      animation: slide-left 0.5s;
-    }
-    .direc-button:hover {
-      transform: translateX(-4px) scale(1.1);
-      transition: 0.25s;
-      filter: brightness(110%);
-      cursor: pointer;
-    }
-    .direc-button:active {
-      transform: scale(0.9);
-      transition: 0.25s;
-    }
+  function showInfo(x, index) {
+    var arr = ["หน้าหลัก", "ข้าวโพดเลี้ยงสัตว์", "ปัญหา", "มลพิษข้ามพรมแดน", "PM 2.5", "ลงชื่อ"];
+    x.innerHTML = `<div class="direc-text" style="display: initial;">${arr[index]}</div>`;
+  }
 
-    .picture-contain {
-      width: 40%;
-      margin: 2%;
-      border-radius: 4px;
-      animation: slide-left 1.5s;
-    }
-    .picture {
-      width: 100%;
-      box-shadow: 0px 0px 8px 10px rgb(0, 0, 0, 20%);
-    }
-    .caption {
-      text-align: center;
-      display: block;
-      color: white;
-      opacity: 50%;
-      font-family: 'Maitree', sans-serif;
-      font-style: italic;
-      padding: 8px 0% 56px 0%;
-      font-size: 1vw;
-    }
+  var hidding = true;
 
-    .line {
-      margin: 1% 20% 1% 20%;
-      width: 60%;
-      height: 4px;
-      border-radius: 4px;
-      background: rgb(100, 100, 100, 40%);
-      animation: up-down 3s linear infinite alternate;
+  function showMenu() {
+    if (hidding) {
+      document.getElementsByClassName("show-menu")[0].style.transform = "scaleX(6.7)";
+      listbar.style.transform = 'scaleX(1)';
+      hidding = false;
+    } else {
+      document.getElementsByClassName("show-menu")[0].style.transform = "initial";
+      listbar.style.transform = 'scaleX(0)';
+      hidding = true;
     }
+  }
+</script>
 
-    .about {
-      display: none;
-      width: 33%;
-      height: 200px;
-      padding: 1% 1% 1% 1%;
-      font-style: italic;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-start;
-      font-size: 14px;
-      color: hsl(0, 0%, 100%, 60%);
-      font-family: 'Maitree', sans-serif;
-    }
-
-    #signcontain {
-      width: 100%;
-      position: fixed;
-      bottom: -100%;
-      filter: grayscale(100%) sepia(10%) drop-shadow(0px -8px 2px hsl(0, 0%, 0%, 20%));
-      transition: 0.5s;
-    }
-    #signtext {
-      transition: 1s;
-      width: 100%;
-      height: 300px;
-      position: fixed;
-      bottom: 10%;
-      left: -100%;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
-      font-size: 3vw;
-      font-style: italic; 
-      color: hsl(55, 93%, 38%, 100%);
-      font-family: 'Maitree', sans-serif;
-    }
-    #signbutton {
-      width: 25%;
-      height: 4vw;
-      margin: 1% 0% 0% 2%;
-      background: #608016;
-      border-radius: 16px;
-      display: flex;
-      box-shadow: 8px 8px 2px hsl(0, 0%, 0%, 20%);
-      justify-content: center;
-      align-items: center;
-      font-size: 18px;
-      color: white;
-      text-decoration: none;
-    }
-    #signbutton:hover {
-      filter: brightness(110%);
-      transition: 0.25s;
-      transform: scale(1.025);
-      text-decoration: initial;
-    }
-
-    .layer {
-      width: var(--screen-width);
-      background-size: 100%;
-      position: fixed;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .smoke {
-      opacity: 80%;
-      height: 200%;
-      bottom: -90%;
-      background-image: url("/Landing/pic/Pngtreeblack_particle_style_pollution_smoke_5436310.png");
-    }
-    .corn {
-      height: 200%;
-      bottom: -100%;
-      background-image: url("/Landing/pic/background-corn.png");
-    }
-    .front-field {
-      height: 200%;
-      bottom: -105%;
-      background-image: url("/Landing/pic/Pngtreefields_5643431.png");
-    }
-    .back-field {
-      height: 200%;
-      bottom: -85%;
-      background-image: url("/Landing/pic/Pngtreefields_5643431.png");
-      transform: scaleX(-1);
-    }
-    .sky {
-      opacity: 60%;
-      height: 200%;
-      top: -10%;
-      background-image: url("/Landing/pic/Pngtreeabstract_cloudy_sky_with_some_5675425.png");
-    }
-    @keyframes up-down {
-      to {transform: translateY(8px);}
-    }
-    @keyframes slide-up {
-      from {transform: translateY(64px); opacity: 0%;}
-      to {transform: translateY(0px); opacity: 100%;}
-    }
-    @keyframes slide-right {
-      from {transform: translateX(-20%); opacity: 0%;}
-      to {transform: translateX(0px); opacity: 100%;}
-    }
-    @keyframes slide-left {
-      from {transform: translateX(20%); opacity: 0%;}
-      to {transform: translateX(0px); opacity: 100%;}
-    }
-  </style>
-  <script>
-    window.onscroll = function() {
-      let value =  window.scrollY;
-      // test.innerHTML = value;
-
-      smoke1.style.bottom = `${(-90 + (value / 80))}%`;
-      corn1.style.bottom = `${(-100 + (value / 76))}%`;
-      field1.style.bottom = `${(-105 + (value / 96))}%`;
-      smoke2.style.bottom = `${(-75 + (value / 64))}%`;
-      field2.style.bottom = `${(-85 + (value / 76))}%`;
-      sky1.style.top = `${(-10 - (value / 24))}%`;
-
-      corn1.style.filter = `grayscale(${(value / 100 * 3)}%) sepia(${(value / 100 * 1.8)}%)`;
-      field1.style.filter = `grayscale(${(value / 100 * 3)}%) blur(1px)`;
-      field2.style.filter = `grayscale(${(value / 100 * 3.5)}%) blur(3px)`;
-
-      document.getElementsByClassName("focus-2")[0].style.backgroundColor = `hsl(0, 0%, 0%, ${30 - value * 1.5}%)`;
-      document.getElementsByClassName("head-contain")[0].style.transform = `translateY(${0 - value / 10}%)`;
-
-      if (value > 400) {
-        document.getElementsByClassName("material-contain-1")[0].style.display = "flex";
-      }
-      if (value > 1400) {
-        document.getElementsByClassName("material-2")[0].style.display = "flex";
-        document.getElementsByClassName("side-material")[0].style.display = "initial";
-      }
-      if (value > 2400) {
-        document.getElementsByClassName("material-2")[1].style.display = "flex";
-        document.getElementsByClassName("side-material")[1].style.display = "initial";
-      }
-      if (value > 4400) {
-        document.getElementsByClassName("material-contain-1")[1].style.display = "flex";
-      }
-      if (value > 5000) {
-        document.getElementsByClassName("material-2")[2].style.display = "flex";
-        document.getElementsByClassName("side-material")[2].style.display = "initial";
-        document.getElementsByClassName("about")[0].style.display = "flex";
-      }
-      if (value > 5800) {
-        signcontain.style.bottom = `-18%`;
-        signtext.style.opacity = "100%";
-        signtext.style.left = "6%";
-      } else {
-        signcontain.style.bottom = "-100%";
-        signtext.style.opacity = "0%";
-        signtext.style.left = "-100%";
-      }
-
-      if (value < 600) {
-        document.body.style.backgroundColor = "hsl(190, 100%, 50%)";
-      } else if (value < 1600) {
-        document.body.style.backgroundColor = "hsl(190, 20%, 50%)";
-      } else if (value < 2600) {
-        document.body.style.backgroundColor = "hsl(36, 20%, 50%)";
-      } else if (value < 3600) {
-        document.body.style.backgroundColor = "hsl(19, 40%, 50%)";
-      }
-    }
-
-    function showInfo(x, index) {
-      var arr = ["หน้าหลัก", "นิยามข้าวโพดเลี้ยงสัตว์", "ปัญหา", "ผลกระทบ", "ข้อเสนอ", "ลงชื่อ"];
-      x.innerHTML = `<div class="direc-text" style="display: initial;">${arr[index]}</div>`;
-    }
-
-    var hidding = true;
-
-    function showMenu() {
-      if (hidding) {
-        document.getElementsByClassName("show-menu")[0].style.transform = "scaleX(6.7)";
-        listbar.style.transform = 'scaleX(1)';
-        hidding = false;
-      } else {
-        document.getElementsByClassName("show-menu")[0].style.transform = "initial";
-        listbar.style.transform = 'scaleX(0)';
-        hidding = true;
-      }
-    }
-  </script>
 </html>
